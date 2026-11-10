@@ -26,7 +26,8 @@ function useSize() {
 export default function App() {
   const { w, h } = useSize()
   const [edgeKinds, setEdgeKinds] = useState(() => new Set(['inspired', 'part_of', 'role', 'defined']))
-  const [nodeKinds, setNodeKinds] = useState(() => new Set(Object.keys(KINDS)))
+  // theories are unverified, so they stay off until the viewer turns them on
+  const [nodeKinds, setNodeKinds] = useState(() => new Set(Object.keys(KINDS).filter((k) => k !== 'theory')))
   const [selected, setSelected] = useState(null)
   const [link, setLink] = useState(null)
   const [hover, setHover] = useState(null)
@@ -39,7 +40,7 @@ export default function App() {
     const links = []
     const deg = {}
     for (const l of LINKS) {
-      const vis = EDGES.find((e) => edgeKinds.has(e.key) && l.kinds[e.key])
+      const vis = EDGES.find((e) => (edgeKinds.has(e.key) || (e.key === 'theorized' && nodeKinds.has('theory'))) && l.kinds[e.key])
       if (!vis) continue
       const a = BY_ID[id(l.source)], b = BY_ID[id(l.target)]
       if (!nodeKinds.has(a.kind) || !nodeKinds.has(b.kind)) continue

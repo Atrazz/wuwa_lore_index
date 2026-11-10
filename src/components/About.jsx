@@ -22,6 +22,10 @@ export default function About({ meta, onClose, onExample }) {
         <dl className="notes">
           <dt>Real-world roots</dt>
           <dd>Marked <span className="cert stated">stated</span> when the source says it plainly, <span className="cert possible">possible</span> when it hedges (“may be based on”). Notes the wiki itself calls false are left out.</dd>
+          <dt>Theories</dt>
+          <dd>Fan theories are off by default and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
+          <dt>Grain of salt</dt>
+          <dd>Hand-summarised theories are rated by how much game material they lean on, not by whether they're right: <b>grounded</b> (a small step from what's shown), <b>stretch</b> (an interpretive leap or outside comparison), <b>wild</b> (symbolism or prediction).</dd>
           <dt>Chinese</dt>
           <dd>Names come from the wiki’s language tables and the game’s own text; “literal” meanings from the wiki.</dd>
           <dt>Sources</dt>

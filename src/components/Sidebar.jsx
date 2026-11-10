@@ -66,7 +66,7 @@ export default function Sidebar({ nodes, links, onPick, edgeKinds, toggleEdge, n
 
       <div className="group">
         <div className="group-title">Connections <span>strongest first</span></div>
-        {EDGES.map((e) => (
+        {EDGES.filter((e) => e.key !== 'theorized').map((e) => (
           <button key={e.key} className={'row' + (edgeKinds.has(e.key) ? ' on' : '')} onClick={() => toggleEdge(e.key)} title={e.rule} style={{ '--c': e.color }}>
             <i className={'line ' + e.key} /><span>{e.label}</span><b>{edgeCount[e.key]}</b>
           </button>

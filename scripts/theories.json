@@ -1,0 +1,221 @@
+[
+  {
+    "example": true,
+    "title": "Example — replace with a theory, in your own words",
+    "video": "local-note", "timestamp": "20:34",
+    "summary": "One or two sentences summarising the claim. Entries with \"example\": true are ignored. \"video\" and \"timestamp\" are only for your own reference and are never published.",
+    "plausibility": "stretch",
+    "basis": "What in-game material the claim rests on.",
+    "concepts": ["Threnodian", "The Lament"]
+  },
+
+  {
+    "video": "cosmology", "timestamp": "7:00",
+    "title": "Abraxas is the being beyond every pair of opposites",
+    "summary": "The name is taken unchanged from the Gnostic Abraxas, a god above good and evil, creation and destruction. He reads Abby's two eye colours (space and time in WuWa's colour code) as a sign that the entity sits above both, not just on them.",
+    "plausibility": "stretch",
+    "basis": "The real Gnostic name; Abby's eye colours.",
+    "concepts": ["Abraxas", "Abby"]
+  },
+  {
+    "video": "cosmology", "timestamp": "21:00",
+    "title": "Attributes are habits of one pure frequency, not separate powers",
+    "summary": "Everything is one underlying frequency since the Lament rewrote reality into waves. The six attributes are only tendencies in how a Resonator shapes it (Spectro leans to time, Aero to space), so any attribute can touch any domain, just less efficiently. Beings that command the raw frequency act on concepts such as creation and destruction.",
+    "plausibility": "stretch",
+    "basis": "The game's premise that the world is frequency; attribute flavour.",
+    "concepts": ["Frequencies", "Resonator", "Forte", "The Lament"]
+  },
+  {
+    "video": "cosmology", "timestamp": "38:00",
+    "title": "Somnoire is a “Cradle of Eternity” built to hold endless things",
+    "summary": "Dreams and hope have a beginning but no end, which he calls Eternity. Somnoire was built as a container that copies that concept, which is why it can hold Eternity at all; it is not stronger than what it seals, only shaped like it.",
+    "plausibility": "stretch",
+    "basis": "The “Cradle of Eternity” naming inside Somnoire.",
+    "concepts": ["Somnoire", "Dreaming Deep"]
+  },
+  {
+    "video": "cosmology", "timestamp": "39:00",
+    "title": "Denia is the “Cradle of Void”, and the blue Denia is the real one",
+    "summary": "A cradle must stay true to the concept it holds, so the hopeless, blue form of Denia is the true vessel of the Void, and her hopeful side keeps sliding back. He reads her as a Fractsidus trial run at making a Threnodian Resonator for Aleph-1.",
+    "plausibility": "stretch",
+    "basis": "The “Cradle of Void” item from Denia's boss and her story arc.",
+    "concepts": ["Denia", "Aleph-1", "Fractsidus", "Threnodian"]
+  },
+  {
+    "video": "cosmology", "timestamp": "44:00",
+    "title": "The “White Tower” is an Eternity entity sealed by a matching concept",
+    "summary": "“White Tower” is only what the ruined civilisation called it. It devours hope, slipped into Somnoire to feed on the dreams stored there, and was sealed because Somnoire is built on the same concept — the way comics seal higher beings with a conceptual twin rather than a stronger weapon.",
+    "plausibility": "stretch",
+    "basis": "The Somnoire story of the two cats and the White Tower; Dreaming Deep text about its endless hunger.",
+    "concepts": ["Somnoire", "Abraxas", "Rover"]
+  },
+  {
+    "video": "cosmology", "timestamp": "63:00",
+    "title": "Somnoire's makers may have trapped the White Tower on purpose",
+    "summary": "The cats say the White Tower got in by accident, but the black cat didn't want to help that civilisation and the white cat insisted. He suspects whoever ordered the cats planned the trap from the start.",
+    "plausibility": "wild",
+    "basis": "The cats' differing attitudes in the story and trailer.",
+    "concepts": ["Somnoire"]
+  },
+  {
+    "video": "cosmology", "timestamp": "83:00",
+    "title": "Abby was born when Rover defeated Dreamless",
+    "summary": "Dreamless was a Threnodian vessel fuelled by the dreams of fallen soldiers and Jinzhou's hope for victory, so it carried Eternity-type frequency and tore a hole into Somnoire. Its “bring back to the mother” line was it sensing that frequency in Rover. Absorbing Dreamless gave Rover enough of it for Abby to manifest.",
+    "plausibility": "stretch",
+    "basis": "Dreamless's dialogue; the Somnoire leak in the 1.x story.",
+    "concepts": ["Abby", "Dreamless", "Rover", "Somnoire", "Phantoms"]
+  },
+  {
+    "video": "cosmology", "timestamp": "99:00",
+    "title": "Rover is a “Resonator of Abraxas” project",
+    "summary": "Abby's frequency was inside Rover long before 1.0 (per Shorekeeper), so Rover was built — by the Somnoire makers and the goddess of the opening — to resonate with Abraxas, remade from pure gold Remnant each loop until it finally worked in this timeline.",
+    "plausibility": "wild",
+    "basis": "Shorekeeper's remark that Abby resonated with Rover long ago; Rover's gold Remnant.",
+    "concepts": ["Rover", "Abby", "Abraxas", "Goddess", "Remnant Energy", "Somnoire"]
+  },
+  {
+    "video": "cosmology", "timestamp": "102:00",
+    "title": "Abby, not Rover alone, is what breaks the loop",
+    "summary": "A Möbius-strip loop is escaped either by cutting the strip or by adding something from outside it. Abby is that outside element, which is why this timeline is the special one; he disagrees with calling Rover alone “the one who brings change”.",
+    "plausibility": "wild",
+    "basis": "The game's loop/iteration hints; the trailer's “new possibility” line.",
+    "concepts": ["Abby", "Rover", "Solaris-3"]
+  },
+  {
+    "video": "cosmology", "timestamp": "110:00",
+    "title": "Hiyuki can borrow the timeline where she succeeded",
+    "summary": "Her power finds a version of herself that succeeded, takes that timeline and absorbs it as a power-up. The Grand Architect wanted her as a Threnodian Resonator for that reason, and she refused.",
+    "plausibility": "stretch",
+    "basis": "His reading of Hiyuki's story.",
+    "concepts": ["Hiyuki", "Grand Architect", "Aleph-1", "Fractsidus"]
+  },
+  {
+    "video": "cosmology", "timestamp": "128:00",
+    "title": "The White Tower is only Abraxas's “beginning” half",
+    "summary": "Gold stands for time and Eternity, blue for space and destruction. What is sealed in Somnoire is the Eternity half of Abraxas; the “ending” half — the Lament and the Threnodians — is still loose, which is why Solaris has endings without a beginning.",
+    "plausibility": "wild",
+    "basis": "Gold/blue colour symbolism in the trailer weapons.",
+    "concepts": ["Abraxas", "The Lament", "Threnodian", "Somnoire"]
+  },
+  {
+    "video": "cosmology", "timestamp": "142:00",
+    "title": "Tacetite weapons cost ordinary people their lifespan",
+    "summary": "Low-rarity Tacetite weapons let non-Resonators hurt Lament creatures, but using one shortens their life. Resonators carry weapons anyway to channel frequency efficiently and keep Overclocking in check.",
+    "plausibility": "stretch",
+    "basis": "Weapon rarity tiers and Tacetite descriptions.",
+    "concepts": ["Tacetite", "Overclocking", "Resonator"]
+  },
+  {
+    "video": "cosmology", "timestamp": "151:00",
+    "title": "Threnodians can't die; only their vessels can",
+    "summary": "Threnodians are concepts, so what Rover fights are the vessels they take, like Dreamless. Defeating a vessel doesn't end the Threnodian.",
+    "plausibility": "stretch",
+    "basis": "The vessel framing around Dreamless and other Threnodian fights.",
+    "concepts": ["Threnodian", "Dreamless"]
+  },
+  {
+    "video": "cosmology", "timestamp": "149:00",
+    "title": "The New Federation will run on frequency gadgets",
+    "summary": "Resonators are outcast there, so ordinary people will buy Tacetite-core suits and weapons to match them, including disposable frequency weapons that explode when pushed past their limit.",
+    "plausibility": "wild",
+    "basis": "A prediction from the New Federation's anti-Resonator setting.",
+    "concepts": ["New Federation", "Tacetite"]
+  },
+  {
+    "video": "cosmology", "timestamp": "157:00",
+    "title": "Each Overseer is fused with a Calamity-class Tacet Discord",
+    "summary": "Overseers are a Fractsidus project to combine a Resonator with a Calamity-class Tacet Discord, so every Overseer has one of their own.",
+    "plausibility": "stretch",
+    "basis": "Overseer boss fights and Fractsidus experiments.",
+    "concepts": ["Overseer", "Fractsidus", "Calamity Class", "Tacet Discord"]
+  },
+  {
+    "video": "cosmology", "timestamp": "180:00",
+    "title": "Higher entities engineered the whole tragedy",
+    "summary": "After the Solaris arc he expects a twist: cosmic “observers” who set up Somnoire, the White Tower disaster and Rover on purpose — possibly with the Grand Architect as one of their agents.",
+    "plausibility": "wild",
+    "basis": "Story-structure expectation; no direct evidence.",
+    "concepts": ["Grand Architect", "Somnoire", "Solaris-3"]
+  },
+  {
+    "video": "cosmology", "timestamp": "188:00",
+    "title": "Exploring Somnoire is what grows Abby",
+    "summary": "Rover is the only “Dream Walker” given proper access, and each dreamscape explored lets Rover and Abby resonate with more of the frequency stored there, so the Somnoire events are leveling Abby up rather than filler.",
+    "plausibility": "stretch",
+    "basis": "Rover's Dream Walker role in Somnoire events.",
+    "concepts": ["Abby", "Rover", "Somnoire"]
+  },
+
+  {
+    "video": "transcendo", "timestamp": "29:00",
+    "title": "Abby's trailer voice mixes animal, pulsar and black-hole sounds",
+    "summary": "He hears three layers in the voice: an animal sound for the mythic beast, a pulsar recording, and the low rumble of the TON 618 black hole — sound design that marks Abby as a cosmic, Abraxas-level being.",
+    "plausibility": "stretch",
+    "basis": "His listening of the Transcendo trailer's sound design (unconfirmed).",
+    "concepts": ["Abby", "Abraxas"]
+  },
+  {
+    "video": "transcendo", "timestamp": "33:00",
+    "title": "“Astral Modulator” means converting frequency between analog and digital",
+    "summary": "Like a modem, Rover's title is about turning natural (analog) frequency into the digital form the Tethys System runs on and back, with the piano as the anchor instrument.",
+    "plausibility": "stretch",
+    "basis": "Rover's Astral Modulator title; Tethys System lore.",
+    "concepts": ["Astral Modulator", "Rover", "Tethys System", "Black Shores"]
+  },
+  {
+    "video": "transcendo", "timestamp": "41:00",
+    "title": "Today's Solaris is a “Plan 3” world living inside the old one",
+    "summary": "The current world is a stop-gap world anchored by Shorekeeper inside the original, Lament-eaten world. Lament outbreaks are leaks from that original world, and Fractsidus's “True Lament” means tearing Plan 3 open until it falls back into the original. He places the Grand Architect as someone from that original world.",
+    "plausibility": "stretch",
+    "basis": "In-game Tethys and Plan 3 material; Fractsidus's “True Lament” wording.",
+    "concepts": ["Shorekeeper", "Fractsidus", "The Lament", "Grand Architect", "Tethys System", "Black Shores"]
+  },
+  {
+    "video": "transcendo", "timestamp": "77:00",
+    "title": "Solaris orbits a broken three-star system",
+    "summary": "The trailer shows a stable three-star orbit like Alpha Centauri; he thinks one star (an “Instance”) collapsed into a black hole and threw the system into the chaotic eras of Liu Cixin's Three-Body Problem, which he says WuWa's eras and Dark Forest names borrow from. Fractsidus, the “fractured star”, may serve that collapsed star, and Tethys data listing Instance One as “(Solar)” would mean its authority passed back to the main star.",
+    "plausibility": "wild",
+    "basis": "Trailer orbit imagery; Tethys data entries; Dreaming Deep's redshift/blueshift scenes.",
+    "concepts": ["Solaris-3", "Fractsidus", "Shorekeeper", "Tethys System", "Dark forest hypothesis"]
+  },
+  {
+    "video": "transcendo", "timestamp": "110:00",
+    "title": "The trailer's emblems point to Fractsidus's New Federation cast",
+    "summary": "He reads Overseer insignia for a Zashiki-warashi, Balanophora, Eris and a nine-headed Hydra, and predicts Hydra experimenting on outcast Resonators living in a sunken oasis city, with Phrolova and others backing the main antagonists.",
+    "plausibility": "wild",
+    "basis": "Emblems in the Transcendo trailer; predictions.",
+    "concepts": ["Fractsidus", "Overseer", "Phrolova", "New Federation"]
+  },
+  {
+    "video": "transcendo", "timestamp": "124:00",
+    "title": "Weapon cores change colour as they take on the wielder's frequency",
+    "summary": "Pure Remnant/Tacetite is gold, as seen in low-rarity weapons. Signature weapons' cores have absorbed their owner's frequency and turned other colours — Augusta's sun-red, Iuno's — so the core colour shows whose weapon it is.",
+    "plausibility": "grounded",
+    "basis": "Visible core colours on in-game weapon models.",
+    "concepts": ["Tacetite", "Remnant Energy", "Augusta", "Iuno"]
+  },
+  {
+    "video": "transcendo", "timestamp": "219:00",
+    "title": "Threnodians are the true gods; Sentinels are made to counter them",
+    "summary": "Threnodians arise naturally from disaster, so they are the native “gods” of this cosmology. Sentinels are engines civilisations built with god-like authority to stand against them.",
+    "plausibility": "stretch",
+    "basis": "Sentinels described as Oracle Engines; Threnodians born from the Laments.",
+    "concepts": ["Threnodian", "Sentinel"]
+  },
+  {
+    "video": "transcendo", "timestamp": "222:00",
+    "title": "Abby is the part of Abraxas let out by a deal with the cat",
+    "summary": "The giant cat with Abby-like eyes is the original Somnoire cat after ages of its frequency fusing with the sealed Abraxas. Their deal let a pure fragment of Abraxas's frequency out — Abby — while the rest stays sealed. Abby guards hope where Abraxas devours it, which he expects to collide when Abraxas is freed.",
+    "plausibility": "wild",
+    "basis": "The cat's look in the Transcendo trailer; the deal it mentions.",
+    "concepts": ["Abby", "Abraxas", "Somnoire"]
+  },
+  {
+    "video": "transcendo", "timestamp": "266:00",
+    "title": "Leviathan's power breaches Somnoire",
+    "summary": "Leviathan turns imagination into reality, which punctures Somnoire. That explains Nightmare Tacet Discords in Septimont, and how Fractsidus moved Scar out of Mingting's prison through Somnoire. Their larger aim would be to unseal Abraxas, which he sees as suicidal.",
+    "plausibility": "stretch",
+    "basis": "Nightmare enemies in Rinascita; Scar's escape; Leviathan's powers.",
+    "concepts": ["Leviathan", "Somnoire", "Scar", "Septimont", "Mingting", "Fractsidus"]
+  }
+]

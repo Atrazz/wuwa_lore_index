@@ -179,8 +179,9 @@ def find(name):
     return nodes[by_key[k2]] if k2 in by_key else None
 
 
-KIND_RANK = {"character": 0, "faction": 1, "place": 2, "being": 3, "concept": 4, "realworld": 5}
+KIND_RANK = {"character": 0, "faction": 1, "place": 2, "being": 3, "concept": 4, "realworld": 5, "theory": 6}
 BEING = re.compile(r"sentinel|threnodian|tacet discord|exostrider|crownless|whisperin|howler|tranquilite|clamorling|staticoid|leviathan|jué|imperator|lorelei|dreamless|voidworm|exoswarm", re.I)
+BEING_CLASSES = {"threnodian", "sentinel", "tacet discord", "exostrider", "whisperin", "howler", "tranquilite", "clamorling", "staticoid"}
 META = re.compile(r"glossary|tokens?$|common echoes|\becho(es)?$|battle beneath|wutherium geographic|preview|crescendo|event|twitch|discord|creator|program|showcase|video|podcast|soundtrack|comic|campaign|drop|sign-in|simulation|battle rush|illusive realm|alloy smelt|tactical|beyond the waves|glamour|couture|excerpt|notice|manual|report|cherished item|evaluation|^lore$|^unknown$|^npc$|game systems|^remnant$|ascendant aces|lollo", re.I)
 
 # ---------------------------------------------------------------- 1. Fandom nodes
@@ -256,7 +257,8 @@ for tag, cnt in tag_count.items():
     if not n and len(parts) > 1:
         owner = find(parts[-2][0])
         # "Sentinel Jué - Sui'guang": an unknown name under a known being qualifies that being
-        if owner and owner["kind"] == "being": n = owner
+        # ...but not under a whole class: "Threnodian - Leviathan" is its own being, part of the class
+        if owner and owner["kind"] == "being" and norm(owner["id"]) not in BEING_CLASSES: n = owner
     n = n or add_node(parts[-1][0], "being" if BEING.search(tag) else "concept")
     if not n: continue
     for nm in parts[-1]: alias(n, nm)
@@ -435,17 +437,71 @@ for nid, es in by_node.items():
                                   official=e.get("URL", "") if "kurogames" in (e.get("URL") or "") else "") for e in es[:10]]
     nodes[nid]["entryCount"] = len(es)
 
+# ---------------------------------------------------------------- unverified theories
+# Kept apart from sourced lore: kind "theory", edge "theorized", hidden by default in the UI.
+#   - community write-ups typed "Speculation" in the Solaris Archives dataset
+#   - scripts/theories.json: theories noted by hand from livestreams/videos, with a timestamped link
+def excerpt(text, n=320):
+    t = re.sub(r"^#+\s*", "", (text or "").strip(), flags=re.M)
+    t = re.sub(r"\s+", " ", t).strip()
+    return (t[:n].rsplit(" ", 1)[0] + "…") if len(t) > n else t
+
+
+theories = []
+for e in NOTION:
+    if "Speculation" not in (e.get("Type") or ""): continue
+    m = re.search(r"\[([^\]]+)\]\s*$", e["Name"])
+    concepts = [tag_node.get(t.strip()) or (find(t.strip()) or {}).get("id") for t in (e.get("Tags") or "").split(",") if t.strip()]
+    theories.append(dict(title=re.sub(r"\s*\[[^\]]+\]\s*$", "", e["Name"]).strip(), author=m.group(1) if m else "",
+                         source="Solaris Archives community", url=e["url"], summary=excerpt(e.get("Text")),
+                         concepts=[c for c in dict.fromkeys(concepts) if c]))
+THEORY_FILE = os.path.join(HERE, "theories.json")
+
+
+unknown = []
+for t in (json.load(open(THEORY_FILE)) if os.path.exists(THEORY_FILE) else []):
+    if t.get("example"): continue
+    ids = []
+    for c in t.get("concepts", []):
+        n = find(c)
+        if n: ids.append(n["id"])
+        else: unknown.append(f'{t.get("title")}: "{c}"')
+    # Livestream theories are published without their source: no creator, channel, video title,
+    # link or timestamp reaches the site. ("video"/"timestamp" stay in theories.json for your own reference.)
+    theories.append(dict(title=t["title"], author="", source="Fan theory", url="", date="",
+                         summary=t.get("summary", ""), concepts=ids, timestamp="",
+                         plausibility=t.get("plausibility", ""), basis=t.get("basis", "")))
+if unknown: print("theories.json: no entry found for", "; ".join(unknown))
+
+for t in theories:
+    if not t["concepts"]:  # untagged write-up: link the names its title mentions
+        t["concepts"] = [n["id"] for n in list(nodes.values()) if n["kind"] != "theory" and len(n["id"]) >= 5
+                         and re.search(r"(?<![\w-])" + re.escape(n["id"]) + r"(?![\w-])", t["title"])]
+    if not t["concepts"]: continue
+    n = add_node(t["title"], "theory", summary=t["summary"], author=t["author"], source=t["source"], url=t["url"],
+                 date=t.get("date", ""), timestamp=t.get("timestamp", ""), plausibility=t.get("plausibility", ""),
+                 basis=t.get("basis", ""), video=t.get("video", ""), channel=t.get("channel", ""))
+    if not n: continue
+    for c in t["concepts"]:
+        edge(n["id"], c, "theorized", theory=n["id"], concept=c, source=t["source"], author=t["author"], url=t["url"])
+        nodes[c].setdefault("theories", []).append(n["id"])
+
 # ---------------------------------------------------------------- prune and score
-W = dict(part_of=8, role=8, inspired=10, defined=4, cotag=1)
+W = dict(part_of=8, role=8, inspired=10, defined=4, cotag=1, theorized=2)
 out_edges = []
 for e in edges.values():
     score = sum(W[k] * (min(len(v), 3) if k != "cotag" else math.log2(1 + e.get("cotagCount", 1)) * 2) for k, v in e["kinds"].items())
     e["score"] = round(score, 1)
-    e["strongest"] = min(e["kinds"], key=lambda k: list(W).index(k))
+    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "part_of", "role", "defined", "cotag", "theorized"].index(k))
     out_edges.append(e)
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1
-keep = {nid for nid, n in nodes.items() if deg[nid] > 0 and (n["kind"] != "concept" or deg[nid] >= 2 or n.get("summary"))}
+# a concept needs two links that aren't just theories (theories alone shouldn't put a node on the map)
+real_deg = collections.Counter()
+for e in out_edges:
+    if set(e["kinds"]) != {"theorized"}: real_deg[e["source"]] += 1; real_deg[e["target"]] += 1
+keep = {nid for nid, n in nodes.items() if deg[nid] > 0 and (n["kind"] == "theory" or real_deg[nid] > 0)
+        and (n["kind"] != "concept" or real_deg[nid] >= 2 or n.get("summary"))}
 out_edges = [e for e in out_edges if e["source"] in keep and e["target"] in keep]
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1
@@ -454,6 +510,7 @@ for nid in keep:
     if not deg[nid]: continue
     n = nodes[nid]
     n["degree"] = deg[nid]
+    if n.get("theories"): n["theories"] = [t for t in n["theories"] if t in keep]
     out_nodes.append(n)
 
 PORTRAITS = os.path.join(HERE, "..", "public", "portraits")

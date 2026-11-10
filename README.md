@@ -32,6 +32,30 @@ npm run build      # static site in dist/ (Netlify config included)
 Huiji, BWIKI, Moegirl and the WuWa text searcher ask AI tools not to collect their content (robots.txt /
 content signals), so they are only linked from each entry for reading by hand.
 
+## Unverified theories
+
+Fan theories are a separate layer: off by default, drawn as dashed “?” nodes, and always labelled unverified.
+
+- **Solaris Archives “Speculation” write-ups** (20, from the community dataset), linked to the concepts they're tagged with.
+- **`scripts/theories.json`**: theories summarised by hand, in your own words. Only the title, summary,
+  rating and concepts are published; `video` and `timestamp` are private notes for you and never reach the site.
+  Entries with `"example": true` are ignored.
+
+```json
+{
+  "title": "The Lament is a cycle, not an event",
+  "summary": "One or two sentences on the claim.",
+  "plausibility": "stretch",
+  "basis": "What in-game material it points to.",
+  "concepts": ["The Lament", "Threnodian"],
+  "video": "my-notes", "timestamp": "20:34"
+}
+```
+
+`plausibility` is `grounded`, `stretch` or `wild`: how much the theory leans on game material, not whether it's right.
+`concepts` are entry names as shown on the map (English); the build prints any it can't find. Run
+`python3 -I scripts/build_lore.py` after editing.
+
 ## Data pipeline
 
 ```bash

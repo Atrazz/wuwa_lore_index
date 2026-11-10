@@ -24,6 +24,14 @@ function Section({ title, count, color, children, open: open0 = true }) {
   )
 }
 
+// How much a theory leans on game material, not whether it's right.
+export const SALT = {
+  grounded: { label: 'Grounded', note: 'A small step from game material he points to.' },
+  stretch: { label: 'Stretch', note: 'An interpretive leap or an outside-work comparison.' },
+  wild: { label: 'Wild', note: 'Mostly symbolism, prediction or speculation.' },
+}
+const Salt = ({ p }) => (SALT[p] ? <span className={'salt ' + p} title={SALT[p].note}>{SALT[p].label}</span> : null)
+
 const Certainty = ({ c }) => <span className={'cert ' + (c || 'stated')}>{c === 'possible' ? 'possible' : 'stated'}</span>
 
 function Chip({ node, onPick, extra }) {
@@ -65,11 +73,37 @@ export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose 
       </header>
 
       <div className="p-scroll">
+        {node.kind === 'theory' && (
+          <div className="unverified">
+            <b>Unverified theory</b>
+            <span>A fan interpretation, not confirmed by the game.</span>
+          </div>
+        )}
+        {node.kind === 'theory' && (
+          <div className="theory-meta">
+            {node.author && <span>by <b>{node.author}</b></span>}
+            {node.source && <span>{node.source}</span>}
+            {node.date && <span>{node.date}</span>}
+            {node.url
+              ? <a className="pill" href={node.url} target="_blank" rel="noreferrer">{node.timestamp ? `Watch at ${node.timestamp} ↗` : 'Read the full theory ↗'}</a>
+              : node.channel && <a className="pill" href={node.channel} target="_blank" rel="noreferrer">Channel ↗{node.timestamp && <small> · at {node.timestamp}</small>}</a>}
+          </div>
+        )}
+        {node.kind === 'theory' && node.video && <p className="theory-video">From “{node.video}”{node.timestamp && <> at <b>{node.timestamp}</b></>}. Summary in our words.</p>}
+        {node.kind === 'theory' && node.plausibility && (
+          <div className={'salt-box ' + node.plausibility}>
+            <div className="salt-scale">
+              {Object.keys(SALT).map((k) => <i key={k} className={k === node.plausibility ? 'on ' + k : ''} />)}
+            </div>
+            <div><b>Grain of salt: {SALT[node.plausibility].label}</b><span>{SALT[node.plausibility].note}</span>
+              {node.basis && <span className="basis">Points to: {node.basis}</span>}</div>
+          </div>
+        )}
         {node.kind === 'realworld' && node.image && <img className="rw-img" src={node.image} alt="" />}
         {node.summary && (
           <p className="p-summary">
             {node.summary}
-            <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>
+            {node.kind !== 'theory' && <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>}
           </p>
         )}
 
@@ -130,6 +164,26 @@ export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose 
           </Section>
         )}
 
+        {node.kind === 'theory' && (
+          <Section title="Discusses" count={by('theorized').length} color="#ff8fc8">
+            <div className="chips">{by('theorized').map((l) => <Chip key={other(l, node.id)} node={nodes[other(l, node.id)]} onPick={onPick} />)}</div>
+          </Section>
+        )}
+
+        {node.kind !== 'theory' && node.theories?.length > 0 && (
+          <Section title="Fan theories" count={node.theories.length} color="#ff8fc8" open={false}>
+            {node.theories.map((tid) => {
+              const t = nodes[tid]
+              return t ? (
+                <button key={tid} className="theory-row" onClick={() => onPick(tid)}>
+                  <span>{t.id}</span><Salt p={t.plausibility} />{t.author && <small>{t.author}</small>}
+                </button>
+              ) : null
+            })}
+            <p className="note">Unverified. Turn on “Theory” in Entries to see them on the map.</p>
+          </Section>
+        )}
+
         {node.documents?.length > 0 && (
           <Section title="In-game documents" count={node.documentCount} color="#9fd3ff" open={false}>
             {node.documents.map((d, i) => (
@@ -150,7 +204,7 @@ export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose 
           </Section>
         )}
 
-        {node.kind !== 'realworld' && <ReadMore node={node} />}
+        {node.kind !== 'realworld' && node.kind !== 'theory' && <ReadMore node={node} />}
         {node.kind === 'realworld' && node.wikiZh && (
           <a className="zh-wiki" href={node.wikiZh} target="_blank" rel="noreferrer">维基百科 · {node.zh} ↗</a>
         )}

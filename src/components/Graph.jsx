@@ -27,6 +27,8 @@ function shape(ctx, kind, x, y, r) {
       ctx.moveTo(x, y - r * 1.2); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r * 1.2); ctx.lineTo(x - r, y); ctx.closePath(); break
     case 'triangle':
       ctx.moveTo(x, y - r * 1.2); ctx.lineTo(x + r * 1.1, y + r * 0.8); ctx.lineTo(x - r * 1.1, y + r * 0.8); ctx.closePath(); break
+    case 'question':
+      ctx.arc(x, y, r, 0, Math.PI * 2); break
     case 'star':
       for (let i = 0; i < 8; i++) { const rr = i % 2 ? r * 0.42 : r * 1.25; const a = Math.PI / 4 * i - Math.PI / 2; ctx.lineTo(x + rr * Math.cos(a), y + rr * Math.sin(a)) }
       ctx.closePath(); break
@@ -109,8 +111,14 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       ctx.strokeStyle = k.color; ctx.lineWidth = 1.4 / Math.sqrt(scale); ctx.stroke()
     } else {
       shape(ctx, n.kind, n.x, n.y, r)
-      ctx.fillStyle = rgba(k.color, n.kind === 'realworld' ? 0.15 : 0.28); ctx.fill()
+      ctx.fillStyle = rgba(k.color, n.kind === 'realworld' || n.kind === 'theory' ? 0.12 : 0.28); ctx.fill()
+      if (n.kind === 'theory') ctx.setLineDash([2 / scale, 2 / scale])
       ctx.strokeStyle = k.color; ctx.lineWidth = (isSel ? 2 : 1.2) / Math.sqrt(scale); ctx.stroke()
+      ctx.setLineDash([])
+      if (n.kind === 'theory') {
+        ctx.fillStyle = k.color; ctx.font = `600 ${r * 1.3}px Inter, sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'
+        ctx.fillText('?', n.x, n.y + r * 0.05)
+      }
     }
     const big = (n.degree || 0) > 25 || n.kind === 'realworld' || n.kind === 'place'
     if (isSel || isHover || neigh.has(n.id) || inFocus || scale > 1.6 || (big && scale > 0.7)) {

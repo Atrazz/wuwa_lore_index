@@ -6,6 +6,7 @@ export const KINDS = {
   place:     { label: 'Place',      color: '#6fe3a1', shape: 'triangle', rule: 'Nations, regions and cities.' },
   character: { label: 'Character',  color: '#f2c86b', shape: 'portrait', rule: 'Playable Resonators.' },
   realworld: { label: 'Real world', color: '#ffd9a0', shape: 'star',    rule: 'Myths, places, books and science the game draws on.' },
+  theory:    { label: 'Theory',     color: '#ff8fc8', shape: 'question', rule: 'Unverified fan theories. Not confirmed by the game.' },
 }
 
 export const EDGES = [
@@ -14,6 +15,7 @@ export const EDGES = [
   { key: 'role',     label: 'Role',         color: '#ff7a7a', dash: null,   rule: 'Leader, founder, ally or enemy in a faction’s wiki profile.' },
   { key: 'defined',  label: 'Defined with', color: '#5ee6ff', dash: null,   rule: 'One wiki page links to the other in its own text.' },
   { key: 'cotag',    label: 'Discussed together', color: '#7f8ea6', dash: [2, 4], rule: 'Community lore entries tagged with both, at least three times.' },
+  { key: 'theorized', label: 'Theorized', color: '#ff8fc8', dash: [1, 3], rule: 'A fan theory discusses this entry. Unverified.' },
 ]
 export const EDGE = Object.fromEntries(EDGES.map((e) => [e.key, e]))
 

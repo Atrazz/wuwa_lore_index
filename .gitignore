@@ -2,3 +2,5 @@ node_modules
 dist
 scripts/raw
 __pycache__
+scripts/transcripts
+scripts/videos.json
