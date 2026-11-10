@@ -2,8 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import raw from './data/lore.json'
 import Graph from './components/Graph.jsx'
-import Starfield from './components/Starfield.jsx'
-import Sidebar from './components/Sidebar.jsx'
+import Toolbar from './components/Toolbar.jsx'
 import NodePanel from './components/NodePanel.jsx'
 import EdgePanel from './components/EdgePanel.jsx'
 import About from './components/About.jsx'
@@ -12,6 +11,8 @@ import { EDGES, KINDS, id } from './lib/kinds'
 const NODES = raw.nodes.map((n) => ({ ...n }))
 const BY_ID = Object.fromEntries(NODES.map((n) => [n.id, n]))
 const LINKS = raw.links.map((l) => ({ ...l }))
+// catalogue numbers, alphabetical, shown on each entry's dossier
+const INDEX = Object.fromEntries([...NODES].sort((a, b) => a.id.localeCompare(b.id)).map((n, i) => [n.id, i + 1]))
 const PAIR = Object.fromEntries(LINKS.map((l) => [[l.source, l.target].sort().join('|'), l]))
 
 function useSize() {
@@ -66,12 +67,11 @@ export default function App() {
 
   return (
     <div className="app">
-      <Starfield />
-      <div className="vignette" />
+      <div className="paper" />
       <Graph data={data} selected={selected} focusLink={link} hoverId={hover} onHover={setHover}
         onSelect={pick} onLinkSelect={openLink} width={w} height={h} />
 
-      <Sidebar nodes={NODES} links={LINKS} onPick={pick} edgeKinds={edgeKinds} toggleEdge={toggle(setEdgeKinds)}
+      <Toolbar nodes={NODES} links={LINKS} onPick={pick} edgeKinds={edgeKinds} toggleEdge={toggle(setEdgeKinds)}
         nodeKinds={nodeKinds} toggleNode={toggle(setNodeKinds)} onAbout={() => setAbout(true)} visible={data} />
 
       <AnimatePresence mode="wait">
@@ -79,26 +79,27 @@ export default function App() {
           <EdgePanel key={'e' + id(link.source) + id(link.target)} link={link} nodes={BY_ID} from={selected}
             onBack={() => setLink(null)} onClose={() => { setLink(null); setSelected(null) }} onPick={pick} />
         ) : selected ? (
-          <NodePanel key={'n' + selected} node={BY_ID[selected]} links={LINKS} nodes={BY_ID}
+          <NodePanel key={'n' + selected} index={INDEX[selected]} node={BY_ID[selected]} links={LINKS} nodes={BY_ID}
             onOpen={openLink} onPick={pick} onClose={() => setSelected(null)} />
         ) : null}
       </AnimatePresence>
 
       {!selected && !intro && (
         <motion.div className="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-          Select anything on the map · the outer ring is the real world
+          Select an entry to open its file · the outer ring is the real world
         </motion.div>
       )}
 
       <AnimatePresence>{about && <About meta={raw} onClose={() => setAbout(false)} onExample={() => { setAbout(false); openPair('Jué', 'Twenty-Eight Mansions') }} />}</AnimatePresence>
       <AnimatePresence>
         {intro && (
-          <motion.div className="splash" onClick={() => setIntro(false)} exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
-            <motion.div className="splash-ring" initial={{ scale: 0.4, opacity: 0, rotate: -40 }} animate={{ scale: 1, opacity: 1, rotate: 0 }} transition={{ duration: 1.6, ease: [0.2, 0.8, 0.2, 1] }} />
-            <motion.div className="splash-title" initial={{ letterSpacing: '0.9em', opacity: 0 }} animate={{ letterSpacing: '0.32em', opacity: 1 }} transition={{ duration: 1.3 }}>ECHO CODEX</motion.div>
-            <motion.div className="splash-sub" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
-              {NODES.length} entries · {LINKS.length} connections
-            </motion.div>
+          <motion.div className="splash" onClick={() => setIntro(false)} exit={{ opacity: 0 }} transition={{ duration: 0.7 }}>
+            <motion.div className="splash-seal" initial={{ scale: 1.6, opacity: 0, rotate: -12 }} animate={{ scale: 1, opacity: 1, rotate: -4 }}
+              transition={{ delay: 0.35, duration: 0.45, ease: [0.3, 1.4, 0.5, 1] }}>E</motion.div>
+            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.6 }}>Echo <em>Codex</em></motion.h1>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}>
+              {NODES.length} entries indexed · {LINKS.length} cross-references
+            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>

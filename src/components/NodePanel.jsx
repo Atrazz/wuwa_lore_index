@@ -5,10 +5,11 @@ import ReadMore from './ReadMore'
 import ParallelCard from './ParallelCard'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
+// the file slides out from the left edge like a drawer
 export const panelAnim = {
-  initial: { x: 480, opacity: 0 },
-  animate: { x: 0, opacity: 1, transition: { type: 'spring', stiffness: 220, damping: 28 } },
-  exit: { x: 480, opacity: 0, transition: { duration: 0.22 } },
+  initial: { clipPath: 'inset(0 100% 0 0)', opacity: 0.4 },
+  animate: { clipPath: 'inset(0 0% 0 0)', opacity: 1, transition: { duration: 0.42, ease: [0.2, 0.7, 0.2, 1] } },
+  exit: { clipPath: 'inset(0 100% 0 0)', opacity: 0, transition: { duration: 0.22, ease: 'easeIn' } },
 }
 
 function Section({ title, count, color, children, open: open0 = true }) {
@@ -43,7 +44,7 @@ function Chip({ node, onPick, extra }) {
   )
 }
 
-export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose }) {
+export default function NodePanel({ node, index, links, nodes, onOpen, onPick, onClose }) {
   const k = KINDS[node.kind]
   const mine = useMemo(() => links.filter((l) => id(l.source) === node.id || id(l.target) === node.id), [links, node])
   const by = (kind) => mine.filter((l) => l.kinds[kind])
@@ -60,17 +61,27 @@ export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose 
 
   return (
     <motion.aside className="panel" {...panelAnim} style={{ '--k': k.color }}>
-      <button className="close" onClick={onClose} aria-label="Close">✕</button>
+      <button className="close" onClick={onClose} aria-label="Close">Close ✕</button>
       <header className="p-head">
-        <div className="p-kind"><Glyph kind={node.kind} size={13} /> {k.label}{node.category && <span> · {node.category}</span>}</div>
-        <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }}>{node.id}</motion.h2>
-        {node.zh && (
-          <div className="p-zh">
-            <span className="zh-big">{node.zh}</span>
-            {node.lit && <span className="lit">“{node.lit}”</span>}
+        <div className="p-file">
+          <span>Nº {String(index || 0).padStart(4, '0')}</span>
+          <span className="p-kind"><Glyph kind={node.kind} size={11} /> {k.label}</span>
+        </div>
+        <div className="p-titlerow">
+          <div>
+            <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>{node.id}</motion.h2>
+            {node.category && <div className="p-cat">{node.category}</div>}
+            {node.lit && <div className="lit">lit. “{node.lit}”</div>}
+            {node.aliases?.length > 0 && <div className="p-alias">also filed as {node.aliases.slice(0, 4).join(' · ')}</div>}
           </div>
-        )}
-        {node.aliases?.length > 0 && <div className="p-alias">Also: {node.aliases.slice(0, 4).join(' · ')}</div>}
+          {node.zh && (
+            <motion.div className={'seal' + (node.zh.length > 3 ? ' long' : '')} title="Chinese name"
+              initial={{ scale: 1.5, opacity: 0, rotate: -10 }} animate={{ scale: 1, opacity: 1, rotate: -3 }}
+              transition={{ delay: 0.25, duration: 0.35, ease: [0.3, 1.4, 0.5, 1] }}>
+              {node.zh}
+            </motion.div>
+          )}
+        </div>
       </header>
 
       <div className="p-scroll">

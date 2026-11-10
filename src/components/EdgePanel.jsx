@@ -21,7 +21,7 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
     <motion.aside className="panel" {...panelAnim}>
       <div className="e-top">
         <button className="back" onClick={onBack}>← {A.id}</button>
-        <button className="close" onClick={onClose} aria-label="Close">✕</button>
+        <button className="close" onClick={onClose} aria-label="Close">Close ✕</button>
       </div>
       <div className="e-hero">
         <End node={A} onPick={onPick} />
