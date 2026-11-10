@@ -11,6 +11,7 @@ export const KINDS = {
 
 export const EDGES = [
   { key: 'inspired', label: 'Inspired by',  color: '#ffd9a0', dash: [6, 4], rule: 'A wiki Etymology or Trivia note, or a cited article, names the real-world source.' },
+  { key: 'parallel', label: 'Possible parallel', color: '#ffa98a', dash: [1, 4], rule: 'Our comparison, stated by no source: matching points quote the wiki and Wikipedia, with what doesn’t fit.' },
   { key: 'part_of',  label: 'Part of',      color: '#e8c77a', dash: null,   rule: 'Region, nation or base on the wiki, or the community tag path (“Rinascita - Septimont”).' },
   { key: 'role',     label: 'Role',         color: '#ff7a7a', dash: null,   rule: 'Leader, founder, ally or enemy in a faction’s wiki profile.' },
   { key: 'defined',  label: 'Defined with', color: '#5ee6ff', dash: null,   rule: 'One wiki page links to the other in its own text.' },

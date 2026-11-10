@@ -384,6 +384,26 @@ for title, refs in rw_sources.items():
         target = find(r["node"]) or nodes.get(r["node"])
         if target: edge(target["id"], rw["id"], "inspired", **r)
 
+# ---------------------------------------------------------------- possible parallels (our comparisons)
+# scripts/parallels.json pairs a game event/place with a real one. No source states the link: each matching
+# point quotes the wiki for the game side and Wikipedia for the real side, and "against" lists what doesn't fit.
+PARALLEL_FILE = os.path.join(HERE, "parallels.json")
+for par in (json.load(open(PARALLEL_FILE)) if os.path.exists(PARALLEL_FILE) else []):
+    info = WP.get(par["real"], {})
+    rw = add_node(info.get("title") or par["real"], "realworld", summary=info.get("extract", ""),
+                  wiki=info.get("url") or "https://en.wikipedia.org/wiki/" + par["real"].replace(" ", "_"),
+                  zh=info.get("zh", ""), wikiZh=info.get("zhUrl", ""), category=info.get("description", ""), image=info.get("thumb", ""))
+    game = [find(g) for g in par["game"]]
+    missing = [g for g, n in zip(par["game"], game) if not n]
+    if missing: print("parallels.json: no entry found for", missing)
+    record = dict(real=rw["id"], game=[n["id"] for n in game if n], confidence=par["confidence"], summary=par["summary"],
+                  points=par["points"], against=par.get("against", []))
+    for n in game:
+        if not n: continue
+        edge(n["id"], rw["id"], "parallel", **record)
+        n.setdefault("parallels", []).append(record)
+    rw.setdefault("parallels", []).append(record)
+
 # ---------------------------------------------------------------- Chinese names (official text map) + literal meanings
 en_index = collections.defaultdict(list)
 for k, v in DM_EN.items():
@@ -487,12 +507,12 @@ for t in theories:
         nodes[c].setdefault("theories", []).append(n["id"])
 
 # ---------------------------------------------------------------- prune and score
-W = dict(part_of=8, role=8, inspired=10, defined=4, cotag=1, theorized=2)
+W = dict(part_of=8, role=8, inspired=10, parallel=6, defined=4, cotag=1, theorized=2)
 out_edges = []
 for e in edges.values():
     score = sum(W[k] * (min(len(v), 3) if k != "cotag" else math.log2(1 + e.get("cotagCount", 1)) * 2) for k, v in e["kinds"].items())
     e["score"] = round(score, 1)
-    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "part_of", "role", "defined", "cotag", "theorized"].index(k))
+    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "defined", "cotag", "theorized"].index(k))
     out_edges.append(e)
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1

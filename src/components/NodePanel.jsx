@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Glyph from './Glyph'
 import ReadMore from './ReadMore'
+import ParallelCard from './ParallelCard'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
 export const panelAnim = {
@@ -127,6 +128,17 @@ export default function NodePanel({ node, links, nodes, onOpen, onPick, onClose 
                 </div>
               )
             })}
+          </Section>
+        )}
+
+        {node.parallels?.length > 0 && (
+          <Section title={node.kind === 'realworld' ? 'Possible parallels in the game' : 'Possible real-world parallels'} count={node.parallels.length} color="#ffa98a">
+            {node.parallels.map((p, i) => (
+              <ParallelCard key={i} p={p} open={node.parallels.length === 1}
+                title={node.kind === 'realworld' ? p.game.join(' · ') : p.real}
+                onTitle={() => onPick(node.kind === 'realworld' ? p.game[0] : p.real)} />
+            ))}
+            <p className="note">Our comparisons. No source says the game is based on these; each point quotes the wiki and Wikipedia.</p>
           </Section>
         )}
 

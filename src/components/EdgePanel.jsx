@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Glyph from './Glyph'
 import { panelAnim } from './NodePanel'
 import { KINDS, EDGES, id } from '../lib/kinds'
+import ParallelCard from './ParallelCard'
 
 function End({ node, onPick }) {
   return (
@@ -35,7 +36,8 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
           <section key={e.key} className="sec" style={{ '--c': e.color }}>
             <div className="sec-head static"><span>{e.label}</span><b>{e.key === 'cotag' ? link.cotagCount : link.kinds[e.key].length}</b></div>
             <p className="note rule">{e.rule}</p>
-            {link.kinds[e.key].map((ev, i) => (
+            {e.key === 'parallel' ? link.kinds.parallel.map((p, i) => <ParallelCard key={i} p={p} open title={p.real} />) :
+            link.kinds[e.key].map((ev, i) => (
               <div key={i} className="ev">
                 {e.key === 'part_of' && <p><b>{ev.child}</b> is part of <b>{ev.parent}</b>{ev.note && <span className="dim"> · tag “{ev.note}”</span>}</p>}
                 {e.key === 'role' && <p><b>{ev.who}</b> — {ev.role} of <b>{ev.of}</b></p>}

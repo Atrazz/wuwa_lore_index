@@ -1,0 +1,189 @@
+[
+  {
+    "game": ["Resonator War", "Federated Cities", "New Federation"],
+    "real": "Russian Civil War",
+    "confidence": "moderate",
+    "summary": "A civil war framed as a class war, fought across a federation with trains carrying aid and troops, in a country whose own sayings echo Russia.",
+    "points": [
+      { "game": "The Federated Cities were caught in “a class war between the New Federation's Resonator and non-Resonator populations”, escalating into a large-scale civil war.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Federated_Cities",
+        "real": "The two largest combatants were the Red Army, fighting for the establishment of a Bolshevik-led socialist state headed by Vladimir Lenin, and the forces known as the White movement.",
+        "realUrl": "https://en.wikipedia.org/wiki/Russian_Civil_War" },
+      { "game": "The Resonator front “distributed emergency aid and reinforcements by train” from the Federated Cities to regions such as the Fifth Sector.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Resonator_War",
+        "real": "The most intensive use of armoured trains was during the Russian Civil War (1918–1920).",
+        "realUrl": "https://en.wikipedia.org/wiki/Armoured_train" },
+      { "game": "A New Federation saying, quoted as from the “Old Federation”: “Solaris is the cradle of humanity, but one cannot live in a cradle forever.”",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Maxim_(Lahai-Roi)",
+        "real": "In a letter written in 1911 he [Tsiolkovsky] indicated his belief that, “Earth is the cradle of humanity, but one cannot live in a cradle forever.”",
+        "realUrl": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky" }
+    ],
+    "against": [
+      "The Bolsheviks won and built a socialist state; the New Federation's winners built a capitalist, corporate one.",
+      "The sides are Resonators and ordinary people, not political camps."
+    ]
+  },
+  {
+    "game": ["Resonator War", "Federated Cities", "New Federation"],
+    "real": "American Civil War",
+    "confidence": "moderate",
+    "summary": "A civil war inside a federation, fought with railroads, remembered through soldiers' identity tags, after which the winners built an industrial, corporate economy in a country the wiki already links to America.",
+    "points": [
+      { "game": "A large-scale civil war across the New Federation's Federated Cities, between the Resonator and non-Resonator fronts.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Resonator_War",
+        "real": "The American Civil War … was a civil war in the United States between the Union (“the North”) and the Confederacy (“the South”).",
+        "realUrl": "https://en.wikipedia.org/wiki/American_Civil_War" },
+      { "game": "Aid and reinforcements moved between the Federated Cities and the Fifth Sector by train, with squads deployed en route.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Fifth_Sector",
+        "real": "Railroads, the electrical telegraph, steamships, the ironclad warship, and mass-produced weapons were widely used.",
+        "realUrl": "https://en.wikipedia.org/wiki/American_Civil_War" },
+      { "game": "Resonator soldiers carried dog tags, and the last one standing carried the tags of the fallen, as Lily did.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Resonator_War",
+        "real": "During the American Civil War from 1861 to 1865, some soldiers pinned paper notes with their name and home address to the backs of their coats.",
+        "realUrl": "https://en.wikipedia.org/wiki/Dog_tag" },
+      { "game": "After the war the New Federation “adopted a capitalist economy, which prioritized corporate interests and technological advancement”; the wiki notes its cyberpunk depiction of America, particularly California.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/New_Federation",
+        "real": "These included the Morrill Tariff, land grant colleges, a Homestead Act, a transcontinental railroad, the National Bank Act …",
+        "realUrl": "https://en.wikipedia.org/wiki/American_Civil_War" }
+    ],
+    "against": [
+      "The American war was fought over secession and slavery; this one is Resonators against ordinary people.",
+      "In America the side that lost was not turned into a persecuted minority the way Resonators were."
+    ]
+  },
+  {
+    "game": ["New Federation"],
+    "real": "Soviet Union",
+    "confidence": "moderate",
+    "summary": "The “Old Federation” is only mentioned once, but what surrounds it points east: a Tsiolkovsky saying, a federation that calls itself a union, and Soviet space references nearby.",
+    "points": [
+      { "game": "The “Old Federation” saying is Tsiolkovsky's famous line with Earth swapped for Solaris; the wiki itself says this suggests connections to Russia and the Soviet Union.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/New_Federation#Trivia",
+        "real": "In a letter written in 1911 he indicated his belief that, “Earth is the cradle of humanity, but one cannot live in a cradle forever.”",
+        "realUrl": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky" },
+      { "game": "The New Federation's Japanese name is ネオユニオン, “Neo Union”.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/New_Federation#Other_Languages",
+        "real": "A diverse multinational state, it was organized as a federal union of national republics.",
+        "realUrl": "https://en.wikipedia.org/wiki/Soviet_Union" },
+      { "game": "Nearby Soviet space nods: Mornye's name may come from the Molniya satellites, and the Spacetrek Collective's logo resembles the Soyuz cosmonaut patches.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Spacetrek_Collective#Trivia",
+        "real": "The Soviet Union, officially the Union of Soviet Socialist Republics (USSR), was a transcontinental country that spanned much of Eurasia from its formation in 1922 until its dissolution in 1991.",
+        "realUrl": "https://en.wikipedia.org/wiki/Soviet_Union" }
+    ],
+    "against": [
+      "The Old Federation appears in a single line of dialogue; the game hasn't said where or what it is.",
+      "Mornye and the Spacetrek Collective belong to Lahai-Roi, not the New Federation."
+    ]
+  },
+  {
+    "game": ["Lawless Zone", "Exiles"],
+    "real": "American frontier",
+    "confidence": "loose",
+    "summary": "A lawless desert fringe of outlaw gangs and camps beyond the cities, until the government moves in.",
+    "points": [
+      { "game": "A dangerous badlands region where Exiles built camps and formed bandit gangs, until the government declared war on them.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Lawless_Zone",
+        "real": "This period includes historical events synonymous with the archetypical Old West or “Wild West” such as violent conflict arising from encroaching settlement into frontier land … vigilantism.",
+        "realUrl": "https://en.wikipedia.org/wiki/American_frontier" }
+    ],
+    "against": ["Outlaw frontiers are a broad genre; nothing in the game names the Old West directly."]
+  },
+  {
+    "game": ["Ghost Hounds", "Lawless Zone"],
+    "real": "Private military company",
+    "confidence": "moderate",
+    "summary": "A mercenary group that the government hires by contract, including for black ops.",
+    "points": [
+      { "game": "The Lawless Zone became a hiring ground where the federal government leases contracts to mercenaries, including illegal black ops such as assassinations; the Ghost Hounds are a multinational mercenary group rooted there.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/New_Federation#Lawless_Zone",
+        "real": "A private military company (PMC) … is a privately held company that provides armed combat or security services, military training or consulting, or operational support such as intelligence or logistics.",
+        "realUrl": "https://en.wikipedia.org/wiki/Private_military_company" }
+    ],
+    "against": ["PMCs are a general modern pattern rather than one event."]
+  },
+  {
+    "game": ["Pilgrim's Sail", "Order of the Deep", "Penitent's End"],
+    "real": "Roman Inquisition",
+    "confidence": "moderate",
+    "summary": "An Italian-styled religious order that rules the city, judges the “faithless” and bans works it dislikes.",
+    "points": [
+      { "game": "The Order of the Deep is the ultimate authority in Ragunna; those it deems faithless are sent away on the Pilgrim's Sail, and none have returned.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Pilgrim%27s_Sail",
+        "real": "The Roman Inquisition … was a system of partisan tribunals developed by the Holy See of the Catholic Church, during the second half of the 16th century.",
+        "realUrl": "https://en.wikipedia.org/wiki/Roman_Inquisition" },
+      { "game": "Roccia was sent on the Pilgrim's Sail for performing a play the Order had banned.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Pilgrim%27s_Sail#Trivia",
+        "real": "The Index Librorum Prohibitorum … was a changing list of publications deemed heretical or contrary to morality … Catholics were forbidden to print or read them.",
+        "realUrl": "https://en.wikipedia.org/wiki/Index_Librorum_Prohibitorum" }
+    ],
+    "against": ["The Order worships a Sentinel and exiles by sea; the Inquisition tried people in courts."]
+  },
+  {
+    "game": ["Carnevale", "Ragunna"],
+    "real": "Carnival of Venice",
+    "confidence": "strong",
+    "summary": "A masked carnival in an Italian-styled sea city, later banned by those in power.",
+    "points": [
+      { "game": "Ragunna's Carnevale is its grandest celebration, “where the masquerades never end”, lasting seven days.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Carnevale",
+        "real": "The Carnival of Venice … is an annual festival held in Venice, Italy, famous for its elaborate costumes and masks.",
+        "realUrl": "https://en.wikipedia.org/wiki/Carnival_of_Venice" },
+      { "game": "After the second Dark Tide many activities were banned by the Order, and the Carnevale eventually ended altogether.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Carnevale",
+        "real": "However, under the rule of Emperor Francis II, the festival was outlawed entirely in 1797 and the use of masks became strictly forbidden.",
+        "realUrl": "https://en.wikipedia.org/wiki/Carnival_of_Venice" }
+    ],
+    "against": ["Venice's ban came from a foreign emperor, Ragunna's from its own religious order."]
+  },
+  {
+    "game": ["Averardo Vault", "Montelli Family"],
+    "real": "Medici Bank",
+    "confidence": "strong",
+    "summary": "An Italian-styled banking family whose bank carries a name the Medici claimed as their own.",
+    "points": [
+      { "game": "Averardo Vault, built by the Montelli Family, is “the leading bank in all of Rinascita”, holding precious metals and artworks and offering secure storage and appraisals.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Montelli_Family",
+        "real": "Giovanni di Bicci de' Medici established the bank in Florence.",
+        "realUrl": "https://en.wikipedia.org/wiki/Medici_Bank" },
+      { "game": "The vault carries the name “Averardo”.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Averardo_Vault",
+        "real": "He was named after the legendary knight Averardo, from whom the Medici claimed descent.",
+        "realUrl": "https://en.wikipedia.org/wiki/Averardo_de%27_Medici" },
+      { "game": "As Ragunna opened to the wider world, the Montellis rose to prominence, “amassing great wealth and unmatched influence”.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Montelli_Family",
+        "real": "It was not until his son Cosimo the Elder took over in 1434 as gran maestro that the Medici became the unofficial head of state of the Florentine Republic.",
+        "realUrl": "https://en.wikipedia.org/wiki/Medici_Bank" }
+    ],
+    "against": ["The Medici came to run Florence; the Montelli hold influence but the Order of the Deep rules Ragunna."]
+  },
+  {
+    "game": ["Ginnungamere", "Mount Gjallar", "Roya Frostlands"],
+    "real": "Ginnungagap",
+    "confidence": "strong",
+    "summary": "A place named after the primordial void of Norse myth, in a region full of Old Norse names.",
+    "points": [
+      { "game": "Ginnungamere is an area of Mount Gjallar in the Roya Frostlands, where names like Bjartr and Sigrika come from Old Norse.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Ginnungamere",
+        "real": "In Norse mythology, Ginnungagap (“gaping abyss”, “yawning void”) is the primordial, magical void mentioned in three poems from the Poetic Edda.",
+        "realUrl": "https://en.wikipedia.org/wiki/Ginnungagap" }
+    ],
+    "against": ["Only the name matches so far; the area's story isn't known yet."]
+  },
+  {
+    "game": ["Night of Remembrance", "Egla Town"],
+    "real": "Halloween",
+    "confidence": "moderate",
+    "summary": "A yearly night for the dead, with masks and ghost costumes, when lost spirits are said to return.",
+    "points": [
+      { "game": "An annual festival in Egla Town honouring the deceased; people wear masks or dress as ghosts, and lost spirits with unfulfilled wishes are said to return.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Night_of_Remembrance",
+        "real": "It was traditionally believed that the souls of the departed wandered the earth until All Saints' Day, and All Hallows' Eve provided one last chance for the dead to gain vengeance.",
+        "realUrl": "https://en.wikipedia.org/wiki/Halloween" },
+      { "game": "Each year has a ghost-themed costume theme, most recently “ghost girl”.",
+        "gameUrl": "https://wutheringwaves.fandom.com/wiki/Night_of_Remembrance",
+        "real": "Popular Halloween activities include trick-or-treating …, attending Halloween costume parties, carving pumpkins …",
+        "realUrl": "https://en.wikipedia.org/wiki/Halloween" }
+    ],
+    "against": ["Rinascita is Italian-styled, so an Italian All Souls' tradition may be the closer source."]
+  }
+]

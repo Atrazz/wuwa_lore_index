@@ -22,6 +22,8 @@ export default function About({ meta, onClose, onExample }) {
         <dl className="notes">
           <dt>Real-world roots</dt>
           <dd>Marked <span className="cert stated">stated</span> when the source says it plainly, <span className="cert possible">possible</span> when it hedges (“may be based on”). Notes the wiki itself calls false are left out.</dd>
+          <dt>Possible parallels</dt>
+          <dd>Real events and places that big moments in the game resemble, like the Resonator War and the Russian or American civil wars. These are our comparisons, not stated by any source: every matching point quotes the wiki for the game and Wikipedia for history, and each lists what doesn’t fit. Rated <b>strong</b>, <b>moderate</b> or <b>loose</b>.</dd>
           <dt>Theories</dt>
           <dd>Fan theories are off by default and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
           <dt>Grain of salt</dt>

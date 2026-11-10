@@ -204,3 +204,29 @@ code { font: 11.5px ui-monospace, monospace; color: var(--amber); }
 .salt-scale i.on.stretch { background: #ffcf7a; box-shadow: 0 0 8px #ffcf7a; }
 .salt-scale i.on.wild { background: #ff8f8f; box-shadow: 0 0 8px #ff8f8f; }
 .theory-meta .pill small { color: var(--dim); }
+
+/* ---------- possible parallels ---------- */
+.line.parallel { border-top-style: dotted; border-top-width: 3px; }
+.par-card { margin-bottom: 8px; border: 1px solid rgba(255,169,138,.22); background: rgba(255,169,138,.035); }
+.par-card.open { border-color: rgba(255,169,138,.45); }
+.par-head { display: flex; align-items: center; gap: 8px; width: 100%; padding: 9px 10px 2px; text-align: left; }
+.par-title { font-size: 13.5px; font-weight: 600; color: #ffd2c2; cursor: pointer; }
+.par-title:hover { text-decoration: underline; }
+.conf { margin-left: auto; font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid; flex: none; }
+.conf.strong { color: #8ff0c0; border-color: rgba(143,240,192,.4); }
+.conf.moderate { color: #ffcf7a; border-color: rgba(255,207,122,.45); }
+.conf.loose { color: #9aa4b8; border-color: rgba(154,164,184,.45); }
+.par-sum { font-size: 12.5px; line-height: 1.55; color: #cfd5e1; margin: 4px 10px 6px; }
+.par-body { overflow: hidden; padding: 0 10px; }
+.par-point { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 6px 0; background: rgba(255,255,255,.06); }
+.par-point .side { background: #0a0e17; padding: 8px 9px; display: flex; flex-direction: column; gap: 3px; }
+.par-point small, .par-against small { font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+.par-point .side.game small { color: var(--cyan); } .par-point .side.real small { color: var(--amber); }
+.par-point p { margin: 0; font-size: 11.5px; line-height: 1.5; color: #d6dbe5; }
+.par-point .side.real p { font-family: Georgia, serif; font-style: italic; }
+.par-point a { font-size: 10.5px; color: var(--dim); text-decoration: none; margin-top: auto; } .par-point a:hover { color: var(--cyan); }
+.par-against { margin: 8px 0 4px; padding: 7px 9px; border-left: 2px solid rgba(255,143,143,.5); background: rgba(255,143,143,.04); }
+.par-against small { color: #ff9f9f; }
+.par-against ul { margin: 4px 0 0; padding-left: 16px; font-size: 11.5px; line-height: 1.5; color: #cfd5e1; }
+.par-toggle { width: 100%; padding: 6px 10px 8px; font-size: 11px; color: #ffa98a; text-align: left; }
+@media (max-width: 600px) { .par-point { grid-template-columns: 1fr; } }
