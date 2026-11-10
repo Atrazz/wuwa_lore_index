@@ -64,15 +64,18 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
       <button className="close" onClick={onClose} aria-label="Close">Close ✕</button>
       <header className="p-head">
         <div className="p-file">
-          <span>Nº {String(index || 0).padStart(4, '0')}</span>
+          <span>ENTRY {String(index || 0).padStart(4, '0')}</span>
           <span className="p-kind"><Glyph kind={node.kind} size={11} /> {k.label}</span>
+          <span className="signal" title={`${node.degree || 0} links`}>
+            {[1, 2, 3, 4, 5].map((i) => <i key={i} className={(node.degree || 0) >= [1, 4, 10, 25, 50][i - 1] ? 'on' : ''} />)}
+          </span>
         </div>
         <div className="p-titlerow">
           <div>
             <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>{node.id}</motion.h2>
             {node.category && <div className="p-cat">{node.category}</div>}
             {node.lit && <div className="lit">lit. “{node.lit}”</div>}
-            {node.aliases?.length > 0 && <div className="p-alias">also filed as {node.aliases.slice(0, 4).join(' · ')}</div>}
+            {node.aliases?.length > 0 && <div className="p-alias">ALIAS: {node.aliases.slice(0, 4).join(' / ')}</div>}
           </div>
           {node.zh && (
             <motion.div className={'seal' + (node.zh.length > 3 ? ' long' : '')} title="Chinese name"

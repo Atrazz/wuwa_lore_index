@@ -48,13 +48,13 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
   return (
     <motion.header className="toolbar" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
       <div className="mast">
-        <span className="mast-title">Echo <em>Codex</em></span>
-        <span className="mast-sub">An index of Solaris · lore, names &amp; sources</span>
+        <span className="mast-title"><i className="mast-hex" />ECHO <em>CODEX</em></span>
+        <span className="mast-sub"><b>●</b> Solaris lore archive · online</span>
       </div>
 
       <div className="find">
-        <span className="find-label">Find</span>
-        <input ref={box} value={q} placeholder="an entry, a 中文 name, a myth…" onChange={(e) => { setQ(e.target.value); setIdx(0) }}
+        <span className="find-label">&gt;_</span>
+        <input ref={box} value={q} placeholder="query an entry, 中文 name or myth" onChange={(e) => { setQ(e.target.value); setIdx(0) }}
           onKeyDown={(e) => {
             if (e.key === 'ArrowDown') setIdx((i) => Math.min(i + 1, hits.length - 1))
             if (e.key === 'ArrowUp') setIdx((i) => Math.max(i - 1, 0))
@@ -98,7 +98,7 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
         <button className="about-btn" onClick={onAbout}>Method</button>
       </nav>
 
-      <div className="tally">{visible.nodes.length} entries · {visible.links.length} links shown</div>
+      <div className="tally"><span>NODES</span> {visible.nodes.length}<span>LINKS</span> {visible.links.length}</div>
     </motion.header>
   )
 }

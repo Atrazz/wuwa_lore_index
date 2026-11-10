@@ -35,7 +35,7 @@ export default function App() {
   const [about, setAbout] = useState(false)
   const [intro, setIntro] = useState(true)
 
-  useEffect(() => { const t = setTimeout(() => setIntro(false), 2400); return () => clearTimeout(t) }, [])
+  useEffect(() => { const t = setTimeout(() => setIntro(false), 2600); return () => clearTimeout(t) }, [])
 
   const data = useMemo(() => {
     const links = []
@@ -86,20 +86,25 @@ export default function App() {
 
       {!selected && !intro && (
         <motion.div className="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-          Select an entry to open its file · the outer ring is the real world
+          SELECT A NODE TO OPEN ITS RECORD · OUTER RING = REAL-WORLD SOURCES
         </motion.div>
       )}
 
       <AnimatePresence>{about && <About meta={raw} onClose={() => setAbout(false)} onExample={() => { setAbout(false); openPair('Jué', 'Twenty-Eight Mansions') }} />}</AnimatePresence>
       <AnimatePresence>
         {intro && (
-          <motion.div className="splash" onClick={() => setIntro(false)} exit={{ opacity: 0 }} transition={{ duration: 0.7 }}>
-            <motion.div className="splash-seal" initial={{ scale: 1.6, opacity: 0, rotate: -12 }} animate={{ scale: 1, opacity: 1, rotate: -4 }}
-              transition={{ delay: 0.35, duration: 0.45, ease: [0.3, 1.4, 0.5, 1] }}>E</motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.6 }}>Echo <em>Codex</em></motion.h1>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.1 }}>
-              {NODES.length} entries indexed · {LINKS.length} cross-references
-            </motion.p>
+          <motion.div className="splash" onClick={() => setIntro(false)} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.6 }}>
+            <motion.div className="boot-hex" initial={{ opacity: 0, rotate: -60, scale: 0.6 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}>
+              <svg viewBox="0 0 84 96"><polygon points="42,2 82,25 82,71 42,94 2,71 2,25" /><polygon className="core" points="42,24 63,36 63,60 42,72 21,60 21,36" /></svg>
+            </motion.div>
+            <motion.h1 initial={{ opacity: 0, letterSpacing: '0.6em' }} animate={{ opacity: 1, letterSpacing: '0.28em' }} transition={{ delay: 0.3, duration: 0.9 }}>ECHO CODEX</motion.h1>
+            <div className="boot-log">
+              {[`mounting lore archive`, `${NODES.length} entries indexed`, `${LINKS.length} cross-references linked`, `external sources: real world`, `status: online`].map((line, i) => (
+                <motion.div key={i} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 + i * 0.28 }}>
+                  <span>[{String(i + 1).padStart(2, '0')}]</span> {line}{i === 4 && <b> ●</b>}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
