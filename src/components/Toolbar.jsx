@@ -81,14 +81,6 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
       </div>
 
       <nav className="tools">
-        <Menu label="Entries" count={`${nodeKinds.size}/${Object.keys(KINDS).length}`}>
-          {Object.entries(KINDS).map(([k, v]) => (
-            <label key={k} className={'opt' + (nodeKinds.has(k) ? ' on' : '')} title={v.rule}>
-              <input type="checkbox" checked={nodeKinds.has(k)} onChange={() => toggleNode(k)} />
-              <Glyph kind={k} size={13} /><span>{v.label}</span><b>{kindCount[k]}</b>
-            </label>
-          ))}
-        </Menu>
         <Menu label="Links" count={`${EDGES.filter((e) => e.key !== 'theorized' && edgeKinds.has(e.key)).length}/${EDGES.length - 1}`}>
           {EDGES.filter((e) => e.key !== 'theorized').map((e) => (
             <label key={e.key} className={'opt' + (edgeKinds.has(e.key) ? ' on' : '')} title={e.rule} style={{ '--c': e.color }}>
@@ -101,6 +93,16 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
       </nav>
 
       <div className="tally">{visible.nodes.length}<span>nodes</span>{visible.links.length}<span>links</span></div>
+
+      <aside className="entries" aria-label="Entries shown on the map">
+        <div className="entries-head">Entries<b>{nodeKinds.size}/{Object.keys(KINDS).length}</b></div>
+        {Object.entries(KINDS).map(([k, v]) => (
+          <label key={k} className={'ent' + (nodeKinds.has(k) ? ' on' : '')} title={v.rule} style={{ '--c': v.color }}>
+            <input type="checkbox" checked={nodeKinds.has(k)} onChange={() => toggleNode(k)} />
+            <Glyph kind={k} size={13} /><span>{v.label}</span><b>{kindCount[k]}</b>
+          </label>
+        ))}
+      </aside>
     </motion.header>
   )
 }
