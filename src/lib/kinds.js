@@ -15,7 +15,6 @@ export const EDGES = [
   { key: 'part_of',  label: 'Part of',      color: '#7ee8ff', dash: null,   rule: 'Region, nation or base on the wiki, or the community tag path (“Rinascita - Septimont”).' },
   { key: 'role',     label: 'Role',         color: '#ff5f7e', dash: null,   rule: 'Leader, founder, ally or enemy in a faction’s wiki profile.' },
   { key: 'defined',  label: 'In the wiki', color: '#4cc9ff', dash: null,   rule: 'A wiki article connects the two: the sentence that says how, or the list it puts one in.' },
-  { key: 'cotag',    label: 'Discussed together', color: '#3e5f66', dash: [2, 4], rule: 'Community lore entries tagged with both, at least three times.' },
   { key: 'theorized', label: 'Theorized', color: '#ff74d4', dash: [1, 3], rule: 'A fan theory discusses this entry. Unverified.' },
 ]
 export const EDGE = Object.fromEntries(EDGES.map((e) => [e.key, e]))

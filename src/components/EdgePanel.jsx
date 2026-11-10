@@ -35,7 +35,7 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
       <div className="p-scroll">
         {EDGES.filter((e) => link.kinds[e.key]).map((e) => (
           <section key={e.key} className="sec" style={{ '--c': e.color }}>
-            <div className="sec-head static"><span>{e.label}</span><b>{e.key === 'cotag' ? link.cotagCount : link.kinds[e.key].length}</b></div>
+            <div className="sec-head static"><span>{e.label}</span><b>{link.kinds[e.key].length}</b></div>
             <p className="note rule">{e.rule}</p>
             {e.key === 'parallel' ? link.kinds.parallel.map((p, i) => <ParallelCard key={i} p={p} open title={p.real} />) :
             link.kinds[e.key].map((ev, i) => (
@@ -47,8 +47,7 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
                 {e.key === 'theorized' && <p><span className="cert possible">unverified</span> <b>{ev.theory}</b> discusses <b>{ev.concept}</b>{ev.author && <span className="dim"> · {ev.author}</span>}</p>}
                 {ev.quote && <p className="zh-quote">「{ev.quote}」</p>}
                 {e.key === 'inspired' && <span className={'cert ' + (ev.certainty || 'stated')}>{ev.certainty === 'possible' ? 'possible' : 'stated'}</span>}
-                {e.key === 'cotag' && <p><a href={ev.url} target="_blank" rel="noreferrer">{ev.entry}</a> <span className="dim">{ev.type}</span></p>}
-                {ev.url && e.key !== 'cotag' && <a className="src" href={ev.url} target="_blank" rel="noreferrer">{ev.source || (e.key === 'defined' ? `${ev.from} — wiki article` : 'source')} ↗</a>}
+                {ev.url && <a className="src" href={ev.url} target="_blank" rel="noreferrer">{ev.source || (e.key === 'defined' ? `${ev.from} — wiki article` : 'source')} ↗</a>}
               </div>
             ))}
           </section>

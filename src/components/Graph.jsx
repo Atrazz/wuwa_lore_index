@@ -73,8 +73,8 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     const g = fg.current
     if (!g) return
     g.d3Force('charge').strength((n) => (n.kind === 'realworld' ? -60 : -120)).distanceMax(500)
-    g.d3Force('link').distance((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 140 : l.vis === 'cotag' ? 90 : 60))
-      .strength((l) => (l.vis === 'cotag' ? 0.03 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.04 : 0.15))
+    g.d3Force('link').distance((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 140 : 60))
+      .strength((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.04 : 0.15))
     g.d3Force('collide', forceCollide((n) => radius(n) + 6))
     g.d3Force('radial', forceRadial((n) => (n.kind === 'realworld' ? ORBIT : 0)).strength((n) => (n.kind === 'realworld' ? 0.9 : 0.035)))
     g.d3ReheatSimulation()
@@ -169,7 +169,7 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       onRenderFramePre={(ctx, scale) => drawBackdrop(ctx, scale)}
       nodeCanvasObject={drawNode}
       nodePointerAreaPaint={(n, c, ctx) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(n.x, n.y, radius(n) + 3, 0, Math.PI * 2); ctx.fill() }}
-      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, selected || focusLink === l ? 0.85 : l.vis === 'cotag' ? 0.12 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24) : 'rgba(255,255,255,0.025)')}
+      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, selected || focusLink === l ? 0.85 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24) : 'rgba(255,255,255,0.025)')}
       linkWidth={(l) => (active(l) ? 0.4 + Math.log2(1 + l.score) * (selected ? 0.4 : 0.18) : 0.2)}
       linkLineDash={(l) => EDGE[l.vis].dash}
       linkCurvature={(l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.18 : 0)}

@@ -55,7 +55,6 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
   const roles = by('role')
   const hasLine = (l) => l.kinds.defined.some((e) => e.text)
   const defined = by('defined').sort((a, b) => hasLine(b) - hasLine(a) || b.score - a.score)
-  const cotag = by('cotag').sort((a, b) => (b.cotagCount || 0) - (a.cotagCount || 0))
   const [moreDef, setMoreDef] = useState(false)
   // etymology lines already shown as a real-world card aren't repeated
   const shownRefs = new Set(inspired.flatMap((l) => l.kinds.inspired.map((e) => e.text)))
@@ -184,12 +183,6 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
           </Section>
         )}
 
-        {cotag.length > 0 && (
-          <Section title="Discussed together" count={cotag.length} color={EDGE.cotag.color} open={false}>
-            <div className="chips">{cotag.map((l) => <Chip key={other(l, node.id)} node={nodes[other(l, node.id)]} onPick={onPick} extra={`${l.cotagCount}×`} />)}</div>
-            <p className="note">How many community lore entries carry both tags.</p>
-          </Section>
-        )}
 
         {node.kind === 'theory' && (
           <Section title="Discusses" count={by('theorized').length} color="#ff8fc8">

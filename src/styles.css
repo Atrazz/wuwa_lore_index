@@ -263,3 +263,5 @@ a { color: inherit; }
 .wiki-line b { font-weight: 600; color: var(--white); }
 .wiki-line.listed { color: var(--muted) !important; font-size: 12.5px !important; }
 .wiki-line.listed i { font-style: normal; color: var(--text); }
+
+button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--hud-faint); }

@@ -13,7 +13,6 @@ Edge kinds (strongest evidence first):
   role        faction infobox fields: leader, founder, ally, enemy
   inspired    real-world reference named in an Etymology/Trivia note or a cited article
   defined     one wiki page links to the other in its own text
-  cotag       community entries tagged with both concepts
 """
 import collections, datetime, json, math, os, re, unicodedata
 
@@ -383,32 +382,6 @@ for (a, b), evs in defined_ev.items():
     for text in seen:
         edge(a, b, "defined", **{"from": a, "to": b, "text": text, "url": WIKI + page.replace(" ", "_")})
 
-# cotag: community entries tagged with both concepts, scored by lift so hubs don't dominate
-entry_tags = []
-for e in NOTION:
-    ids = sorted({tag_node[t.strip()] for t in (e.get("Tags") or "").split(",") if t.strip() in tag_node})
-    if len(ids) >= 2: entry_tags.append((e, ids))
-occ = collections.Counter(i for _, ids in entry_tags for i in ids)
-pair_entries = collections.defaultdict(list)
-for e, ids in entry_tags:
-    if len(ids) > 25: continue  # catch-all pages tag everything
-    for i, a in enumerate(ids):
-        for b in ids[i + 1:]:
-            pair_entries[(a, b)].append(e)
-N = max(len(entry_tags), 1)
-scored = []
-for (a, b), es in pair_entries.items():
-    if len(es) < 3: continue
-    lift = len(es) * N / (occ[a] * occ[b])
-    scored.append((len(es) * math.log2(1 + lift), a, b, es))
-per_node = collections.Counter()
-for score, a, b, es in sorted(scored, reverse=True):
-    if per_node[a] >= 10 and per_node[b] >= 10: continue
-    per_node[a] += 1; per_node[b] += 1
-    for e in es[:6]:
-        edge(a, b, "cotag", entry=e["Name"][:140], type=(e.get("Type") or "").split(",")[0], url=e["url"])
-    edges[tuple(sorted((a, b)))]["cotagCount"] = len(es)
-
 # ---------------------------------------------------------------- real-world references
 rw_sources = collections.defaultdict(list)
 DEBUNKED = re.compile(r"falsely|incorrect(ly)?|debunk|not true|misconception", re.I)
@@ -562,21 +535,23 @@ for t in theories:
         nodes[c].setdefault("theories", []).append(n["id"])
 
 # ---------------------------------------------------------------- prune and score
-W = dict(part_of=8, role=8, inspired=10, parallel=6, defined=4, cotag=1, theorized=2)
+W = dict(part_of=8, role=8, inspired=10, parallel=6, defined=4, theorized=2)
 out_edges = []
 for e in edges.values():
-    score = sum(W[k] * (min(len(v), 3) if k != "cotag" else math.log2(1 + e.get("cotagCount", 1)) * 2) for k, v in e["kinds"].items())
+    score = sum(W[k] * min(len(v), 3) for k, v in e["kinds"].items())
     e["score"] = round(score, 1)
-    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "defined", "cotag", "theorized"].index(k))
+    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "defined", "theorized"].index(k))
     out_edges.append(e)
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1
 # a concept needs two links that aren't just theories (theories alone shouldn't put a node on the map)
-real_deg = collections.Counter()
+# ...unless two or more theories discuss it (Abby, the Goddess, the lost civilisation are mostly theory territory)
+real_deg, theory_deg = collections.Counter(), collections.Counter()
 for e in out_edges:
-    if set(e["kinds"]) != {"theorized"}: real_deg[e["source"]] += 1; real_deg[e["target"]] += 1
-keep = {nid for nid, n in nodes.items() if deg[nid] > 0 and (n["kind"] == "theory" or real_deg[nid] > 0)
-        and (n["kind"] != "concept" or real_deg[nid] >= 2 or n.get("summary"))}
+    c = real_deg if set(e["kinds"]) != {"theorized"} else theory_deg
+    c[e["source"]] += 1; c[e["target"]] += 1
+keep = {nid for nid, n in nodes.items() if deg[nid] > 0 and (n["kind"] == "theory" or real_deg[nid] > 0 or theory_deg[nid] >= 2)
+        and (n["kind"] != "concept" or real_deg[nid] >= 2 or n.get("summary") or theory_deg[nid] >= 2)}
 out_edges = [e for e in out_edges if e["source"] in keep and e["target"] in keep]
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1

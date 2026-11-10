@@ -27,8 +27,7 @@ function useSize() {
 export default function App() {
   const { w, h } = useSize()
   const [edgeKinds, setEdgeKinds] = useState(() => new Set(['inspired', 'parallel', 'part_of', 'role', 'defined']))
-  // theories are unverified, so they stay off until the viewer turns them on
-  const [nodeKinds, setNodeKinds] = useState(() => new Set(Object.keys(KINDS).filter((k) => k !== 'theory')))
+  const [nodeKinds, setNodeKinds] = useState(() => new Set(Object.keys(KINDS)))
   const [selected, setSelected] = useState(null)
   const [link, setLink] = useState(null)
   const [hover, setHover] = useState(null)

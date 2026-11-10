@@ -25,7 +25,7 @@ export default function About({ meta, onClose, onExample }) {
           <dt>Possible parallels</dt>
           <dd>Real events and places that big moments in the game resemble, like the Resonator War and the Russian or American civil wars. These are our comparisons, not stated by any source: every matching point quotes the wiki for the game and Wikipedia for history, and each lists what doesn’t fit. Rated <b>strong</b>, <b>moderate</b> or <b>loose</b>.</dd>
           <dt>Theories</dt>
-          <dd>Fan theories are off by default and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
+          <dd>Fan theories are shown by default (turn them off under Entries) and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
           <dt>Grain of salt</dt>
           <dd>Hand-summarised theories are rated by how much game material they lean on, not by whether they're right: <b>grounded</b> (a small step from what's shown), <b>stretch</b> (an interpretive leap or outside comparison), <b>wild</b> (symbolism or prediction).</dd>
           <dt>Chinese</dt>
