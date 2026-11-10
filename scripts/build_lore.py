@@ -12,6 +12,7 @@ Edge kinds (strongest evidence first):
   part_of     hierarchy: location region/nation fields, faction bases, community tag paths ("Rinascita - Septimont")
   role        faction infobox fields: leader, founder, ally, enemy
   inspired    real-world reference named in an Etymology/Trivia note or a cited article
+  bond        character relationships from WuWa Interact (family, shared quests, voice lines, mentions)
   defined     one wiki page links to the other in its own text
 """
 import collections, datetime, json, math, os, re, unicodedata
@@ -28,6 +29,8 @@ def load(name, default=None):
 
 
 P = load("pages.json", {})
+P.update({k: v for k, v in load("npc_pages.json", {}).items() if k not in P})  # NPC pages via import_bonds.py
+BONDS = json.load(open(os.path.join(HERE, "bonds.json"))) if os.path.exists(os.path.join(HERE, "bonds.json")) else {"characters": [], "bonds": []}
 G = load("groups.json", {})
 NOTION = load("notion_entries.json", {"entries": []})["entries"]
 WP = load("wikipedia.json", {})
@@ -49,6 +52,8 @@ def _tpl(inner):
     if name in ("color",): return pos[-1] if pos else ""
     if name in ("rover",): return "Rover"
     if name == "description": return pos[-1] if pos else ""
+    if name in ("location", "quest", "item", "character", "char", "faction", "term", "event", "enemy", "echo", "weapon", "resonator", "npc"):
+        return pos[0] if pos else ""  # link-style templates: keep the name they point at
     return ""
 
 
@@ -220,6 +225,26 @@ for t in ("Sentinel", "Jué", "Shorekeeper", "Imperator", "Lorelei", "Threnodian
     if t in P and not find(t):
         n = add_node(t, "being", summary=lead(P[t])); page_of[n["id"]] = t
 
+PENDING = []  # (a, b, kind, evidence) for edges made before edge() exists
+# Every character from the relationship graph, NPCs included. Existing concept nodes for them
+# (Abby, Scar, …) become characters; beings such as Jué keep their kind.
+for c in BONDS["characters"]:
+    n = find(c["id"])
+    if n and n["kind"] == "being":
+        n.setdefault("zh", c["zh"])
+    else:
+        wt = P.get(c["id"], "")
+        n = add_node(c["id"], "character", nation=c["nation"], summary=lead(wt) or c["intro"], zh=c["zh"])
+        if wt and n["id"] not in page_of: page_of[n["id"]] = c["id"]
+    n.update(playable=c["playable"], attribute=c["attribute"])
+    for f in c["affiliations"]:
+        org = find(f)
+        if org and org["id"] != n["id"] and org["kind"] in ("faction", "place"):
+            PENDING.append((n["id"], org["id"], "role", dict(role="member", of=org["id"], who=n["id"], source=f"{c['id']} — wiki profile", url=c["page"])))
+for b in BONDS["bonds"]:
+    a, z = find(b["a"]), find(b["b"])
+    if a and z: PENDING.append((a["id"], z["id"], "bond", dict({k: v for k, v in b.items() if k not in ("a", "b")}, pair=[a["id"], z["id"]])))
+
 for t in list(G.get("location", [])) + list(G.get("faction", [])) + list(G.get("resonator", [])):
     wt = P.get(t, "")
     for box in ("Location Infobox", "Faction Infobox", "Resonator Infobox"):
@@ -276,6 +301,9 @@ def edge(a, b, kind, **ev):
     lst = e["kinds"].setdefault(kind, [])
     if ev and ev not in lst and len(lst) < 8: lst.append(ev)
     elif not ev and not lst: lst.append({})
+
+
+for a, b, kind, ev in PENDING: edge(a, b, kind, **ev)
 
 
 # part_of from community tag paths
@@ -535,12 +563,12 @@ for t in theories:
         nodes[c].setdefault("theories", []).append(n["id"])
 
 # ---------------------------------------------------------------- prune and score
-W = dict(part_of=8, role=8, inspired=10, parallel=6, defined=4, theorized=2)
+W = dict(part_of=8, role=8, inspired=10, parallel=6, bond=5, defined=4, theorized=2)
 out_edges = []
 for e in edges.values():
     score = sum(W[k] * min(len(v), 3) for k, v in e["kinds"].items())
     e["score"] = round(score, 1)
-    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "defined", "theorized"].index(k))
+    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "bond", "defined", "theorized"].index(k))
     out_edges.append(e)
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1

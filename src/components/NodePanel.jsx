@@ -4,6 +4,7 @@ import Glyph from './Glyph'
 import ReadMore from './ReadMore'
 import ParallelCard from './ParallelCard'
 import WikiLine from './WikiLine'
+import { BondRow, bondRank } from './Bond'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
 // the file slides out from the left edge like a drawer
@@ -53,6 +54,8 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
   const children = by('part_of').filter((l) => l.kinds.part_of.every((e) => e.parent === node.id)).map((l) => nodes[other(l, node.id)])
   const inspired = by('inspired')
   const roles = by('role')
+  const bonds = by('bond').sort((a, b) => bondRank(b) - bondRank(a) || b.kinds.bond[0].score - a.kinds.bond[0].score)
+  const [moreBond, setMoreBond] = useState(false)
   const hasLine = (l) => l.kinds.defined.some((e) => e.text)
   const defined = by('defined').sort((a, b) => hasLine(b) - hasLine(a) || b.score - a.score)
   const [moreDef, setMoreDef] = useState(false)
@@ -119,6 +122,21 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
             {node.summary}
             {node.kind !== 'theory' && <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>}
           </p>
+        )}
+
+        {bonds.length > 0 && (
+          <Section title="Relationships" count={bonds.length} color={EDGE.bond.color}>
+            {(moreBond ? bonds : bonds.slice(0, 8)).map((l) => {
+              const o = nodes[other(l, node.id)]
+              return (
+                <div key={o.id} className="ctx bond-row" onClick={() => onOpen(l)}>
+                  <Chip node={o} onPick={onPick} />
+                  <BondRow b={l.kinds.bond[0]} />
+                </div>
+              )
+            })}
+            {bonds.length > 8 && <button className="more" onClick={() => setMoreBond(!moreBond)}>{moreBond ? 'Show fewer' : `Show all ${bonds.length}`}</button>}
+          </Section>
         )}
 
         {etymology.length > 0 && (

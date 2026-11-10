@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react'
 import ForceGraph2D from 'react-force-graph-2d'
 import { forceCollide, forceRadial } from 'd3-force'
 import { KINDS, EDGE, id } from '../lib/kinds'
+import { bondRank } from './Bond'
 
 const ORBIT = 620 // radius of the real-world ring
 const BG = '#050b10'
@@ -18,6 +19,9 @@ const rgba = (hex, a) => {
   const n = parseInt(hex.slice(1), 16)
   return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`
 }
+// bond lines fade with weaker evidence: same quest only < mention < voice line < talk < family
+const BOND_ALPHA = [0.2, 0.05, 0.12, 0.18, 0.26, 0.55]
+const baseAlpha = (l) => (l.vis === 'bond' ? BOND_ALPHA[bondRank(l)] : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24)
 const radius = (n) => (n.kind === 'character' ? 8.5 : 3.5 + Math.sqrt(n.degree || 1) * 1.45)
 
 function shape(ctx, kind, x, y, r) {
@@ -58,6 +62,8 @@ function halo(ctx, x, y, r, t, scale, color) {
 export default function Graph({ data, selected, focusLink, hoverId, onHover, onSelect, onLinkSelect, width, height }) {
   const fg = useRef()
   const t0 = useRef(performance.now())
+  const wrap = useRef()
+  if (import.meta.env.DEV) { window.__fg = fg; window.__data = data } // test hook, stripped from builds
 
   const neigh = useMemo(() => {
     const s = new Set()
@@ -73,8 +79,8 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     const g = fg.current
     if (!g) return
     g.d3Force('charge').strength((n) => (n.kind === 'realworld' ? -60 : -120)).distanceMax(500)
-    g.d3Force('link').distance((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 140 : 60))
-      .strength((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.04 : 0.15))
+    g.d3Force('link').distance((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 140 : l.vis === 'bond' ? 80 : 60))
+      .strength((l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.04 : l.vis === 'bond' ? 0.02 + bondRank(l) * 0.02 : 0.15))
     g.d3Force('collide', forceCollide((n) => radius(n) + 6))
     g.d3Force('radial', forceRadial((n) => (n.kind === 'realworld' ? ORBIT : 0)).strength((n) => (n.kind === 'realworld' ? 0.9 : 0.035)))
     g.d3ReheatSimulation()
@@ -89,6 +95,62 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     const n = data.nodes.find((x) => x.id === selected)
     if (n && n.x != null) { fg.current?.centerAt(n.x - 120, n.y, 800); fg.current?.zoom(Math.max(fg.current.zoom(), 1.4), 800) }
   }, [selected])
+
+  // Hit-testing done here, from node positions, instead of force-graph's colour-picking shadow canvas:
+  // browsers with canvas fingerprint protection (Brave, hardened Firefox) add noise to pixel reads,
+  // which made some nodes unclickable.
+  const hit = useCallback((ev) => {
+    const g = fg.current, box = wrap.current?.getBoundingClientRect()
+    if (!g || !box) return null
+    const p = g.screen2GraphCoords(ev.clientX - box.left, ev.clientY - box.top), k = g.zoom()
+    let node = null, best = Infinity
+    for (const n of data.nodes) {
+      if (!Number.isFinite(n.x)) continue
+      const d = Math.hypot(n.x - p.x, n.y - p.y)
+      if (d < radius(n) * (n.id === selected ? 1.35 : 1) + 4 / k && d < best) { node = n; best = d }
+    }
+    if (node) return { node }
+    let link = null; best = 6 / k
+    for (const l of data.links) {
+      const a = l.source, b = l.target
+      if (!Number.isFinite(a?.x) || !Number.isFinite(b?.x)) continue
+      const curve = l.vis === 'inspired' || l.vis === 'parallel' ? 0.18 : 0
+      const len = Math.hypot(b.x - a.x, b.y - a.y), ang = Math.atan2(b.y - a.y, b.x - a.x)
+      const cx = (a.x + b.x) / 2 + len * curve * Math.cos(ang - Math.PI / 2), cy = (a.y + b.y) / 2 + len * curve * Math.sin(ang - Math.PI / 2)
+      let px = a.x, py = a.y
+      for (let i = 1; i <= (curve ? 12 : 1); i++) { // the curve as short segments (one segment when straight)
+        const t = i / (curve ? 12 : 1), u = 1 - t
+        const qx = curve ? u * u * a.x + 2 * u * t * cx + t * t * b.x : b.x, qy = curve ? u * u * a.y + 2 * u * t * cy + t * t * b.y : b.y
+        const vx = qx - px, vy = qy - py, w = Math.max(0, Math.min(1, ((p.x - px) * vx + (p.y - py) * vy) / (vx * vx + vy * vy || 1)))
+        const d = Math.hypot(p.x - (px + w * vx), p.y - (py + w * vy))
+        if (d < best) { best = d; link = l }
+        px = qx; py = qy
+      }
+    }
+    return link ? { link } : null
+  }, [data, selected])
+
+  const down = useRef(null), frame = useRef(0)
+  const onPointerDown = (ev) => { down.current = { x: ev.clientX, y: ev.clientY } }
+  const onPointerUp = (ev) => {
+    const d = down.current; down.current = null
+    if (!d || Math.hypot(ev.clientX - d.x, ev.clientY - d.y) > 5) return // a pan, not a click
+    const h = hit(ev)
+    if (h?.node) onSelect(h.node.id)
+    else if (h?.link) onLinkSelect(h.link)
+    else onSelect(null)
+  }
+  const onPointerMove = (ev) => {
+    if (down.current) return
+    const { clientX, clientY } = ev
+    cancelAnimationFrame(frame.current)
+    frame.current = requestAnimationFrame(() => {
+      const h = hit({ clientX, clientY })
+      onHover(h?.node?.id || null)
+      if (wrap.current) wrap.current.style.cursor = h ? 'pointer' : ''
+    })
+  }
+  const onPointerLeave = () => { onHover(null); if (wrap.current) wrap.current.style.cursor = '' }
 
   const active = useCallback((l) => !selected || id(l.source) === selected || id(l.target) === selected || l === focusLink, [selected, focusLink])
 
@@ -160,6 +222,7 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
   }, [selected, hoverId, neigh, focusLink])
 
   return (
+    <div ref={wrap} onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
     <ForceGraph2D
       ref={fg}
       width={width}
@@ -168,8 +231,8 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       backgroundColor="rgba(0,0,0,0)"
       onRenderFramePre={(ctx, scale) => drawBackdrop(ctx, scale)}
       nodeCanvasObject={drawNode}
-      nodePointerAreaPaint={(n, c, ctx) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(n.x, n.y, radius(n) + 3, 0, Math.PI * 2); ctx.fill() }}
-      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, selected || focusLink === l ? 0.85 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24) : 'rgba(255,255,255,0.025)')}
+      enablePointerInteraction={false}
+      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, focusLink === l ? 0.9 : selected ? (l.vis === 'bond' && bondRank(l) <= 1 ? 0.3 : 0.85) : baseAlpha(l)) : 'rgba(255,255,255,0.025)')}
       linkWidth={(l) => (active(l) ? 0.4 + Math.log2(1 + l.score) * (selected ? 0.4 : 0.18) : 0.2)}
       linkLineDash={(l) => EDGE[l.vis].dash}
       linkCurvature={(l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.18 : 0)}
@@ -177,16 +240,12 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       linkDirectionalParticleWidth={2}
       linkDirectionalParticleSpeed={0.008}
       linkDirectionalParticleColor={(l) => EDGE[l.vis].color}
-      onNodeHover={(n) => { onHover(n?.id || null); document.body.style.cursor = n ? 'pointer' : '' }}
-      onLinkHover={(l) => { document.body.style.cursor = l ? 'pointer' : '' }}
-      onNodeClick={(n) => onSelect(n.id)}
-      onLinkClick={onLinkSelect}
-      onBackgroundClick={() => onSelect(null)}
       autoPauseRedraw={false}
       cooldownTicks={400}
       warmupTicks={60}
       minZoom={0.2}
       maxZoom={8}
     />
+    </div>
   )
 }

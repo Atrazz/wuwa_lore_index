@@ -26,7 +26,7 @@ function useSize() {
 
 export default function App() {
   const { w, h } = useSize()
-  const [edgeKinds, setEdgeKinds] = useState(() => new Set(['inspired', 'parallel', 'part_of', 'role', 'defined']))
+  const [edgeKinds, setEdgeKinds] = useState(() => new Set(['inspired', 'parallel', 'part_of', 'role', 'bond', 'defined']))
   const [nodeKinds, setNodeKinds] = useState(() => new Set(Object.keys(KINDS)))
   const [selected, setSelected] = useState(null)
   const [link, setLink] = useState(null)

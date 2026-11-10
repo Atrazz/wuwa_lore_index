@@ -4,6 +4,7 @@ import { panelAnim } from './NodePanel'
 import { KINDS, EDGES, id } from '../lib/kinds'
 import ParallelCard from './ParallelCard'
 import WikiLine from './WikiLine'
+import { BondDetail } from './Bond'
 
 function End({ node, onPick }) {
   return (
@@ -38,6 +39,7 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
             <div className="sec-head static"><span>{e.label}</span><b>{link.kinds[e.key].length}</b></div>
             <p className="note rule">{e.rule}</p>
             {e.key === 'parallel' ? link.kinds.parallel.map((p, i) => <ParallelCard key={i} p={p} open title={p.real} />) :
+            e.key === 'bond' ? link.kinds.bond.map((b, i) => <BondDetail key={i} b={b} />) :
             link.kinds[e.key].map((ev, i) => (
               <div key={i} className="ev">
                 {e.key === 'part_of' && <p><b>{ev.child}</b> is part of <b>{ev.parent}</b>{ev.note && <span className="dim"> · tag “{ev.note}”</span>}</p>}
