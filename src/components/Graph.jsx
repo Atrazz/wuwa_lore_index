@@ -130,11 +130,55 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     return link ? { link } : null
   }, [data, selected])
 
-  const down = useRef(null), frame = useRef(0)
+  const down = useRef(null), frame = useRef(0), drag = useRef(null)
+  const toGraph = (ev) => {
+    const box = wrap.current.getBoundingClientRect()
+    return fg.current.screen2GraphCoords(ev.clientX - box.left, ev.clientY - box.top)
+  }
+
+  // Node dragging. Pressing on a node is caught in the capture phase, before d3-zoom on the canvas
+  // sees it, so the map doesn't pan while a node is being moved.
+  const hitRef = useRef(hit); hitRef.current = hit
+  useEffect(() => {
+    const el = wrap.current
+    if (!el) return
+    const start = (ev) => {
+      const pt = ev.touches ? ev.touches[0] : ev
+      const h = hitRef.current(pt)
+      if (!h?.node) return
+      ev.stopPropagation()
+      drag.current = { node: h.node, x: pt.clientX, y: pt.clientY, moved: false }
+    }
+    const move = (ev) => {
+      const d = drag.current
+      if (!d) return
+      if (!d.moved && Math.hypot(ev.clientX - d.x, ev.clientY - d.y) < 4) return
+      if (!d.moved) { d.moved = true; fg.current?.d3ReheatSimulation(); el.style.cursor = 'grabbing' }
+      const p = toGraph(ev)
+      d.node.fx = p.x; d.node.fy = p.y
+    }
+    const end = () => {
+      const d = drag.current
+      if (d?.moved) { d.node.fx = undefined; d.node.fy = undefined; el.style.cursor = 'grab' }
+      drag.current = null
+    }
+    el.addEventListener('mousedown', start, true)
+    el.addEventListener('touchstart', start, { capture: true, passive: true })
+    addEventListener('pointermove', move)
+    addEventListener('pointerup', end)
+    return () => {
+      el.removeEventListener('mousedown', start, true)
+      el.removeEventListener('touchstart', start, { capture: true })
+      removeEventListener('pointermove', move)
+      removeEventListener('pointerup', end)
+    }
+  }, [])
+
   const onPointerDown = (ev) => { down.current = { x: ev.clientX, y: ev.clientY } }
   const onPointerUp = (ev) => {
-    const d = down.current; down.current = null
-    if (!d || Math.hypot(ev.clientX - d.x, ev.clientY - d.y) > 5) return // a pan, not a click
+    const d = down.current, dragged = drag.current?.moved
+    down.current = null
+    if (dragged || !d || Math.hypot(ev.clientX - d.x, ev.clientY - d.y) > 5) return // a drag or a pan, not a click
     const h = hit(ev)
     if (h?.node) onSelect(h.node.id)
     else if (h?.link) onLinkSelect(h.link)
@@ -147,10 +191,10 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     frame.current = requestAnimationFrame(() => {
       const h = hit({ clientX, clientY })
       onHover(h?.node?.id || null)
-      if (wrap.current) wrap.current.style.cursor = h ? 'pointer' : ''
+      if (wrap.current) wrap.current.style.cursor = h?.node ? 'grab' : h ? 'pointer' : ''
     })
   }
-  const onPointerLeave = () => { onHover(null); if (wrap.current) wrap.current.style.cursor = '' }
+  const onPointerLeave = () => { if (!drag.current) { onHover(null); if (wrap.current) wrap.current.style.cursor = '' } }
 
   const active = useCallback((l) => !selected || id(l.source) === selected || id(l.target) === selected || l === focusLink, [selected, focusLink])
 
