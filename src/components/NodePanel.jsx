@@ -4,7 +4,7 @@ import Glyph from './Glyph'
 import ReadMore from './ReadMore'
 import ParallelCard from './ParallelCard'
 import WikiLine from './WikiLine'
-import { BondRow, bondRank } from './Bond'
+import { BondItem, bondRank, Avatar } from './Bond'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
 // the file slides out from the left edge like a drawer
@@ -72,7 +72,8 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
           <span className="p-kind"><Glyph kind={node.kind} size={11} /> {k.label}</span>
           <span className="p-deg">{node.degree || 0} links</span>
         </div>
-        <div className="p-titlerow">
+        <div className={'p-titlerow' + (node.portrait ? ' has-face' : '')}>
+          {node.portrait && <Avatar node={node} size={58} ring={k.color} />}
           <div>
             <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>{node.id}</motion.h2>
             {node.category && <div className="p-cat">{node.category}</div>}
@@ -129,10 +130,7 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
             {(moreBond ? bonds : bonds.slice(0, 8)).map((l) => {
               const o = nodes[other(l, node.id)]
               return (
-                <div key={o.id} className="ctx bond-row" onClick={() => onOpen(l)}>
-                  <Chip node={o} onPick={onPick} />
-                  <BondRow b={l.kinds.bond[0]} />
-                </div>
+                <BondItem key={o.id} node={o} b={l.kinds.bond[0]} onOpen={() => onOpen(l)} onPick={onPick} />
               )
             })}
             {bonds.length > 8 && <button className="more" onClick={() => setMoreBond(!moreBond)}>{moreBond ? 'Show fewer' : `Show all ${bonds.length}`}</button>}
