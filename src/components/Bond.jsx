@@ -101,12 +101,12 @@ export function BondHero({ A, B, b, onPick }) {
   return (
     <div className="bond-hero" style={{ '--c': c }}>
       <div className="bh-pair">
-        <button className="bh-person" onClick={() => onPick(A.id)}><Avatar node={A} size={68} ring={c} /><b>{A.id}</b>{A.zh && <small>{A.zh}</small>}</button>
+        <button className="bh-person" onClick={() => onPick(A.id)}><Avatar node={A} size={68} ring={c} /><b>{A.id}</b>{A.title && <em>{A.title}</em>}{A.zh && <small>{A.zh}</small>}</button>
         <div className="bh-link">
           <svg viewBox="0 0 120 30" preserveAspectRatio="none"><path d="M0 15 Q60 0 120 15" /><path d="M0 15 Q60 30 120 15" /></svg>
           <motion.span className="bh-label" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.15 }}>{b.label}</motion.span>
         </div>
-        <button className="bh-person" onClick={() => onPick(B.id)}><Avatar node={B} size={68} ring={c} /><b>{B.id}</b>{B.zh && <small>{B.zh}</small>}</button>
+        <button className="bh-person" onClick={() => onPick(B.id)}><Avatar node={B} size={68} ring={c} /><b>{B.id}</b>{B.title && <em>{B.title}</em>}{B.zh && <small>{B.zh}</small>}</button>
       </div>
       {bondFacts(b).length > 0 && <p className="bh-facts">{bondFacts(b).join(' · ')}</p>}
       <div className="bh-strip">

@@ -395,3 +395,5 @@ button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--hud-faint); }
   .ent { grid-template-columns: 16px auto; padding: 4px 9px; border: 1px solid var(--line2); border-radius: 999px; font-size: 12px; }
   .ent b { display: none; }
 }
+.p-title { margin-top: 4px; font: 300 14px var(--head); letter-spacing: .02em; color: var(--hud); }
+.bh-person em { font: normal 300 11.5px var(--head); color: var(--hud); margin-top: -3px; text-align: center; }

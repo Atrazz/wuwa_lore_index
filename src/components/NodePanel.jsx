@@ -76,6 +76,7 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
           {node.portrait && <Avatar node={node} size={58} ring={k.color} />}
           <div>
             <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>{node.id}</motion.h2>
+            {node.title && <div className="p-title">{node.title}</div>}
             {node.category && <div className="p-cat">{node.category}</div>}
             {node.lit && <div className="lit">lit. “{node.lit}”</div>}
             {node.aliases?.length > 0 && <div className="p-alias">also {node.aliases.slice(0, 4).join(' / ')}</div>}

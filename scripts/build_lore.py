@@ -237,6 +237,7 @@ for c in BONDS["characters"]:
         n = add_node(c["id"], "character", nation=c["nation"], summary=lead(wt) or c["intro"], zh=c["zh"])
         if wt and n["id"] not in page_of: page_of[n["id"]] = c["id"]
     n.update(playable=c["playable"], attribute=c["attribute"])
+    if c["title"]: n["title"] = c["title"]  # in-game title, e.g. Aalto “Mistcloak Strike”
     for f in c["affiliations"]:
         org = find(f)
         if org and org["id"] != n["id"] and org["kind"] in ("faction", "place"):
