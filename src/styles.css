@@ -257,3 +257,9 @@ a { color: inherit; }
   .notes { grid-template-columns: 1fr; }
   .par-point { grid-template-columns: 1fr; }
 }
+
+/* wiki sentences */
+.wiki-line { font-size: 13.5px !important; line-height: 1.65 !important; color: var(--text) !important; margin: 6px 0 0; }
+.wiki-line b { font-weight: 600; color: var(--white); }
+.wiki-line.listed { color: var(--muted) !important; font-size: 12.5px !important; }
+.wiki-line.listed i { font-style: normal; color: var(--text); }

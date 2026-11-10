@@ -315,18 +315,73 @@ for nid, page in page_of.items():
         parent = find(n["nation"])
         if parent: edge(nid, parent["id"], "part_of", child=nid, parent=parent["id"], source=f"{page} — wiki (nation)", url=WIKI + page.replace(" ", "_"))
 
-# defined: wiki page text links to another node, with the sentence as context
+# defined: wiki page text links to another node. The evidence is the whole sentence that makes the link
+# (plus the one before it when it opens with "It/They/This…"), never a cut-off window or a table cell.
+ABBR = r"\b(Mt|Dr|St|Mr|Mrs|Ms|Jr|vs|No|Vol|ca|approx|e\.g|i\.e)\."
+PRONOUN = re.compile(r"^(It|Its|They|Their|Them|He|His|Him|She|Her|This|These|Those|That|There|Here|However|Both|Such|Afterwards|Later|Thus|Therefore|Meanwhile)\b")
+
+
+def sentences(text):
+    t = re.sub(ABBR, lambda m: m.group(0).replace(".", "\u2024"), text)
+    parts = re.split(r"(?:(?<=[.!?])|(?<=[.!?][\"”’)]))\s+(?=[\"“(\[]?[A-Z0-9])", t)
+    return [x.replace("\u2024", ".").strip() for x in parts if x.strip()]
+
+
+def good_sentence(x):
+    words = x.split()
+    return (len(words) >= 7 and len(x) <= 520 and re.search(r"[.!?][\"”’)]?$", x)
+            and not x.startswith(("|", "!", "{", "*", "#", ":", "=")) and x.count("|") == 0)
+
+
+defined_ev = collections.defaultdict(list)  # (from, to) -> [(rank, text)]
+listed = {}                                  # (from, to) -> heading of the list/table that links them
+page_sents = collections.defaultdict(list)   # nid -> [(section no, sentence)]
 for nid, page in page_of.items():
-    wt = body(P.get(page, ""))
+    wt = strip_templates(body(P.get(page, "")), r"Quote|Description|Main|About|Stub|Spoiler|Dialogue[\w ]*")
+    sec_no, heading = 0, ""
     for para in wt.split("\n"):
-        for m in re.finditer(r"\[\[([^|\]#]+)(?:#[^|\]]*)?(?:\|[^\]]*)?\]\]", para):
+        if para.startswith("=="): sec_no += 1; heading = clean(para.strip("= ")).strip("[] "); continue
+        links = list(re.finditer(r"\[\[([^|\]#]+)(?:#[^|\]]*)?(?:\|[^\]]*)?\]\]", para))
+        if para.lstrip().startswith(("{|", "|", "!", "<gallery", "{{", "[[File", "[[Image", "*", "#", ":", ";")):
+            for m in links:  # list / table row: no sentence, but still says where it is listed
+                other = find(m.group(1))
+                if other and other["id"] != nid: listed.setdefault((nid, other["id"]), heading)
+            continue
+        sents = sentences(clean(para))
+        page_sents[nid] += [(sec_no, x) for x in sents if good_sentence(x)]
+        if not links: continue
+        for m in links:
             other = find(m.group(1))
             if not other or other["id"] == nid: continue
-            sent = clean(para)
-            if len(sent) > 320:
-                i = sent.find(clean(m.group(0)))
-                sent = ("…" if i > 160 else "") + sent[max(0, i - 160): i + 160] + "…"
-            edge(nid, other["id"], "defined", **{"from": nid, "to": other["id"], "text": sent, "url": WIKI + page.replace(" ", "_")})
+            label = clean(m.group(0))
+            idx = next((i for i, x in enumerate(sents) if label and label in x), None)
+            if idx is None or not good_sentence(sents[idx]): continue
+            text = sents[idx]
+            if PRONOUN.match(text) and idx > 0 and good_sentence(sents[idx - 1]) and len(sents[idx - 1]) + len(text) < 520:
+                text = sents[idx - 1] + " " + text
+            # prefer the lead section, sentences naming both sides, and a readable length
+            rank = sec_no * 2 + (0 if nid.lower() in text.lower() or (nodes[nid].get("zh") or "\0") in text else 1) \
+                   + (0 if 60 <= len(text) <= 340 else 1)
+            defined_ev[(nid, other["id"])].append((rank, text))
+
+# list/table-only links: look for a sentence on the other page that names this one, else say where it is listed
+for (a, b), heading in listed.items():
+    if (a, b) in defined_ev or (b, a) in defined_ev: continue
+    name = re.compile(r"(?<![\w-])" + re.escape(a) + r"(?![\w-])")
+    hit = next((x for _, x in sorted(page_sents.get(b, []), key=lambda t: t[0]) if name.search(x)), None)
+    if hit: defined_ev[(b, a)].append((0, hit))
+    else: listed_only = edge(a, b, "defined", **{"from": a, "to": b, "listed": heading or "the page", "text": "",
+                                                "url": WIKI + page_of[a].replace(" ", "_")})
+
+for (a, b), evs in defined_ev.items():
+    seen = []
+    for _, text in sorted(evs, key=lambda x: x[0]):
+        if any(text in t or t in text for t in seen): continue
+        seen.append(text)
+        if len(seen) == 2: break
+    page = page_of[a]
+    for text in seen:
+        edge(a, b, "defined", **{"from": a, "to": b, "text": text, "url": WIKI + page.replace(" ", "_")})
 
 # cotag: community entries tagged with both concepts, scored by lift so hubs don't dominate
 entry_tags = []

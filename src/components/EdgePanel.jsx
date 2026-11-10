@@ -3,6 +3,7 @@ import Glyph from './Glyph'
 import { panelAnim } from './NodePanel'
 import { KINDS, EDGES, id } from '../lib/kinds'
 import ParallelCard from './ParallelCard'
+import WikiLine from './WikiLine'
 
 function End({ node, onPick }) {
   return (
@@ -41,12 +42,13 @@ export default function EdgePanel({ link, nodes, from, onBack, onClose, onPick }
               <div key={i} className="ev">
                 {e.key === 'part_of' && <p><b>{ev.child}</b> is part of <b>{ev.parent}</b>{ev.note && <span className="dim"> · tag “{ev.note}”</span>}</p>}
                 {e.key === 'role' && <p><b>{ev.who}</b> — {ev.role} of <b>{ev.of}</b></p>}
-                {(e.key === 'defined' || e.key === 'inspired') && <p>{ev.text}</p>}
+                {e.key === 'defined' && <WikiLine ev={ev} />}
+                {e.key === 'inspired' && <p>{ev.text}</p>}
                 {e.key === 'theorized' && <p><span className="cert possible">unverified</span> <b>{ev.theory}</b> discusses <b>{ev.concept}</b>{ev.author && <span className="dim"> · {ev.author}</span>}</p>}
                 {ev.quote && <p className="zh-quote">「{ev.quote}」</p>}
                 {e.key === 'inspired' && <span className={'cert ' + (ev.certainty || 'stated')}>{ev.certainty === 'possible' ? 'possible' : 'stated'}</span>}
                 {e.key === 'cotag' && <p><a href={ev.url} target="_blank" rel="noreferrer">{ev.entry}</a> <span className="dim">{ev.type}</span></p>}
-                {ev.url && e.key !== 'cotag' && <a className="src" href={ev.url} target="_blank" rel="noreferrer">{ev.source || (e.key === 'defined' ? `${ev.from} on the wiki` : 'source')} ↗</a>}
+                {ev.url && e.key !== 'cotag' && <a className="src" href={ev.url} target="_blank" rel="noreferrer">{ev.source || (e.key === 'defined' ? `${ev.from} — wiki article` : 'source')} ↗</a>}
               </div>
             ))}
           </section>

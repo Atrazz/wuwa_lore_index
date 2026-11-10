@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Glyph from './Glyph'
 import ReadMore from './ReadMore'
 import ParallelCard from './ParallelCard'
+import WikiLine from './WikiLine'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
 // the file slides out from the left edge like a drawer
@@ -52,7 +53,8 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
   const children = by('part_of').filter((l) => l.kinds.part_of.every((e) => e.parent === node.id)).map((l) => nodes[other(l, node.id)])
   const inspired = by('inspired')
   const roles = by('role')
-  const defined = by('defined').sort((a, b) => b.score - a.score)
+  const hasLine = (l) => l.kinds.defined.some((e) => e.text)
+  const defined = by('defined').sort((a, b) => hasLine(b) - hasLine(a) || b.score - a.score)
   const cotag = by('cotag').sort((a, b) => (b.cotagCount || 0) - (a.cotagCount || 0))
   const [moreDef, setMoreDef] = useState(false)
   // etymology lines already shown as a real-world card aren't repeated
@@ -134,7 +136,7 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
               return (
                 <div key={o.id} className="rw-card" onClick={() => onOpen(l)}>
                   <div className="rw-top"><Glyph kind={o.kind} /><b>{o.id}</b>{o.zh && <small>{o.zh}</small>}<Certainty c={ev.certainty} /></div>
-                  <p>{ev.text}</p>
+                  <WikiLine ev={ev} />
                   {ev.quote && <p className="zh-quote">「{ev.quote}」</p>}
                   <span className="src">{ev.source}</span>
                 </div>
@@ -166,14 +168,15 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
         )}
 
         {defined.length > 0 && (
-          <Section title="Defined with" count={defined.length} color={EDGE.defined.color}>
+          <Section title="In the wiki" count={defined.length} color={EDGE.defined.color}>
             {(moreDef ? defined : defined.slice(0, 6)).map((l) => {
               const o = nodes[other(l, node.id)]
-              const ev = l.kinds.defined.find((e) => e.from === node.id) || l.kinds.defined[0]
+              const evs = l.kinds.defined
+              const ev = evs.find((e) => e.text && e.from === node.id) || evs.find((e) => e.text) || evs[0]
               return (
                 <div key={o.id} className="ctx" onClick={() => onOpen(l)}>
                   <Chip node={o} onPick={onPick} />
-                  <p>{ev.text}</p>
+                  <WikiLine ev={ev} />
                 </div>
               )
             })}
