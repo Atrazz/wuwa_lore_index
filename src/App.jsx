@@ -86,7 +86,7 @@ export default function App() {
 
       {!selected && !intro && (
         <motion.div className="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-          SELECT A NODE TO OPEN ITS RECORD · OUTER RING = REAL-WORLD SOURCES
+          Select a node to open its record · the outer ring holds real-world sources
         </motion.div>
       )}
 
@@ -94,17 +94,13 @@ export default function App() {
       <AnimatePresence>
         {intro && (
           <motion.div className="splash" onClick={() => setIntro(false)} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.6 }}>
-            <motion.div className="boot-hex" initial={{ opacity: 0, rotate: -60, scale: 0.6 }} animate={{ opacity: 1, rotate: 0, scale: 1 }} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}>
-              <svg viewBox="0 0 84 96"><polygon points="42,2 82,25 82,71 42,94 2,71 2,25" /><polygon className="core" points="42,24 63,36 63,60 42,72 21,60 21,36" /></svg>
+            <motion.div className="orbit" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}>
+              <i /><i /><b />
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, letterSpacing: '0.6em' }} animate={{ opacity: 1, letterSpacing: '0.28em' }} transition={{ delay: 0.3, duration: 0.9 }}>ECHO CODEX</motion.h1>
-            <div className="boot-log">
-              {[`mounting lore archive`, `${NODES.length} entries indexed`, `${LINKS.length} cross-references linked`, `external sources: real world`, `status: online`].map((line, i) => (
-                <motion.div key={i} initial={{ opacity: 0, x: -8 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 + i * 0.28 }}>
-                  <span>[{String(i + 1).padStart(2, '0')}]</span> {line}{i === 4 && <b> ●</b>}
-                </motion.div>
-              ))}
-            </div>
+            <motion.h1 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>Echo <em>Codex</em></motion.h1>
+            <motion.p className="splash-sub" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.8 }}>
+              Solaris lore archive · {NODES.length} entries · {LINKS.length} links
+            </motion.p>
           </motion.div>
         )}
       </AnimatePresence>

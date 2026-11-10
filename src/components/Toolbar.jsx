@@ -8,7 +8,9 @@ function Menu({ label, count, children }) {
   const ref = useRef()
   useEffect(() => {
     const f = (e) => { if (!ref.current?.contains(e.target)) setOpen(false) }
-    addEventListener('mousedown', f); return () => removeEventListener('mousedown', f)
+    const k = (e) => { if (e.key === 'Escape') setOpen(false) }
+    addEventListener('pointerdown', f, true); addEventListener('keydown', k)
+    return () => { removeEventListener('pointerdown', f, true); removeEventListener('keydown', k) }
   }, [])
   return (
     <div className="menu" ref={ref}>
@@ -48,13 +50,13 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
   return (
     <motion.header className="toolbar" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
       <div className="mast">
-        <span className="mast-title"><i className="mast-hex" />ECHO <em>CODEX</em></span>
-        <span className="mast-sub"><b>●</b> Solaris lore archive · online</span>
+        <span className="mast-title"><i className="mast-hex" />Echo <em>Codex</em></span>
+        <span className="mast-sub">Solaris lore archive</span>
       </div>
 
       <div className="find">
-        <span className="find-label">&gt;_</span>
-        <input ref={box} value={q} placeholder="query an entry, 中文 name or myth" onChange={(e) => { setQ(e.target.value); setIdx(0) }}
+        <svg className="find-label" viewBox="0 0 16 16" width="15" height="15"><circle cx="7" cy="7" r="5" /><path d="M11 11l3.5 3.5" /></svg>
+        <input ref={box} value={q} placeholder="Search entries, 中文 names, myths…" onChange={(e) => { setQ(e.target.value); setIdx(0) }}
           onKeyDown={(e) => {
             if (e.key === 'ArrowDown') setIdx((i) => Math.min(i + 1, hits.length - 1))
             if (e.key === 'ArrowUp') setIdx((i) => Math.max(i - 1, 0))
@@ -98,7 +100,7 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
         <button className="about-btn" onClick={onAbout}>Method</button>
       </nav>
 
-      <div className="tally"><span>NODES</span> {visible.nodes.length}<span>LINKS</span> {visible.links.length}</div>
+      <div className="tally">{visible.nodes.length}<span>nodes</span>{visible.links.length}<span>links</span></div>
     </motion.header>
   )
 }

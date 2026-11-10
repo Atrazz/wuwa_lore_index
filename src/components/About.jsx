@@ -6,7 +6,7 @@ export default function About({ meta, onClose, onExample }) {
   return (
     <motion.div className="modal-bg" onClick={onClose} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <motion.div className="modal" onClick={(e) => e.stopPropagation()} initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 20, opacity: 0 }}>
-        <button className="close" onClick={onClose}>Close ✕</button>
+        <button className="close" onClick={onClose} aria-label="Close">✕</button>
         <h2>Method</h2>
         <p className="lead">The inner map is the world of Solaris-3. The outer ring holds the real-world myths, places, books and science the game draws on. Every line links back to its source.</p>
         <h3>Connections</h3>

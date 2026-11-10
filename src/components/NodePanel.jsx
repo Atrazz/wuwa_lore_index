@@ -7,9 +7,9 @@ import { KINDS, EDGE, id, other } from '../lib/kinds'
 
 // the file slides out from the left edge like a drawer
 export const panelAnim = {
-  initial: { clipPath: 'inset(0 100% 0 0)', opacity: 0.4 },
-  animate: { clipPath: 'inset(0 0% 0 0)', opacity: 1, transition: { duration: 0.42, ease: [0.2, 0.7, 0.2, 1] } },
-  exit: { clipPath: 'inset(0 100% 0 0)', opacity: 0, transition: { duration: 0.22, ease: 'easeIn' } },
+  initial: { opacity: 0, x: -16 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.32, ease: [0.2, 0.7, 0.2, 1] } },
+  exit: { opacity: 0, x: -10, transition: { duration: 0.18, ease: 'easeIn' } },
 }
 
 function Section({ title, count, color, children, open: open0 = true }) {
@@ -61,26 +61,24 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
 
   return (
     <motion.aside className="panel" {...panelAnim} style={{ '--k': k.color }}>
-      <button className="close" onClick={onClose} aria-label="Close">Close ✕</button>
+      <button className="close" onClick={onClose} aria-label="Close">✕</button>
       <header className="p-head">
         <div className="p-file">
-          <span>ENTRY {String(index || 0).padStart(4, '0')}</span>
+          <span>№ {String(index || 0).padStart(3, '0')}</span>
           <span className="p-kind"><Glyph kind={node.kind} size={11} /> {k.label}</span>
-          <span className="signal" title={`${node.degree || 0} links`}>
-            {[1, 2, 3, 4, 5].map((i) => <i key={i} className={(node.degree || 0) >= [1, 4, 10, 25, 50][i - 1] ? 'on' : ''} />)}
-          </span>
+          <span className="p-deg">{node.degree || 0} links</span>
         </div>
         <div className="p-titlerow">
           <div>
             <motion.h2 initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>{node.id}</motion.h2>
             {node.category && <div className="p-cat">{node.category}</div>}
             {node.lit && <div className="lit">lit. “{node.lit}”</div>}
-            {node.aliases?.length > 0 && <div className="p-alias">ALIAS: {node.aliases.slice(0, 4).join(' / ')}</div>}
+            {node.aliases?.length > 0 && <div className="p-alias">also {node.aliases.slice(0, 4).join(' / ')}</div>}
           </div>
           {node.zh && (
             <motion.div className={'seal' + (node.zh.length > 3 ? ' long' : '')} title="Chinese name"
-              initial={{ scale: 1.5, opacity: 0, rotate: -10 }} animate={{ scale: 1, opacity: 1, rotate: -3 }}
-              transition={{ delay: 0.25, duration: 0.35, ease: [0.3, 1.4, 0.5, 1] }}>
+              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.15, duration: 0.3 }}>
               {node.zh}
             </motion.div>
           )}

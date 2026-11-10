@@ -4,9 +4,9 @@ import { forceCollide, forceRadial } from 'd3-force'
 import { KINDS, EDGE, id } from '../lib/kinds'
 
 const ORBIT = 620 // radius of the real-world ring
-const BG = '#030a0c'
-const HUD = '#46f0e0'
-const WHITE = '#e9fbff'
+const BG = '#050b10'
+const HUD = '#6fe6dc'
+const WHITE = '#eef8fa'
 
 const imgs = {}
 const img = (src) => {
@@ -44,21 +44,14 @@ function screenText(ctx, text, x, y, scale, font, color) {
   ctx.fillText(text, 0, 0); ctx.restore()
 }
 
-// rotating hexagonal target reticle around the selected entry
-function reticle(ctx, x, y, r, t, scale, color) {
-  const R = r + 8 / scale
-  ctx.save(); ctx.translate(x, y)
-  ctx.rotate(t * 0.6)
-  ctx.strokeStyle = color; ctx.lineWidth = 1.2 / scale
-  ctx.setLineDash([6 / scale, 4 / scale])
-  ctx.beginPath()
-  for (let i = 0; i < 6; i++) { const a = Math.PI / 3 * i; ctx.lineTo(R * Math.cos(a), R * Math.sin(a)) }
-  ctx.closePath(); ctx.stroke(); ctx.setLineDash([])
-  ctx.rotate(-t * 1.2)
-  for (let i = 0; i < 4; i++) {
-    const a = Math.PI / 2 * i
-    ctx.beginPath(); ctx.moveTo(Math.cos(a) * (R + 3 / scale), Math.sin(a) * (R + 3 / scale)); ctx.lineTo(Math.cos(a) * (R + 9 / scale), Math.sin(a) * (R + 9 / scale)); ctx.stroke()
-  }
+// soft breathing halo around the selected entry
+function halo(ctx, x, y, r, t, scale, color) {
+  const p = (Math.sin(t * 2.2) + 1) / 2
+  ctx.save()
+  ctx.strokeStyle = rgba(color, 0.9); ctx.lineWidth = 1.4 / scale
+  ctx.beginPath(); ctx.arc(x, y, r + 5 / scale, 0, Math.PI * 2); ctx.stroke()
+  ctx.strokeStyle = rgba(color, 0.35 * (1 - p)); ctx.lineWidth = 1 / scale
+  ctx.beginPath(); ctx.arc(x, y, r + (8 + p * 10) / scale, 0, Math.PI * 2); ctx.stroke()
   ctx.restore()
 }
 
@@ -99,31 +92,16 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
 
   const active = useCallback((l) => !selected || id(l.source) === selected || id(l.target) === selected || l === focusLink, [selected, focusLink])
 
-  // range rings, a radar sweep and bearing marks around Solaris
+  // a few faint rings around Solaris, and the real-world orbit
   const drawBackdrop = useCallback((ctx, scale) => {
-    const t = (performance.now() - t0.current) / 1000
     ctx.save()
-    for (const [r, a] of [[ORBIT * 0.25, 0.05], [ORBIT * 0.5, 0.07], [ORBIT * 0.75, 0.05], [ORBIT, 0.22]]) {
-      ctx.strokeStyle = rgba(HUD, a); ctx.lineWidth = 1 / scale
-      ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.stroke()
+    ctx.lineWidth = 1 / scale
+    for (const r of [ORBIT * 0.33, ORBIT * 0.66]) {
+      ctx.strokeStyle = rgba(WHITE, 0.035); ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.stroke()
     }
-    // sweep
-    const sweep = (t * 0.35) % (Math.PI * 2)
-    const g = ctx.createConicGradient ? ctx.createConicGradient(sweep - 0.9, 0, 0) : null
-    if (g) {
-      g.addColorStop(0, rgba(HUD, 0)); g.addColorStop(0.14, rgba(HUD, 0.07)); g.addColorStop(0.145, rgba(HUD, 0)); g.addColorStop(1, rgba(HUD, 0))
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, ORBIT, 0, Math.PI * 2); ctx.fill()
-    }
-    ctx.strokeStyle = rgba(HUD, 0.35); ctx.lineWidth = 1 / scale
-    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(Math.cos(sweep) * ORBIT, Math.sin(sweep) * ORBIT); ctx.stroke()
-    // bearing ticks on the outer ring
-    for (let deg = 0; deg < 360; deg += 10) {
-      const a = (deg * Math.PI) / 180, long = deg % 30 === 0
-      ctx.strokeStyle = rgba(HUD, long ? 0.45 : 0.18)
-      ctx.beginPath(); ctx.moveTo(Math.cos(a) * ORBIT, Math.sin(a) * ORBIT); ctx.lineTo(Math.cos(a) * (ORBIT + (long ? 12 : 6) / scale), Math.sin(a) * (ORBIT + (long ? 12 : 6) / scale)); ctx.stroke()
-      if (long) screenText(ctx, String(deg).padStart(3, '0'), Math.cos(a) * (ORBIT + 24 / scale), Math.sin(a) * (ORBIT + 24 / scale), scale, '9px "JetBrains Mono", monospace', rgba(HUD, 0.4))
-    }
-    screenText(ctx, '// EXTERNAL SOURCES — REAL WORLD', 0, -ORBIT - 46 / scale, scale, '600 11px "Chakra Petch", sans-serif', rgba(HUD, 0.6))
+    ctx.strokeStyle = rgba(HUD, 0.16); ctx.setLineDash([2 / scale, 6 / scale])
+    ctx.beginPath(); ctx.arc(0, 0, ORBIT, 0, Math.PI * 2); ctx.stroke(); ctx.setLineDash([])
+    screenText(ctx, 'Real-world sources', 0, -ORBIT - 26 / scale, scale, '500 12px Sora, sans-serif', rgba(HUD, 0.55))
     ctx.restore()
   }, [])
 
@@ -156,22 +134,22 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       shape(ctx, n.kind, n.x, n.y, r)
       ctx.fillStyle = rgba(k.color, n.kind === 'theory' ? 0.08 : 0.16); ctx.fill()
       if (n.kind === 'theory') ctx.setLineDash([1.5 / scale, 1.5 / scale])
-      ctx.shadowColor = k.color; ctx.shadowBlur = lit ? 14 : 6
+      ctx.shadowColor = k.color; ctx.shadowBlur = lit ? 12 : 4
       ctx.strokeStyle = k.color; ctx.lineWidth = (lit ? 1.8 : 1.2) / Math.sqrt(scale); ctx.stroke()
       ctx.shadowBlur = 0; ctx.setLineDash([])
       if (n.kind !== 'theory') { ctx.fillStyle = k.color; ctx.beginPath(); ctx.arc(n.x, n.y, Math.max(0.8, r * 0.3), 0, Math.PI * 2); ctx.fill() }
-      else { ctx.fillStyle = k.color; ctx.font = `700 ${r * 1.3}px "Chakra Petch", sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('?', n.x, n.y + r * 0.05) }
+      else { ctx.fillStyle = k.color; ctx.font = `600 ${r * 1.3}px Sora, sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText('?', n.x, n.y + r * 0.05) }
     }
-    if (isSel) reticle(ctx, n.x, n.y, r, t, scale, HUD)
+    if (isSel) halo(ctx, n.x, n.y, r, t, scale, k.color)
 
     const big = (n.degree || 0) > 25 || n.kind === 'realworld' || n.kind === 'place'
     if (lit || neigh.has(n.id) || scale > 1.7 || (big && scale > 0.75)) {
       ctx.save(); ctx.translate(n.x, n.y + r + 5 / scale); ctx.scale(1 / scale, 1 / scale)
       ctx.textAlign = 'center'; ctx.textBaseline = 'top'
-      const label = n.id.toUpperCase()
-      ctx.font = `${isSel ? 700 : 600} ${isSel ? 12.5 : 10.5}px "Chakra Petch", sans-serif`
+      const label = n.id
+      ctx.font = `${isSel ? 600 : 500} ${isSel ? 13 : 11}px Manrope, sans-serif`
       ctx.lineWidth = 3; ctx.strokeStyle = BG; ctx.strokeText(label, 0, 0)
-      ctx.fillStyle = isSel ? HUD : lit ? WHITE : rgba(WHITE, 0.78); ctx.fillText(label, 0, 0)
+      ctx.fillStyle = isSel ? WHITE : lit ? WHITE : rgba(WHITE, 0.78); ctx.fillText(label, 0, 0)
       if (n.zh && (lit || scale > 2.3)) {
         ctx.font = '500 10.5px "Noto Sans SC", sans-serif'; ctx.fillStyle = rgba(k.color, 0.95)
         ctx.strokeText(n.zh, 0, 14); ctx.fillText(n.zh, 0, 14)
@@ -191,7 +169,7 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
       onRenderFramePre={(ctx, scale) => drawBackdrop(ctx, scale)}
       nodeCanvasObject={drawNode}
       nodePointerAreaPaint={(n, c, ctx) => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(n.x, n.y, radius(n) + 3, 0, Math.PI * 2); ctx.fill() }}
-      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, selected || focusLink === l ? 0.85 : l.vis === 'cotag' ? 0.12 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24) : 'rgba(70,240,224,0.03)')}
+      linkColor={(l) => (active(l) ? rgba(EDGE[l.vis].color, selected || focusLink === l ? 0.85 : l.vis === 'cotag' ? 0.12 : l.vis === 'inspired' || l.vis === 'parallel' ? 0.5 : 0.24) : 'rgba(255,255,255,0.025)')}
       linkWidth={(l) => (active(l) ? 0.4 + Math.log2(1 + l.score) * (selected ? 0.4 : 0.18) : 0.2)}
       linkLineDash={(l) => EDGE[l.vis].dash}
       linkCurvature={(l) => (l.vis === 'inspired' || l.vis === 'parallel' ? 0.18 : 0)}
