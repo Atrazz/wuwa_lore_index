@@ -26,6 +26,9 @@ export default function About({ meta, onClose, onExample }) {
           <dd>Real events and places that big moments in the game resemble, like the Resonator War and the Russian or American civil wars. These are our comparisons, not stated by any source: every matching point quotes the wiki for the game and Wikipedia for history, and each lists what doesn’t fit. Rated <b>strong</b>, <b>moderate</b> or <b>loose</b>.</dd>
           <dt>Relationships</dt>
           <dd>Each pair of characters gets a relation and one line of context, written from their own quotes, voice lines and conversations (<b>From the game text</b>). Pairs that only appear in the same quests get a line read from their sides and affiliations (<b>Inferred</b>). The small tag says how much evidence there is, from “Crossed paths” to “Family”.</dd>
+          <dt>Game-text mentions</dt>
+          <dd>World NPC dialogue, character profiles, quest passages, and readable documents add evidence beyond the wiki. Identified speakers can have a directed mention of another character. A passage naming two entries adds a Game text reference, without claiming they met. World NPC names require an exact English–Chinese match in the cached game text and at least two source passages. Narration and anonymous voices do not become named characters.</dd>
+          {meta.textSearch && <><dt>Text-search coverage</dt><dd>{meta.textSearch.searcherPassages} passages from {meta.textSearch.searches} browser searches, using the searcher’s version {meta.textSearch.version} dataset. Retrieved {meta.textSearch.retrieved}. {meta.textSearch.newNPCs} additional world NPCs; {meta.textSearch.coveredEntries} entries have game-text evidence. Searches are bounded: {meta.textSearch.truncatedSearches} have more results than were collected{meta.textSearch.failedSearches ? `; ${meta.textSearch.failedSearches} searches failed` : ''}. This is a source snapshot, not an exhaustive transcript archive.</dd></>}
           <dt>Theories</dt>
           <dd>Fan theories are off by default (turn them on under Entries) and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
           <dt>Grain of salt</dt>
@@ -37,6 +40,7 @@ export default function About({ meta, onClose, onExample }) {
             <a href="https://wutheringwaves.fandom.com/" target="_blank" rel="noreferrer">Fandom wiki</a> ({meta.counts.fandomPages} pages) ·{' '}
             <a href="https://wutheringwaves.notion.site/Wuthering-Waves-Lore-Dataset-91344f91cb8b4adca6455470f823dd12" target="_blank" rel="noreferrer">Solaris Archives lore dataset</a> ({meta.counts.communityEntries} entries) ·{' '}
             game text via <a href="https://github.com/Dimbreath/WutheringData" target="_blank" rel="noreferrer">Dimbreath/WutheringData</a> ({meta.counts.documents} documents, up to March 2026) ·{' '}
+            <a href="https://mc.yakitahome.com/search" target="_blank" rel="noreferrer">WuWa Text Searcher · Yakitahome</a> (NPC dialogue, profiles, and text references) ·{' '}
             <a href="https://www.gamekee.com/mc/624299.html" target="_blank" rel="noreferrer">GameKee 世界观文化考据</a> · Wikipedia. Updated {meta.generated}.
           </dd>
         </dl>

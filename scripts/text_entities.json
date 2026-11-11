@@ -1,0 +1,45 @@
+[
+  {
+    "id": "Garden of Bells",
+    "kind": "place",
+    "zh": "鸣钟园",
+    "summary": "A memorial garden established in AL155 for those who died defending human civilization. Its background notice credits Jiyan with tending the flowers and Verina with cultivating the seeds.",
+    "textKeys": ["InfoDisplay_11010105_Text"]
+  },
+  {
+    "id": "Haven of Sprouts",
+    "kind": "place",
+    "summary": "The place where Chisa tutored Encore in mathematics, according to the Honami quest summary. That summary suggests the tutoring may explain Encore's renewed interest in homework.",
+    "textKeys": ["Main_Honami_2_8_2_51_16"]
+  },
+  {
+    "id": "Asphodel Barrens",
+    "kind": "place",
+    "summary": "A historic battlefield of conflicts between Gladiators and Dark Tide creations. Augusta and Avidius pursue their joint Corrosaurus hunt there during the Dark Tide campaign.",
+    "textKeys": ["Main_Linaxita_2_9_320_1"]
+  },
+  {
+    "id": "Murmurstown",
+    "kind": "place",
+    "summary": "A settlement Augusta orders Avidius to defend with Anchor Stones during the Dark Tide campaign. A later quest summary places Cristoforo there after finding Avidius's lost Holmleaf Medal.",
+    "textKeys": ["Main_Linaxita_2_9_375_1", "Main_Linaxita_2_9_582_1"]
+  },
+  {
+    "id": "Tempest Cliffs",
+    "kind": "place",
+    "summary": "The location reached under Avidius's escort before Augusta assembles the hunting party and orders the campaign to begin.",
+    "textKeys": ["Main_Linaxita_2_9_40_1"]
+  },
+  {
+    "id": "Salotto Open Air Gallery",
+    "kind": "place",
+    "summary": "A destination Fuling wanted to visit on her travels with Wuli. Wuli mentions the gallery alongside her wish to paint the sunset in Ragunna City.",
+    "textKeys": ["LNXTSJZL_2_8"]
+  },
+  {
+    "id": "Rabelle College",
+    "kind": "faction",
+    "summary": "A college whose curriculum reform and continued funding are discussed by Reilynn. The NPC attributes the proposal to President Lucilla and describes the Etheric Sea as its future challenge.",
+    "textKeys": ["34NPCTHST_7_4", "34NPCTHST_7_9"]
+  }
+]

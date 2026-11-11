@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { KINDS, EDGES } from '../lib/kinds'
 import Glyph from './Glyph'
@@ -28,7 +28,9 @@ function Menu({ label, count, children }) {
   )
 }
 
-export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, nodeKinds, toggleNode, onAbout, visible }) {
+const GROUPINGS = [['none', 'None', 'Free layout'], ['kind', 'Type', 'Concepts, places, factions, characters…'], ['region', 'Region', 'Huanglong, Rinascita, Lahai-Roi… with Across Solaris in the middle']]
+
+export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, nodeKinds, toggleNode, onAbout, visible, groupBy, setGroupBy, lite, toggleLite }) {
   const [q, setQ] = useState('')
   const [idx, setIdx] = useState(0)
   const box = useRef()
@@ -81,6 +83,14 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
       </div>
 
       <nav className="tools">
+        <Menu label="Group by" count={GROUPINGS.find((g) => g[0] === groupBy)[1]}>
+          {GROUPINGS.map(([k, label, note]) => (
+            <label key={k} className={'opt grp' + (groupBy === k ? ' on' : '')} title={note}>
+              <input type="radio" name="groupby" checked={groupBy === k} onChange={() => setGroupBy(k)} />
+              <span className="grp-text"><span>{label}</span><small>{note}</small></span>
+            </label>
+          ))}
+        </Menu>
         <Menu label="Links" count={`${EDGES.filter((e) => e.key !== 'theorized' && edgeKinds.has(e.key)).length}/${EDGES.length - 1}`}>
           {EDGES.filter((e) => e.key !== 'theorized').map((e) => (
             <label key={e.key} className={'opt' + (edgeKinds.has(e.key) ? ' on' : '')} title={e.rule} style={{ '--c': e.color }}>
@@ -89,6 +99,9 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
             </label>
           ))}
         </Menu>
+        <button className={'lite-btn' + (lite ? ' on' : '')} onClick={toggleLite} title={lite ? 'Performance mode is on: no glows or animations, busiest links hidden. Click for the full experience.' : 'Performance mode for phones and slower devices'}>
+          <i />Performance
+        </button>
         <button className="about-btn" onClick={onAbout}>Method</button>
       </nav>
 
@@ -97,10 +110,13 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
       <aside className="entries" aria-label="Entries shown on the map">
         <div className="entries-head">Entries<b>{nodeKinds.size}/{Object.keys(KINDS).length}</b></div>
         {Object.entries(KINDS).map(([k, v]) => (
-          <label key={k} className={'ent' + (nodeKinds.has(k) ? ' on' : '')} title={v.rule} style={{ '--c': v.color }}>
+          <Fragment key={k}>
+          {k === 'character' && <div className="entries-group">Character</div>}
+          <label className={'ent' + (v.group ? ' ent-child' : '') + (nodeKinds.has(k) ? ' on' : '')} title={v.rule} style={{ '--c': v.color }}>
             <input type="checkbox" checked={nodeKinds.has(k)} onChange={() => toggleNode(k)} />
             <Glyph kind={k} size={13} /><span>{v.label}</span><b>{kindCount[k]}</b>
           </label>
+          </Fragment>
         ))}
       </aside>
     </motion.header>

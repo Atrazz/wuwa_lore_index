@@ -15,7 +15,12 @@ Edge kinds (strongest evidence first):
   bond        character relationships from WuWa Interact (family, shared quests, voice lines, mentions)
   defined     one wiki page links to the other in its own text
 """
-import collections, datetime, json, math, os, re, unicodedata
+import collections, datetime, json, math, os, re, unicodedata, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from text_evidence import enrich
+from character_types import character_kind
+from concept_summaries import add_concept_summaries
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RAW = os.path.join(HERE, "raw")
@@ -58,6 +63,7 @@ def _tpl(inner):
 
 
 def clean(t):
+    t = re.sub(r"__[A-Z_]+__", "", t)
     t = re.sub(r"<ref[^>]*/>|<ref[^>]*>.*?</ref>|<!--.*?-->", "", t, flags=re.S)
     for _ in range(6):
         t2 = re.sub(r"\{\{([^{}]*)\}\}", lambda m: _tpl(m.group(1)), t)
@@ -178,9 +184,9 @@ def alias(node, name):
 
 def find(name):
     k = norm(name)
-    if k in by_key: return nodes[by_key[k]]
+    if k in by_key: return nodes.get(by_key[k])  # None once an entry was filtered out
     k2 = norm(STRIP_PREFIX.sub("", name))
-    return nodes[by_key[k2]] if k2 in by_key else None
+    return nodes.get(by_key[k2]) if k2 in by_key else None
 
 
 KIND_RANK = {"character": 0, "faction": 1, "place": 2, "being": 3, "concept": 4, "realworld": 5, "theory": 6}
@@ -224,6 +230,18 @@ for t in G.get("term", []):
 for t in ("Sentinel", "Jué", "Shorekeeper", "Imperator", "Lorelei", "Threnodian", "Tacet Discord"):
     if t in P and not find(t):
         n = add_node(t, "being", summary=lead(P[t])); page_of[n["id"]] = t
+
+# Reviewed alternate names resolve before community tags or edges create another
+# entry. Honami City is the historical name of Chronorift Metropolis; Neo Honami
+# City is its separately documented surviving portion, not an alias.
+ENTITY_ALIASES = json.load(open(os.path.join(HERE, "entity_aliases.json")))
+for alternate, canonical in ENTITY_ALIASES.items():
+    target = find(canonical)
+    if not target:
+        wt = P.get(canonical, "")
+        target = add_node(canonical, "concept", summary=lead(wt))
+        if wt: page_of[target["id"]] = canonical
+    alias(target, alternate)
 
 PENDING = []  # (a, b, kind, evidence) for edges made before edge() exists
 # Every character from the relationship graph, NPCs included. Existing concept nodes for them
@@ -331,15 +349,29 @@ for tag, cnt in tag_count.items():
     n["tagCount"] = n.get("tagCount", 0) + cnt
     tag_node[tag] = n["id"]
 
+# Existing place and faction pages can be introduced through community tags when
+# their wiki subtype (such as Area or Point of Interest) was excluded above.
+# Restore their actual entity type and introduction instead of treating them as
+# unexplained concepts.
+for n in list(nodes.values()):
+    if n["kind"] != "concept": continue
+    wt = P.get(n["id"], "")
+    box = "Location Infobox" if re.search(r"\{\{\s*Location Infobox\b", wt) else "Faction Infobox" if re.search(r"\{\{\s*Faction Infobox\b", wt) else None
+    if not box: continue
+    n["kind"] = "place" if box == "Location Infobox" else "faction"
+    if not n.get("summary"): n["summary"] = lead(wt)
+    n["nation"] = clean(infobox(wt, box).get("nation", ""))
+    page_of[n["id"]] = n["id"]
+
 # ---------------------------------------------------------------- edges
 edges = {}
 
 
-def edge(a, b, kind, **ev):
+def edge(a, b, edge_kind, **ev):
     if not a or not b or a == b: return
     key = tuple(sorted((a, b)))
     e = edges.setdefault(key, dict(source=key[0], target=key[1], kinds={}))
-    lst = e["kinds"].setdefault(kind, [])
+    lst = e["kinds"].setdefault(edge_kind, [])
     if ev and ev not in lst and len(lst) < 8: lst.append(ev)
     elif not ev and not lst: lst.append({})
 
@@ -474,7 +506,11 @@ for c in CURATED:
 for title, refs in rw_sources.items():
     info = WP.get(title, {})
     if info.get("missing"): continue
-    rw = add_node(info.get("title") or title, "realworld", summary=info.get("extract", ""), wiki=info.get("url") or "https://en.wikipedia.org/wiki/" + title.replace(" ", "_"),
+    rw_name = info.get("title") or title
+    clash = find(rw_name)
+    if clash and clash["kind"] != "realworld":  # same name as the game term (Abraxas, Overclocking, Chimera)
+        rw_name = re.sub(r"\s*\((.*?)\)", r" – \1", rw_name) if "(" in rw_name else rw_name + " – real world"
+    rw = add_node(rw_name, "realworld", summary=info.get("extract", ""), wiki=info.get("url") or "https://en.wikipedia.org/wiki/" + title.replace(" ", "_"),
                   zh=info.get("zh", ""), wikiZh=info.get("zhUrl", ""), category=info.get("description", ""), image=info.get("thumb", ""))
     if not rw: continue
     for r in refs:
@@ -518,7 +554,7 @@ for n in nodes.values():
             cands.pop("", None)
             if cands:
                 zh = re.sub(r"^【|】$", "", cands.most_common(1)[0][0]); break
-    n["zh"] = zh
+    n["zh"] = zh or n.get("zh", "")
     if lit: n["lit"] = lit
     if wt:
         n["page"] = WIKI + page.replace(" ", "_")
@@ -541,6 +577,16 @@ for n in nodes.values():
             i = m.start()
             hits.append(dict(title=title, zh=zh, text=("…" if i > 140 else "") + text[max(0, i - 140): i + 220].replace("\n", " ") + "…"))
     if hits: n["documents"] = hits[:6]; n["documentCount"] = len(hits)
+
+# Game-text passages retain their own provenance and evidence type. Mentions are
+# distinct from wiki definitions and do not establish meetings or affiliations.
+TEXT_FILE = os.path.join(HERE, "text_searcher.json")
+TEXT_CONTEXT_FILE = os.path.join(HERE, "text_context.json")
+text_source = json.load(open(TEXT_FILE)) if os.path.exists(TEXT_FILE) else {}
+text_reviews = json.load(open(TEXT_CONTEXT_FILE)) if os.path.exists(TEXT_CONTEXT_FILE) else {}
+TEXT_ENTITIES_FILE = os.path.join(HERE, "text_entities.json")
+text_entities = json.load(open(TEXT_ENTITIES_FILE)) if os.path.exists(TEXT_ENTITIES_FILE) else []
+text_counts = enrich(nodes, edges, add_node, find, edge, text_source, text_reviews, DM_EN, DM_ZH, DM_DOCS, text_entities, ENTITY_ALIASES)
 
 # community entries per node
 by_node = collections.defaultdict(list)
@@ -603,13 +649,59 @@ for t in theories:
         edge(n["id"], c, "theorized", theory=n["id"], concept=c, source=t["source"], author=t["author"], url=t["url"])
         nodes[c].setdefault("theories", []).append(n["id"])
 
+# ---------------------------------------------------------------- general bond types
+# Specific relation labels ("Magistrate & guard", "Schemer & target"…) are shown as one of a few general types
+# (scripts/bond_types.json); the one-line context keeps the specifics.
+BOND_TYPES = {r: cat for cat, rels in json.load(open(os.path.join(HERE, "bond_types.json"))).items() if not cat.startswith("_") for r in rels} \
+    if os.path.exists(os.path.join(HERE, "bond_types.json")) else {}
+_untyped = set()
+for e in edges.values():
+    for b in e["kinds"].get("bond", []):
+        if b.get("rel") in BOND_TYPES: b["rel"] = BOND_TYPES[b["rel"]]
+        elif b.get("rel") and b["rel"] != "Mentioned in game text" and b.get("tier") != "scene": _untyped.add(b["rel"])  # scene-only bonds are removed below
+if _untyped: print("bond_types.json: no general type for", sorted(_untyped))
+
+# ---------------------------------------------------------------- concept filter
+# scripts/concept_filter.json: concept entries that are only ordinary words, game modes, puzzle items or one-off
+# names are removed; duplicates are folded into the entry they name (their links move with them).
+FILTER = json.load(open(os.path.join(HERE, "concept_filter.json"))) if os.path.exists(os.path.join(HERE, "concept_filter.json")) else {}
+
+
+def drop_node(nid):
+    for key in [k for k in edges if nid in k]: edges.pop(key)
+    nodes.pop(nid, None)
+
+
+for old, new in FILTER.get("merge", {}).items():
+    o, t = nodes.get(old), find(new)
+    if not o or not t or o is t: continue
+    for key in [k for k in edges if old in k]:
+        e = edges.pop(key)
+        other = key[1] if key[0] == old else key[0]
+        if other == t["id"]: continue
+        for kind, evs in e["kinds"].items():
+            for ev in evs: edge(t["id"], other, kind, **ev)
+    nodes.pop(old)
+    by_key[norm(old)] = t["id"]
+    if old not in t["aliases"]: t["aliases"].append(old)
+for name in FILTER.get("drop", []):
+    if nodes.get(name, {}).get("kind") == "concept": drop_node(name)
+
+# Bonds that only share quests ("Crossed paths") aren't shown. Pairs promoted by a reviewed game-text note
+# (text_context.json) are no longer "scene" and stay; other link kinds between the pair stay too.
+for key in list(edges):
+    e = edges[key]
+    if any(b.get("tier") == "scene" for b in e["kinds"].get("bond", [])):
+        e["kinds"].pop("bond")
+        if not e["kinds"]: edges.pop(key)
+
 # ---------------------------------------------------------------- prune and score
-W = dict(part_of=8, role=8, inspired=10, parallel=6, bond=5, defined=4, theorized=2)
+W = dict(part_of=8, role=8, inspired=10, parallel=6, bond=5, text=3, defined=4, theorized=2)
 out_edges = []
 for e in edges.values():
     score = sum(W[k] * min(len(v), 3) for k, v in e["kinds"].items())
     e["score"] = round(score, 1)
-    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "bond", "defined", "theorized"].index(k))
+    e["strongest"] = min(e["kinds"], key=lambda k: ["inspired", "parallel", "part_of", "role", "bond", "text", "defined", "theorized"].index(k))
     out_edges.append(e)
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1
@@ -625,23 +717,96 @@ out_edges = [e for e in out_edges if e["source"] in keep and e["target"] in keep
 deg = collections.Counter()
 for e in out_edges: deg[e["source"]] += 1; deg[e["target"]] += 1
 out_nodes = []
-for nid in keep:
+for nid in sorted(keep):
     if not deg[nid]: continue
     n = nodes[nid]
     n["degree"] = deg[nid]
     if n.get("theories"): n["theories"] = [t for t in n["theories"] if t in keep]
     out_nodes.append(n)
 
+SUMMARY_FILE = os.path.join(HERE, "concept_summaries.json")
+reviewed_summaries = json.load(open(SUMMARY_FILE)) if os.path.exists(SUMMARY_FILE) else {}
+canonical_summaries = {}
+FILTERED = set(FILTER.get("drop", []))
+for name, review in reviewed_summaries.items():
+    target = find(name)
+    if not target and (name in FILTERED or name.rstrip("s") in FILTERED): continue  # term removed by concept_filter.json
+    canonical_summaries.setdefault(target["id"] if target else name, review)
+add_concept_summaries(out_nodes, canonical_summaries)
+# Written overviews replace quoted mentions (never reviewed summaries); the citation stays for the "Sources" link.
+OVERVIEWS = json.load(open(os.path.join(HERE, "concept_overviews.json"))) if os.path.exists(os.path.join(HERE, "concept_overviews.json")) else {}
+for n in out_nodes:
+    if n["id"] in OVERVIEWS and n.get("summaryMode") != "reviewed" and (n.get("summaryMode") == "excerpt" or not n.get("summary")):
+        n.update(summary=OVERVIEWS[n["id"]], summaryMode="overview", summarySource="Overview")
+
+# ---------------------------------------------------------------- region (for "Group by region")
+# Own nation first, then a place's parent, then the regions of linked entries; entries spread across several
+# regions (the Lament, Resonators, the Fractsidus…) go to "Across Solaris".
+REGION_OF = {"Huanglong": "Huanglong", "Jinzhou": "Huanglong", "Mengzhou": "Huanglong", "Rinascita": "Rinascita",
+             "Ragunna": "Rinascita", "Septimont": "Rinascita", "Lahai-Roi": "Lahai-Roi", "Roya Frostlands": "Lahai-Roi",
+             "The Black Shores": "Black Shores", "Black Shores": "Black Shores", "New Federation": "New Federation",
+             "Ashinohara": "Ashinohara", "Chronorift Metropolis": "Ashinohara", "Somnoire": "Somnoire"}
+by_id = {n["id"]: n for n in out_nodes}
+for nid, reg in list(REGION_OF.items()):
+    if nid in by_id: by_id[nid]["region"] = reg
+for n in out_nodes:
+    if not n.get("region") and REGION_OF.get(n.get("nation", "")): n["region"] = REGION_OF[n["nation"]]
+nbrs = collections.defaultdict(list)
+STRONG = {"part_of": 4, "role": 3, "bond": 2, "defined": 1, "text": 1}
+for e in out_edges:
+    w = max((STRONG.get(k, 0) for k in e["kinds"]), default=0)
+    if w: nbrs[e["source"]].append((e["target"], w)); nbrs[e["target"]].append((e["source"], w))
+for _ in range(3):  # spread outwards from entries that know their region
+    for n in out_nodes:
+        if n.get("region") or n["kind"] == "realworld": continue
+        if n["kind"] == "place":
+            parent = next((o for o, w in nbrs[n["id"]] if w == 4 and by_id[o].get("region")), None)
+            if parent: n["region"] = by_id[parent]["region"]; continue
+        votes = collections.Counter()
+        for o, w in nbrs[n["id"]]:
+            r = by_id[o].get("region")
+            if r and r != "Across Solaris": votes[r] += w
+        if votes:
+            total = sum(votes.values())
+            top, cnt = votes.most_common(1)[0]
+            spread = sum(1 for v in votes.values() if v / total >= 0.12)
+            if spread >= 3: n["region"] = "Across Solaris"  # substantial ties to three or more regions
+            elif cnt / total >= 0.55 and cnt >= 2: n["region"] = top
+for n in out_nodes:
+    if n["kind"] != "realworld" and not n.get("region"): n["region"] = "Across Solaris"
+
 PORTRAITS = os.path.join(HERE, "..", "public", "portraits")
+unique_npcs = set(json.load(open(os.path.join(HERE, "character_types.json")))["uniqueNPCs"])
 for n in out_nodes:
     if n["kind"] != "character": continue
     slug = re.sub(r"[^a-z0-9]+", "-", n["id"].lower()).strip("-")
     for ext in (".png", ".jpg"):
         if os.path.exists(os.path.join(PORTRAITS, slug + ext)): n["portrait"] = "portraits/" + slug + ext
+    n["kind"] = character_kind(n, unique_npcs)
 
+# Keep passages out of the initial graph bundle, and store each source only once.
+evidence_file = {}
+for n in out_nodes:
+    if n.get("textEvidence"):
+        evidence_file.update((r["id"], dict(r, entities=[nid for nid in r["entities"] if nid in keep],
+                                         speaker=r.get("speaker", "") if r.get("speaker") in keep else "")) for r in n["textEvidence"])
+        n["textEvidence"] = [r["id"] for r in n["textEvidence"]]
+for e in out_edges:
+    if e["kinds"].get("text"):
+        e["kinds"]["text"] = [r["id"] for r in e["kinds"]["text"]]
+    for b in e["kinds"].get("bond", []):
+        if b.get("textEvidence"):
+            # quest dialogue already appears under Conversations; world dialogue and other sources stay
+            b["textEvidence"] = [r["id"] for r in b["textEvidence"] if r.get("kind") != "Dialogue"]
+            if not b["textEvidence"]: del b["textEvidence"]
+json.dump(evidence_file, open(os.path.join(HERE, "..", "public", "game-text.json"), "w"), ensure_ascii=False, separators=(",", ":"))
+text_counts.update(passages=len(evidence_file), searcherPassages=sum(k.startswith("yakita:") for k in evidence_file),
+                   coveredEntries=sum(bool(n.get("textEvidence")) for n in out_nodes),
+                   newNPCs=sum(bool(n.get("textSearcherNPC")) for n in out_nodes))
+out_edges.sort(key=lambda e: (e["source"], e["target"]))
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 json.dump(dict(nodes=out_nodes, links=out_edges, generated=datetime.date.today().isoformat(),
-               counts=dict(fandomPages=len(P), communityEntries=len(NOTION), documents=len(docs))),
+               counts=dict(fandomPages=len(P), communityEntries=len(NOTION), documents=len(docs)), textSearch=text_counts),
           open(OUT, "w"), ensure_ascii=False)
 kc = collections.Counter(n["kind"] for n in out_nodes)
 ec = collections.Counter(k for e in out_edges for k in e["kinds"])

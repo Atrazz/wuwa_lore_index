@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Glyph from './Glyph'
 import ReadMore from './ReadMore'
 import ParallelCard from './ParallelCard'
 import WikiLine from './WikiLine'
+import TextEvidence from './TextEvidence'
 import { BondItem, bondRank, Avatar } from './Bond'
 import { KINDS, EDGE, id, other } from '../lib/kinds'
 
@@ -14,11 +15,12 @@ export const panelAnim = {
   exit: { opacity: 0, x: -10, transition: { duration: 0.18, ease: 'easeIn' } },
 }
 
-function Section({ title, count, color, children, open: open0 = true }) {
-  const [open, setOpen] = useState(open0)
+function Section({ title, count, color, children, open: open0 = true, expanded, onExpandedChange, sectionRef }) {
+  const [internalOpen, setOpen] = useState(open0)
+  const open = expanded ?? internalOpen
   return (
-    <section className="sec" style={{ '--c': color || 'var(--gold)' }}>
-      <button className="sec-head" onClick={() => setOpen(!open)}>
+    <section ref={sectionRef} className="sec" style={{ '--c': color || 'var(--gold)' }}>
+      <button className="sec-head" aria-expanded={open} onClick={() => onExpandedChange ? onExpandedChange(!open) : setOpen(!open)}>
         <span>{title}</span>{count != null && <b>{count}</b>}<i className={open ? 'open' : ''}>⌃</i>
       </button>
       <AnimatePresence initial={false}>
@@ -46,7 +48,7 @@ function Chip({ node, onPick, extra }) {
   )
 }
 
-export default function NodePanel({ node, index, links, nodes, onOpen, onPick, onClose }) {
+export default function NodePanel({ node, index, links, nodes, onOpen, onPick, onClose, onPeek }) {
   const k = KINDS[node.kind]
   const mine = useMemo(() => links.filter((l) => id(l.source) === node.id || id(l.target) === node.id), [links, node])
   const by = (kind) => mine.filter((l) => l.kinds[kind])
@@ -59,12 +61,20 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
   const hasLine = (l) => l.kinds.defined.some((e) => e.text)
   const defined = by('defined').sort((a, b) => hasLine(b) - hasLine(a) || b.score - a.score)
   const [moreDef, setMoreDef] = useState(false)
+  const [mentionsOpen, setMentionsOpen] = useState(false)
+  const mentionsRef = useRef()
+  const mentions = useMemo(() => {
+    const records = node.textEvidence || []
+    const primary = node.summaryCitation?.id
+    return primary && records.includes(primary) ? [primary, ...records.filter((r) => r !== primary)] : records
+  }, [node])
   // etymology lines already shown as a real-world card aren't repeated
   const shownRefs = new Set(inspired.flatMap((l) => l.kinds.inspired.map((e) => e.text)))
   const etymology = (node.etymology || []).filter((e) => !shownRefs.has(e))
 
   return (
     <motion.aside className="panel" {...panelAnim} style={{ '--k': k.color }}>
+      <button className="peek-btn" onClick={onPeek}>See connections</button>
       <button className="close" onClick={onClose} aria-label="Close">✕</button>
       <header className="p-head">
         <div className="p-file">
@@ -122,7 +132,11 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
         {node.summary && (
           <p className="p-summary">
             {node.summary}
-            {node.kind !== 'theory' && <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>}
+            {node.summaryCitation ? <button className="src" title={`${node.summaryCitation.source} · ${node.summaryCitation.textKey}`} onClick={() => {
+              setMentionsOpen(true)
+              requestAnimationFrame(() => mentionsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+            }}>{node.summaryMode === 'overview' ? ' Sources ↓' : ' Game text ↓'}</button> :
+              node.kind !== 'theory' && node.summarySource !== 'Game text' && node.summaryMode !== 'overview' && (node.wiki || node.page) && <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>}
           </p>
         )}
 
@@ -180,6 +194,12 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
               <div key={id(l.source) + id(l.target)} className="kv"><span>{l.kinds.role.map((r) => r.of === node.id ? r.role : `${r.role} of`).join(', ')}</span>
                 <div><Chip node={nodes[other(l, node.id)]} onPick={onPick} /></div></div>
             ))}
+          </Section>
+        )}
+
+        {node.textEvidence?.length > 0 && (
+          <Section title="In-game mentions" count={node.textEvidenceCount} color={EDGE.text.color} expanded={mentionsOpen} onExpandedChange={setMentionsOpen} sectionRef={mentionsRef}>
+            <TextEvidence records={mentions} onPick={onPick} />
           </Section>
         )}
 

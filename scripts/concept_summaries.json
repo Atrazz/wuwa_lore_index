@@ -1,0 +1,130 @@
+{
+  "Anchor": {
+    "summary": "In Black Shores exploration records, Space Anchors stabilize the boundary between the Tethys System's data space and physical reality. They act as firewalls; failures can let simulated space or objects intrude into the real world.",
+    "textKeys": ["AreaReportContent_Text25"]
+  },
+  "Artificial Resonance Object": {
+    "summary": "An experimental manufactured Resonance Object described in the Mt. Firmament research records. Researchers name their developing device the Chronosorter while investigating the relationship between Subject C-001 and the Mianloong Chamber.",
+    "textKeys": ["InfoDisplay_102801016_Text"]
+  },
+  "Artificial Sun": {
+    "summary": "The Helios research project, documented through staged stability, launch, and calibration tests. Its monitoring log names Mornye and Warren as phase leads and records anomalous frequency behavior despite otherwise normal energy and Voidmatter systems.",
+    "textKeys": ["InfoDisplay_30010001_Text"]
+  },
+  "Astral Modulator": {
+    "summary": "A title associated with the former highest authority at the Black Shores. The Shorekeeper's story recalls a period shortly after the Astral Modulator's absence, when she could still visit the surface.",
+    "textKeys": ["FavorStory_150503_Content"]
+  },
+  "Avinoleum Theological Seminary": {
+    "summary": "A mysterious site investigated by the Black Shores. KU-Cage's dialogue identifies it as a place where the powers of a Threnodian and a Sentinel once clashed.",
+    "textKeys": ["BBTTC_8_1"]
+  },
+  "Blessed Maiden": {
+    "summary": "The title borne by Fleurdelys in the Order of the Deep's religious story. Cristoforo's unfinished play recounts her life up to her martyrdom, while an Avinoleum account describes the Sentinel-blessed girl's encounter with her Echo.",
+    "textKeys": ["ItemInfo_70140029_BgDescription", "InfoDisplay_22010103_Text"]
+  },
+  "Blightcloud": {
+    "summary": "The lingering cloud over the Sanguis Plateaus left by Rinascita's first Dark Tide outbreak. Accumulating Remnant Energy sustains it and the creatures below; the Earthrend Wedge's field suppresses its spread toward Septimont's populated areas.",
+    "textKeys": ["Term750001_Desc", "Term750003_Desc"]
+  },
+  "Bloom Bearer": {
+    "summary": "A Black Shores role associated with field assignments and access to the Tethys System's information. Camellya's story describes passing a test to become an official Bloom Bearer; field reports document their investigations abroad.",
+    "textKeys": ["FavorStory_160302_Content", "InfoDisplay_311000009_Text"]
+  },
+  "Capitoline Hill": {
+    "summary": "The hill on which Septimont's capital stands. The city's loading-tip description links its elevated stone-built Gryphon's Fortress to the Septimontians' retreat from the lowlands' Dark Tide and their pursuit of martial glory.",
+    "textKeys": ["LoadingTipsText_200601_TipsText"]
+  },
+  "Cathedral of Mercury": {
+    "summary": "A two-tiered holy building in Ragunna City devoted to worship of the Sentinel's statue. The Order of the Deep relocated there after rising clouds submerged its earlier headquarters, the Seminary of the Forgotten.",
+    "textKeys": ["Term850098_Desc", "InfoDisplay_133002013_Text"]
+  },
+  "Chimera": {
+    "summary": "A presence that speaks alongside Galbrena in her voice lines. A Dark Tide quest summary says Chimera shares part of the cost when Galbrena burns her life force and Overclocks to break through an illusion.",
+    "textKeys": ["Main_Rinascita_2_12_64_46", "FavorWord_120820_Content"]
+  },
+  "Chronosorter": {
+    "summary": "An experimental artificial Resonance Object developed during Mt. Firmament's temporal research. A memorandum reports that prototypes function only within the region's time barrier and that one experiment briefly restored time for 1.29 seconds.",
+    "textKeys": ["InfoDisplay_102801016_Text", "InfoDisplay_102801018_Text"]
+  },
+  "Chronosorters": {
+    "summary": "The experimental devices called Chronosorters, developed to affect time within Mt. Firmament's temporal barrier. Research notes describe their limited operating range, a brief restoration of time, and the danger of catastrophic Overclocking during experiments.",
+    "textKeys": ["InfoDisplay_102801018_Text"]
+  },
+  "Earthrend Wedge": {
+    "summary": "A colossal wedge-shaped structure in the lower Sanguis Plateaus, brought down alongside Sentinel Imperator and controlled by it. Activated during the first Dark Tide outbreak, its field restrains the Blightcloud and helps contain the Dark Tide below Septimont.",
+    "textKeys": ["Term750003_Desc"]
+  },
+  "First Resonator": {
+    "summary": "The redacted subject of an old Resonance Evaluation Report. The archive records amnesia, a right-hand Tacet Mark, golden light during Forte use, and a distinctive waveform. Its historical attachments connect this Resonator to the Crownless battle and Jinzhou's founding, without revealing a name.",
+    "textKeys": ["InfoDisplay_310000311_Text"]
+  },
+  "Forte": {
+    "summary": "A character's distinctive resonance power. Youhu's keepsake descriptions show her cryogenic Forte conjuring an ice mask and repairing a jade ring; Buling's story describes intrusive sounds intensifying as her own Forte matures.",
+    "textKeys": ["FavorGoods_110602_Content", "FavorGoods_110603_Content", "FavorGoods_130703_Content"]
+  },
+  "Frequencies": {
+    "summary": "A means of examining and affecting reality on Solaris-3. The modulation entry describes adjusting frequencies to investigate existence, and identifies the Black Shores' tuning of Stellar Matrices as essential to studying the Lament.",
+    "textKeys": ["Term850111_Desc"]
+  },
+  "Grand Architect": {
+    "summary": "A figure who issues orders to Fractsidus Overseers. Quest flashbacks describe Phrolova acting despite those orders, while a later scene shows the Grand Architect contacting Overseers across multiple regions and discussing Hiyuki's fate.",
+    "textKeys": ["Main_Linaxita_2_7_146_15", "Zuoyequnxing_188_16"]
+  },
+  "Mianloong Chamber": {
+    "summary": "The site identified as Subject C-002 in a spectrum-anomaly report. Researchers correlate its presence with the duration of Subject C-001's frequency loss. Quest dialogue also describes a Fractsidus Artificer gravely injured by its defense mechanism.",
+    "textKeys": ["InfoDisplay_102801016_Text", "Chengxiaoshan_main_1_1_288_1"]
+  },
+  "Necrostar": {
+    "summary": "The black hole identified in Black Shores dialogue as the disaster that destroyed the Port City of Guixu. The Shorekeeper's story later recounts correcting Tethys's errors and bringing peace to souls trapped within it.",
+    "textKeys": ["Heihaian_main_1_3_40_24", "FavorStory_150505_Content"]
+  },
+  "Remnant Energy": {
+    "summary": "Energy that can accumulate and shape environmental phenomena. In the Sanguis Plateaus it sustains the Blightcloud; at Nimbus Sanctum, concentrated Remnant Energy forms the mist and clouds of a Sonoro Sphere that exists in the physical world.",
+    "textKeys": ["Term750001_Desc", "InfoDisplay_133002013_Text"]
+  },
+  "Resonance Ability": {
+    "summary": "An individual's distinctive power associated with resonance. The cited entries describe Qiuyuan sensing enemies' locations and mental states through frequencies, and Suoming preserving her fallen subordinates' frequencies inside her lock.",
+    "textKeys": ["Term260003_Desc", "Term852013_Desc"]
+  },
+  "Resonator": {
+    "summary": "An individual whose resonance powers can be evaluated through frequency and waveform examinations. Jianxin's and Taoqi's assessments illustrate how these reports record resonance stability, criticality, and the risk or history of Overclocking.",
+    "textKeys": ["FavorRoleInfo_1405_TalentCertification", "FavorRoleInfo_1601_TalentCertification"]
+  },
+  "Retroact Rain": {
+    "summary": "A phenomenon studied by researchers at Whining Aix's Mire. Their second-phase notes report stalled progress under Professor Heisen and describe removing clocks to maintain the associated Tacet Field's stability.",
+    "textKeys": ["InfoDisplay_101400004_Text"]
+  },
+  "Solistrees": {
+    "summary": "The trees of Bjartr Woods that a Spacetrek Collective report describes as a symbiotic ecological anchor for the Exostrider's Reactor Drive. The report proposes contaminating their roots with Voidmatter to trigger the Drive's defensive response and force its descent.",
+    "textKeys": ["InfoDisplay_30010006_Text"]
+  },
+  "Sonoro Sphere": {
+    "summary": "A space associated with the manifestation or presentation of memories. Black Shores records describe using one to show the past, while a Nimbus Sanctum document identifies that site as a Sonoro Sphere existing in the physical world, with mist formed from Remnant Energy.",
+    "textKeys": ["InfoDisplay_103000007_Text", "InfoDisplay_133002013_Text"]
+  },
+  "Temporal Disruption": {
+    "summary": "In Changli's quest, a temporal anomaly linked to a malfunction of the Sentinel's Temporal Mandate. A research note says the Disruption became inseparable from a Sonoro Sphere, which was sealed into a medium as part of a contingency plan.",
+    "textKeys": ["InfoDisplay_121000004_Text"]
+  },
+  "Temporal Disruptions": {
+    "summary": "The temporal anomalies at the center of Changli's investigation. The cited note links a Temporal Disruption to a malfunctioning Sentinel mandate and an inseparable Sonoro Sphere, explaining why dealing with the Sphere matters to the plan.",
+    "textKeys": ["InfoDisplay_121000004_Text"]
+  },
+  "Terminal": {
+    "summary": "A device used to load and preserve information and to contact control stations. Taoqi's keepsake contains a Terminal data module recording her observations of Jinzhou; mine-safety instructions also tell workers to report through their Terminals.",
+    "textKeys": ["FavorGoods_160102_Content", "InfoDisplay_11040165_Text"]
+  },
+  "Terminals": {
+    "summary": "The personal devices carried on field operations. Calcharo's character story includes checking that his mercenaries' Terminals are online among the safety precautions he repeats before missions.",
+    "textKeys": ["FavorStory_130104_Content"]
+  },
+  "Voidmatter": {
+    "summary": "A hazardous substance or phenomenon monitored throughout Lahai-Roi. Regional reports track its concentration and relate Void Storm intensity to the dissolution of materials. Scholars also connect abnormal Voidmatter transformations with objects entering an unstable state that cannot be observed directly.",
+    "textKeys": ["AreaReportContent_Text87", "AreaReportContent_Text89", "Term750037_Desc"]
+  },
+  "Waveform Graph": {
+    "summary": "A measurement used in Resonator assessments to examine frequency behavior and stability. Jianxin's report describes a stable pattern and minimal Overclocking risk, whereas Mortefi's zigzag fluctuations accompany a history and higher risk of Overclocking.",
+    "textKeys": ["FavorRoleInfo_1405_TalentCertification", "FavorRoleInfo_1204_TalentCertification"]
+  }
+}

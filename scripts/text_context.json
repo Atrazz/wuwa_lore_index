@@ -1,0 +1,87 @@
+{
+  "Aalto|Cartethyia": {
+    "rel": "Black Shores frequency analysis",
+    "ctx": "Aalto explains that the Black Shores cross-checked a missing frequency against both Chimera and Cartethyia's stored samples. His ambient dialogue adds the method behind his role as an analyst.",
+    "textKeys": ["Main_Rinascita_2_12_113_13"]
+  },
+  "Augusta|Avidius": {
+    "rel": "Rivals on the same hunt",
+    "ctx": "Augusta and Avidius cooperate during the Dark Tide campaign while competing for the title of Hero of Heroes. The quest summary frames their joint Corrosaurus hunt as the stakes for a later duel; Augusta also assigns him responsibility for the Anchor Stones.",
+    "textKeys": ["Main_Linaxita_2_9_320_1", "Main_Linaxita_2_9_375_1"]
+  },
+  "Augusta|Lumiel": {
+    "rel": "A citizen's changing assessment",
+    "ctx": "Lumiel initially reports doubts about Augusta's ability to lead Septimont. Later ambient remarks acknowledge that she has proved herself as Hero of Heroes and express hope that more people will understand her. These are Lumiel's assessments of the Ephor.",
+    "textKeys": ["GNNPC_ZDGXZ_5_8", "GNNPC_ZDGXZ_6_1", "GNNPC_ZDGXZ_6_9"]
+  },
+  "Brant|Calcharo": {
+    "rel": "Captive and mercenary in an event",
+    "ctx": "In the Dango event's story, Calcharo is revealed as Elite No. 1 and has captured Brant. Rover negotiates Brant's release and hires Calcharo to settle a debt with Abbowser. The event setting matters when reading this encounter.",
+    "textKeys": ["TZZNQ_41_46"]
+  },
+  "Buling|Chisa": {
+    "rel": "Introduced through Rover",
+    "ctx": "Chisa has heard about Buling from Rover before the two meet. The Honami quest summary explicitly calls this their first meeting, distinguishing it from Chisa's earlier acquaintance with the Shorekeeper during recovery at the Black Shores.",
+    "textKeys": ["Main_Honami_2_8_2_39_37"]
+  },
+  "Buling|Namipon": {
+    "rel": "Welcoming a visitor",
+    "ctx": "After Buling arrives and lifts the mood of the gathering, Namipon leads her inside. The quest summary supplies a specific interaction rather than merely placing the two in the same quest.",
+    "textKeys": ["Main_Honami_2_8_2_39_37"]
+  },
+  "Calcharo|Galbrena": {
+    "rel": "Former working partners",
+    "ctx": "After Calcharo helps Ragunna in battle, Galbrena recalls briefly working with him in the New Federation and says he is easier to get along with than expected. This adds her own assessment of their past working relationship.",
+    "textKeys": ["Main_Rinascita_2_12_7422_10"]
+  },
+  "Cameron|Fenrico": {
+    "rel": "A performer condemns Fenrico",
+    "ctx": "Cameron says the troupe's plays condemn oppression and bloodshed and intends all of Rinascita to learn what Fenrico has done. Later ambient dialogue notes Fenrico's disappearance and the Blessed Maiden's return. This records Cameron's public stance rather than a personal meeting.",
+    "textKeys": ["NPC_LNXTMDST_25_18", "SZSTBC_17_8"]
+  },
+  "Cantarella|Chloe": {
+    "rel": "Protected by Cantarella, then helping her",
+    "ctx": "Chloe recalls Cantarella shielding the group with illusions during a deadly duel. After the crisis, Chloe goes to Septimont as a visiting pharmacist to help Cantarella, adding a concrete reason for the NPC's presence there.",
+    "textKeys": ["Character_Cantarella_121_10", "lmzxst_13_5"]
+  },
+  "Chisa|Encore": {
+    "rel": "Math tutor and pupil",
+    "ctx": "The quest summary says Chisa tutored Encore in mathematics at the Haven of Sprouts. It suggests that this may explain Encore's renewed dedication to homework, preserving that explanation as a possibility rather than a confirmed motive.",
+    "textKeys": ["Main_Honami_2_8_2_51_16"]
+  },
+  "Fuling|Wuli": {
+    "rel": "Partners who keep travelling",
+    "ctx": "Wuli seeks treatment for his gravely ill girlfriend Fuling, initially misunderstanding the Temporal Disruptions as a route to immortality. Later he promises more journeys together. A subsequent note describes fetching her medicine from Huaxu Academy and planning to sketch together in Xuanfang Hold.",
+    "textKeys": ["Character_ChangLi_21_70", "Character_ChangLi_59_30", "InfoDisplay_35000014_Text"]
+  },
+  "Hsin|Xianchen": {
+    "rel": "A storyteller of Sentinel folklore",
+    "ctx": "Xianchen explains that Hsin protects its own Huanglong state and likes celebrating with people. The NPC also recounts a local belief that rustling leaves signal Hsin's presence and that the Sentinel leaves small gifts. The passage presents this last detail as hearsay.",
+    "textKeys": ["Side_XYHTZST_15_5", "Side_XYHTZST_15_6", "Side_XYHTZST_15_8"]
+  },
+  "Jiyan|Tianhe": {
+    "rel": "A Ranger's view of the general",
+    "ctx": "Tianhe describes the three Midnight Rangers divisions as serving under Jiyan, credits the general with his recovery from injuries, and worries when Jiyan has been away with the Vanguard for more than ten days. These ambient remarks add a soldier's perspective to Jiyan's command role.",
+    "textKeys": ["Flow_11000012_7", "Flow_11000012_27", "Flow_11000012_35"]
+  },
+  "Jiyan|Verina": {
+    "rel": "Contributors to the Garden of Bells",
+    "ctx": "The Garden of Bells memorial document credits Jiyan with sowing and watering its flowers, and Verina with cultivating seeds suited to Huanglong's climate. Their connection is documented work on the same memorial, beyond simply sharing quests.",
+    "textKeys": ["InfoDisplay_11010105_Text"]
+  },
+  "Liangyu|Yangyang": {
+    "rel": "Evacuation comrades",
+    "ctx": "Liangyu confirms she travelled with Yangyang before Rover arrived in Xuanfang. Yangyang later volunteers to help the Wardens evacuate villagers. After Liangyu loses two comrades in Autopuppet ambushes, another Warden asks Yangyang to watch over her.",
+    "textKeys": ["Main_HuangLong_SYYLFML_260_48", "Main_HuangLong_SYYLFML_291_20", "Main_HuangLong_SYYLFML_310_19"]
+  },
+  "Lucilla|Reilynn": {
+    "rel": "Curriculum reform colleagues",
+    "ctx": "Reilynn says President Lucilla requested Rover's input on changes to majoring policies. Further ambient dialogue reports approval of her proposal to reform Rabelle College's curriculum while retaining its funding, and relays her view that the Etheric Sea is its next challenge.",
+    "textKeys": ["34NPCTHST_7_1", "34NPCTHST_7_4", "34NPCTHST_7_9"]
+  },
+  "Lupa|Quinta": {
+    "rel": "A fellow competitor's respect",
+    "ctx": "Quinta treats losing to Lupa as understandable and predicts that she will reach bigger stages and become the strongest Gladiator. This is the NPC's admiration and expectation, rather than confirmation of Lupa's future achievements.",
+    "textKeys": ["FWNPC_QQYC_49_2", "FWNPC_QQYC_49_10"]
+  }
+}

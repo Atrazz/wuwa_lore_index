@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { huiji, moegirl, SEARCHER } from '../lib/kinds'
 
-// Sites that ask not to be collected by AI tools are linked here for reading by hand.
+// The searcher currently has no verified passage permalink: copy the query.
 export default function ReadMore({ node }) {
   const [copied, setCopied] = useState(false)
   const search = async () => {

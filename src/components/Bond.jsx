@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Glyph from './Glyph'
+import TextEvidence from './TextEvidence'
 
 // Character relationships (scripts/bonds.json).
 // Strongest evidence first: family listing > talking in a quest > voice line > mention > same quest.
@@ -33,6 +34,7 @@ export function bondFacts(b) {
   if (froms.length === 2) out.push('voice lines both ways')
   else if (froms.length === 1) out.push(`voice line from ${froms[0]}`)
   if (!b.quests.length && !b.voicelines.length && b.mentions.length) out.push(plural(b.mentions.length, 'mention'))
+  if (b.textEvidence?.length) out.push(plural(b.textEvidence.length, 'game-text reference'))
   if (!out.length && b.scenes) out.push(`${plural(b.scenes, 'shared quest')}, no conversation`)
   return out
 }
@@ -196,13 +198,19 @@ function QuestDialogue({ q, bkey, a, b, nodes }) {
 }
 
 // full evidence for the link panel; `a` is the character the viewer came from (left side)
-export function BondDetail({ b, a, nodes }) {
+export function BondDetail({ b, a, nodes, onPick }) {
   const z = b.pair[0] === a ? b.pair[1] : b.pair[0]
   const [allQ, setAllQ] = useState(false)
   const qs = allQ ? b.quests : b.quests.slice(0, 6)
   const vl = [...b.voicelines].sort((x, y) => (x.source_of === a ? -1 : 1) - (y.source_of === a ? -1 : 1))
   return (
     <div className="bond">
+      {b.textEvidence?.length > 0 && (
+        <Block title="Additional game-text context" count={b.textEvidence.length} color="#99d8ad">
+          {b.textContext && <p className="note">{b.textContext}</p>}
+          <TextEvidence records={b.textEvidence} onPick={onPick} />
+        </Block>
+      )}
       {b.family.length > 0 && (
         <Block title="Family" count={b.family.length} color="#f3cf7a">
           {b.family.map((f, i) => (
