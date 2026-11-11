@@ -486,6 +486,21 @@ button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--hud-faint); }
 }
 @media (max-width: 900px) {
   /* phones: an open panel starts just below the toolbar; the entry-type chips step aside meanwhile */
-  .app.has-panel .entries { display: none; }
   .panel { top: calc(14px + var(--tb-h, 300px) + 8px); height: auto; bottom: 8px; }
+}
+
+/* burger: phones show title + search; the rest unfolds from here */
+.burger { display: none; }
+@media (max-width: 900px) {
+  .mast { order: 0; }
+  .burger { order: 1; margin-left: auto; display: grid; place-content: center; gap: 4px; width: 38px; height: 34px; border-radius: 10px; transition: background .15s; }
+  .burger:hover, .burger.open { background: rgba(255,255,255,0.06); }
+  .burger i { display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--white); transition: transform .2s, opacity .2s; }
+  .burger.open i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .burger.open i:nth-child(2) { opacity: 0; }
+  .burger.open i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .find { order: 2; }
+  .tools { order: 3; }
+  .entries { order: 4; }
+  .toolbar:not(.tb-open) .tools, .toolbar:not(.tb-open) .entries { display: none; }
 }

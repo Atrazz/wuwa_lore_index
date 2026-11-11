@@ -39,6 +39,7 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
     const ro = new ResizeObserver(() => document.documentElement.style.setProperty('--tb-h', `${el.offsetHeight}px`))
     ro.observe(el); return () => ro.disconnect()
   }, [])
+  const [open, setOpen] = useState(false)
   const [q, setQ] = useState('')
   const [idx, setIdx] = useState(0)
   const box = useRef()
@@ -58,11 +59,15 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
   const edgeCount = useMemo(() => Object.fromEntries(EDGES.map((e) => [e.key, links.filter((l) => l.kinds[e.key]).length])), [links])
 
   return (
-    <motion.header ref={headerRef} className="toolbar" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
+    <motion.header ref={headerRef} className={'toolbar' + (open ? ' tb-open' : '')} initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
       <div className="mast">
         <span className="mast-title"><i className="mast-hex" />Echo <em>Codex</em></span>
         <span className="mast-sub">Solaris lore archive</span>
       </div>
+      {/* phones: the controls and entry chips fold behind this button */}
+      <button className={'burger' + (open ? ' open' : '')} onClick={() => setOpen(!open)} aria-label={open ? 'Hide controls' : 'Show controls'} aria-expanded={open}>
+        <i /><i /><i />
+      </button>
 
       <div className="find">
         <svg className="find-label" viewBox="0 0 16 16" width="15" height="15"><circle cx="7" cy="7" r="5" /><path d="M11 11l3.5 3.5" /></svg>
