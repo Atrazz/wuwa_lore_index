@@ -87,9 +87,9 @@ export function BondItem({ node, b, onOpen, onPick }) {
         <div className="bi-top">
           <button className="bi-name" onClick={(e) => { e.stopPropagation(); onPick(node.id) }}>{node.id}</button>
           {node.zh && <small>{node.zh}</small>}
-          <span className={'bond-label t-' + b.tier}>{b.label}</span>
+          <span className={'bond-label t-' + b.tier}>{b.rel || b.label}</span>
         </div>
-        <div className="bi-facts">{bondFacts(b).join(' · ')}</div>
+        <div className="bi-ctx">{b.ctx || bondFacts(b).join(' · ')}</div>
       </div>
     </div>
   )
@@ -108,7 +108,14 @@ export function BondHero({ A, B, b, onPick }) {
         </div>
         <button className="bh-person" onClick={() => onPick(B.id)}><Avatar node={B} size={68} ring={c} /><b>{B.id}</b>{B.title && <em>{B.title}</em>}{B.zh && <small>{B.zh}</small>}</button>
       </div>
-      {bondFacts(b).length > 0 && <p className="bh-facts">{bondFacts(b).join(' · ')}</p>}
+      {b.rel && <motion.h3 className="bh-rel" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>{b.rel}</motion.h3>}
+      {b.ctx && <p className="bh-ctx">{b.ctx}</p>}
+      <p className="bh-facts">
+        <span className={'bh-basis ' + (b.basis || 'inferred')} title={b.basis === 'stated' ? 'Said in quotes, voice lines, stories or the wiki' : 'Read from the quests and affiliations they share'}>
+          {b.basis === 'stated' ? 'From the game text' : 'Inferred'}
+        </span>
+        {bondFacts(b).join(' · ')}
+      </p>
       <div className="bh-strip">
         {TIERS.map((t) => {
           const n = Array.isArray(b[t.key]) ? b[t.key].length : b[t.key] || 0

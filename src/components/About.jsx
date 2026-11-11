@@ -24,6 +24,8 @@ export default function About({ meta, onClose, onExample }) {
           <dd>Marked <span className="cert stated">stated</span> when the source says it plainly, <span className="cert possible">possible</span> when it hedges (“may be based on”). Notes the wiki itself calls false are left out.</dd>
           <dt>Possible parallels</dt>
           <dd>Real events and places that big moments in the game resemble, like the Resonator War and the Russian or American civil wars. These are our comparisons, not stated by any source: every matching point quotes the wiki for the game and Wikipedia for history, and each lists what doesn’t fit. Rated <b>strong</b>, <b>moderate</b> or <b>loose</b>.</dd>
+          <dt>Relationships</dt>
+          <dd>Each pair of characters gets a relation and one line of context, written from their own quotes, voice lines and conversations (<b>From the game text</b>). Pairs that only appear in the same quests get a line read from their sides and affiliations (<b>Inferred</b>). The small tag says how much evidence there is, from “Crossed paths” to “Family”.</dd>
           <dt>Theories</dt>
           <dd>Fan theories are off by default (turn them on under Entries) and always marked unverified. They come from the Solaris Archives “Speculation” write-ups and from theories summarised by hand.</dd>
           <dt>Grain of salt</dt>

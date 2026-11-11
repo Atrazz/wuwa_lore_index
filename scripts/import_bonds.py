@@ -48,7 +48,7 @@ for l in graph["links"]:
                          url=v.get("url", ""), audio=v.get("audio", "")) for v in l["voiceline"]],
         mentions=[dict(source_of=m["from"], to=m["to"], kind=m.get("kind", ""), title=m.get("title", ""),
                        text=m.get("text", ""), url=m.get("url", ""), count=m.get("count", 1)) for m in l["mention"][:6]],
-        scenes=len(l["scene"]),
+        scenes=len(l["scene"]), sceneQuests=[d["quest"] for d in l["scene"][:3]],
     ))
     lines = {d["quest"]: dict(desc=d.get("summary") or d.get("desc") or "", lines=d.get("sample", []), phone=d.get("phoneSample", []))
              for d in l["dialogue"] if d.get("sample") or d.get("phoneSample")}

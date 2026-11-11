@@ -1,0 +1,2502 @@
+{
+ "Aalto|Abby": {
+  "rel": "Black Shores analyst",
+  "ctx": "Aalto notes Abby can absorb Threnodian frequencies and act as a temporary host.",
+  "basis": "stated"
+ },
+ "Aalto|Aemeath": {
+  "rel": "Pitch",
+  "ctx": "Aemeath pitches Aalto for Black Shores funding for the Exostrider Project.",
+  "basis": "stated"
+ },
+ "Aalto|Baizhi": {
+  "rel": "Unlikely client",
+  "ctx": "Aalto doubts Baizhi, who trusts her own research, will ever buy his intel.",
+  "basis": "stated"
+ },
+ "Aalto|Buling": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Buling feels Aalto is an old friend who knows even more people than she does.",
+  "basis": "stated"
+ },
+ "Aalto|Calcharo": {
+  "rel": "Business contacts",
+  "ctx": "Calcharo's Ghost Hounds do clean business with Aalto, and Calcharo refers clients to him.",
+  "basis": "stated"
+ },
+ "Aalto|Camellya": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Camellya respects Aalto's mind games but finds him too reliant on trickery to be a worthy opponent.",
+  "basis": "stated"
+ },
+ "Aalto|Cartethyia": {
+  "rel": "Analyst",
+  "ctx": "Aalto cross-checks Cartethyia's frequency samples at the Black Shores.",
+  "basis": "stated"
+ },
+ "Aalto|Chixia": {
+  "rel": "Bad first impression",
+  "ctx": "Chixia once tried to arrest Aalto in Jinzhou, taking him for a criminal.",
+  "basis": "stated"
+ },
+ "Aalto|Cosmos": {
+  "rel": "Guardian of a guardian",
+  "ctx": "Cosmos and Cloudy dash off with Encore while Aalto is mid-sentence.",
+  "basis": "stated"
+ },
+ "Aalto|Encore": {
+  "rel": "Guardian & ward",
+  "ctx": "Black Shores consultants who work missions as a duo; Aalto looks after Encore.",
+  "basis": "stated"
+ },
+ "Aalto|Galbrena": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Galbrena sends Tacet Discord data back to the Black Shores; Aalto is the one who receives it.",
+  "basis": "stated"
+ },
+ "Aalto|Jiyan": {
+  "rel": "Mutual regard",
+  "ctx": "Aalto admires Jiyan's generalship; Jiyan appreciates the strategic use of fog.",
+  "basis": "stated"
+ },
+ "Aalto|Lucilla": {
+  "rel": "Negotiators",
+  "ctx": "Aalto represents the Black Shores to Lucilla on the Synchronist Program's future.",
+  "basis": "stated"
+ },
+ "Aalto|Lynae": {
+  "rel": "Reputation",
+  "ctx": "Lynae knows Aalto's reputation for handling intel in New Federation circles.",
+  "basis": "stated"
+ },
+ "Aalto|Mornye": {
+  "rel": "Visitor",
+  "ctx": "Aalto sits in on Professor Mornye's lecture.",
+  "basis": "stated"
+ },
+ "Aalto|Mortefi": {
+  "rel": "By reputation",
+  "ctx": "Aalto has heard of Mortefi's way with difficult clients.",
+  "basis": "stated"
+ },
+ "Aalto|Rover": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Aalto helps Rover through Dark Tides and Lahai-Roi; Rover thanks him for everything.",
+  "basis": "stated"
+ },
+ "Aalto|Shorekeeper": {
+  "rel": "Negotiator & leader",
+  "ctx": "The Shorekeeper values Aalto as the Black Shores' negotiator.",
+  "basis": "stated"
+ },
+ "Aalto|Sigrika": {
+  "rel": "Secret sponsor",
+  "ctx": "Sigrika works out that Aalto is the sponsor behind the Academy project.",
+  "basis": "stated"
+ },
+ "Aalto|Taoqi": {
+  "rel": "Briefing partners",
+  "ctx": "Taoqi explains Jinzhou's Retroact Rain defences while Aalto tracks the outbreak's cause.",
+  "basis": "stated"
+ },
+ "Aalto|Valentina": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Valentina relays Tethys warnings built on data Aalto provided.",
+  "basis": "stated"
+ },
+ "Aalto|Verina": {
+  "rel": "Unfinished deal",
+  "ctx": "Verina once offered Aalto a Starflower for news of her mother.",
+  "basis": "stated"
+ },
+ "Aalto|Xiangli Yao": {
+  "rel": "Declined offer",
+  "ctx": "Xiangli Yao turned down Aalto's offer to join the Black Shores.",
+  "basis": "stated"
+ },
+ "Aalto|Yangyang": {
+  "rel": "Acquaintances",
+  "ctx": "Aalto, an information broker, admires how Yangyang reads the \"Streams\".",
+  "basis": "stated"
+ },
+ "Aalto|Youhu": {
+  "rel": "Contacts",
+  "ctx": "Aalto takes Youhu's broken-up call at the Black Shores.",
+  "basis": "stated"
+ },
+ "Abby|Aemeath": {
+  "rel": "Allies",
+  "ctx": "Abby tries to stop Aemeath's frequency from leaking.",
+  "basis": "stated"
+ },
+ "Abby|Augusta": {
+  "rel": "Acquaintances",
+  "ctx": "Abby can hardly believe the Augusta of the stories is the Ephor in the arena.",
+  "basis": "stated"
+ },
+ "Abby|Baizhi": {
+  "rel": "Acquaintances",
+  "ctx": "Abby can't follow Baizhi's science.",
+  "basis": "stated"
+ },
+ "Abby|Brant": {
+  "rel": "Shipmates",
+  "ctx": "Brant welcomed Rover and Abby aboard his ship as guests of honour.",
+  "basis": "stated"
+ },
+ "Abby|Camellya": {
+  "rel": "Black Shores acquaintances",
+  "ctx": "Camellya cuts Abby's photo time short.",
+  "basis": "stated"
+ },
+ "Abby|Cantarella": {
+  "rel": "Acquaintances",
+  "ctx": "Cantarella senses the Dark Tide's frequency in Abby.",
+  "basis": "stated"
+ },
+ "Abby|Carlotta": {
+  "rel": "Allies",
+  "ctx": "Abby credits Carlotta's quick thinking against the sneaky Priest.",
+  "basis": "stated"
+ },
+ "Abby|Cartethyia": {
+  "rel": "Allies",
+  "ctx": "Abby tracks Cartethyia's frequency with Rover in Ragunna.",
+  "basis": "stated"
+ },
+ "Abby|Changli": {
+  "rel": "Curious",
+  "ctx": "Abby wonders why people are so divided about Changli.",
+  "basis": "stated"
+ },
+ "Abby|Chisa": {
+  "rel": "Shipmates",
+  "ctx": "Chisa welcomes Abby aboard in Honami.",
+  "basis": "stated"
+ },
+ "Abby|Chixia": {
+  "rel": "Friends",
+  "ctx": "Chixia makes sure Abby isn't left out of Jinzhou's gatherings.",
+  "basis": "stated"
+ },
+ "Abby|Ciaccona": {
+  "rel": "Allies",
+  "ctx": "Abby and Ciaccona share hopes for Ragunna's rebuilding.",
+  "basis": "stated"
+ },
+ "Abby|Cosmos": {
+  "rel": "Dream-link testers",
+  "ctx": "Cosmos runs dream-link stability tests that Abby wanders into.",
+  "basis": "stated"
+ },
+ "Abby|Cristoforo": {
+  "rel": "Tempter",
+  "ctx": "Cristoforo suggests Abby might recall its \"true self\" if it merged with Leviathan.",
+  "basis": "stated"
+ },
+ "Abby|Denia": {
+  "rel": "Worried",
+  "ctx": "Abby wonders if they will ever see Denia again.",
+  "basis": "stated"
+ },
+ "Abby|Encore": {
+  "rel": "Friends",
+  "ctx": "Encore loves her \"Abby Cube\".",
+  "basis": "stated"
+ },
+ "Abby|Fenrico": {
+  "rel": "Acquaintances",
+  "ctx": "Fenrico greets Rover and Abby as the Righteous One's party.",
+  "basis": "stated"
+ },
+ "Abby|Fulmine": {
+  "rel": "Acquaintances",
+  "ctx": "Abby is too sleepy to help Fulmine with the Plushies.",
+  "basis": "stated"
+ },
+ "Abby|Galbrena": {
+  "rel": "Allies",
+  "ctx": "Galbrena and Rover use Abby's power against the Threnodian; Abby helps find her.",
+  "basis": "stated"
+ },
+ "Abby|Hsin": {
+  "rel": "Frequency trackers",
+  "ctx": "Abby recognises Hsin the Moon Fox's frequency.",
+  "basis": "stated"
+ },
+ "Abby|Iuno": {
+  "rel": "Remembered",
+  "ctx": "Abby still remembers Iuno when the rest of the world forgets her.",
+  "basis": "stated"
+ },
+ "Abby|Jianxin": {
+  "rel": "Friends",
+  "ctx": "Abby is shocked to see Jianxin hurt.",
+  "basis": "stated"
+ },
+ "Abby|Jinhsi": {
+  "rel": "Acquaintances",
+  "ctx": "Jinhsi learns the Sonoro Sphere was the work of Abbowser, Abby's darker side.",
+  "basis": "stated"
+ },
+ "Abby|Jué": {
+  "rel": "Kindred entities",
+  "ctx": "Jué suggested Abby might be an entity like itself.",
+  "basis": "stated"
+ },
+ "Abby|Lenore": {
+  "rel": "Acquaintances",
+  "ctx": "Abby wonders whether the Sentinel cares about Lenore's small worries.",
+  "basis": "stated"
+ },
+ "Abby|Lucilla": {
+  "rel": "Acquaintances",
+  "ctx": "Lucilla calls Rover and Abby in about \"the one from afar\".",
+  "basis": "stated"
+ },
+ "Abby|Lucy": {
+  "rel": "Somnoire acquaintances",
+  "ctx": "Abby explains Tacet Marks to Lucy.",
+  "basis": "stated"
+ },
+ "Abby|Lupa": {
+  "rel": "Acquaintances",
+  "ctx": "Abby remembers Lupa's warning about the Blightcloud over the Sanguis Plateaus.",
+  "basis": "stated"
+ },
+ "Abby|Lynae": {
+  "rel": "Allies",
+  "ctx": "Abby and Lynae deal with the Voidworm together in the Frostlands.",
+  "basis": "stated"
+ },
+ "Abby|Margherita": {
+  "rel": "Food fan",
+  "ctx": "Abby can't wait to eat at Margherita's.",
+  "basis": "stated"
+ },
+ "Abby|Mornye": {
+  "rel": "Acquaintances",
+  "ctx": "Abby thinks Professor Mornye is \"a real gem\".",
+  "basis": "stated"
+ },
+ "Abby|Namipon": {
+  "rel": "Acquaintances",
+  "ctx": "Abby distrusted Namipon's smell, then liked its snacks.",
+  "basis": "stated"
+ },
+ "Abby|Phoebe": {
+  "rel": "Acquaintances",
+  "ctx": "Phoebe is curious how Rover met Abby; Abby is glad to see her.",
+  "basis": "stated"
+ },
+ "Abby|Phrolova": {
+  "rel": "Suspicious",
+  "ctx": "Abby wonders why Phrolova studied what she did.",
+  "basis": "stated"
+ },
+ "Abby|Qingxiao": {
+  "rel": "Acquaintances",
+  "ctx": "Qingxiao promises to remember Abby's name.",
+  "basis": "stated"
+ },
+ "Abby|Rebecca": {
+  "rel": "Admirer",
+  "ctx": "Rebecca wishes she had an Echo buddy like Abby.",
+  "basis": "stated"
+ },
+ "Abby|Roccia": {
+  "rel": "Acquaintances",
+  "ctx": "Roccia guesses Abby saved Rover and retreated into their body to rest.",
+  "basis": "stated"
+ },
+ "Abby|Rover": {
+  "rel": "Inner companion",
+  "ctx": "Abby, who answers to the name Abraxas, lives within Rover and travels with them.",
+  "basis": "stated"
+ },
+ "Abby|Sanhua": {
+  "rel": "Familiar face",
+  "ctx": "Abby is relieved to spot Sanhua in a strange place.",
+  "basis": "stated"
+ },
+ "Abby|Shorekeeper": {
+  "rel": "Caretaker",
+  "ctx": "The Shorekeeper looks for a way to fix Abby's weakening frequency.",
+  "basis": "stated"
+ },
+ "Abby|Sigrika": {
+  "rel": "Friends",
+  "ctx": "Sigrika laughs at Abby sounding like a Soliskin.",
+  "basis": "stated"
+ },
+ "Abby|Suisui": {
+  "rel": "Friends",
+  "ctx": "Suisui feeds Abby her Ultimate Flavor Under Heaven.",
+  "basis": "stated"
+ },
+ "Abby|Xiangli Yao": {
+  "rel": "Acquaintances",
+  "ctx": "Abby senses Xiangli Yao's childhood memories in a Sonoro.",
+  "basis": "stated"
+ },
+ "Abby|Xinyi": {
+  "rel": "Acquaintances",
+  "ctx": "Xinyi welcomes Rover and Abby back to Hongzhen.",
+  "basis": "stated"
+ },
+ "Abby|Xuanqing": {
+  "rel": "Companions in memory",
+  "ctx": "Abby sniffs out Xuanqing's Feeling Capsule pieces.",
+  "basis": "stated"
+ },
+ "Abby|Yangyang": {
+  "rel": "Friends",
+  "ctx": "Yangyang studied Abby as an Echo and sends them snacks from Jinzhou.",
+  "basis": "stated"
+ },
+ "Abby|Zani": {
+  "rel": "Acquaintances",
+  "ctx": "Abby looks forward to seeing Zani and Phoebe again.",
+  "basis": "stated"
+ },
+ "Aemeath|Camellya": {
+  "rel": "Sparring partners",
+  "ctx": "Aemeath wants another round with Camellya.",
+  "basis": "stated"
+ },
+ "Aemeath|Chisa": {
+  "rel": "Friends",
+  "ctx": "Aemeath and Chisa part with the promise of a new beginning together.",
+  "basis": "stated"
+ },
+ "Aemeath|Denia": {
+  "rel": "Admirer",
+  "ctx": "Denia recognises Aemeath as the Academy's legendary \"Fleet Snowfluff\".",
+  "basis": "stated"
+ },
+ "Aemeath|Hiyuki": {
+  "rel": "Concerned elder",
+  "ctx": "Hiyuki was away when Aemeath vanished in the simulator and reads her report closely.",
+  "basis": "stated"
+ },
+ "Aemeath|Lucilla": {
+  "rel": "Mentor & student",
+  "ctx": "Lucilla admires Aemeath's steel and works to bring her back.",
+  "basis": "stated"
+ },
+ "Aemeath|Luuk Herssen": {
+  "rel": "Doctor & lost student",
+  "ctx": "Luuk sees Aemeath's stubborn courage and helps bring her back through the Exostrider.",
+  "basis": "stated"
+ },
+ "Aemeath|Lynae": {
+  "rel": "Schoolmates",
+  "ctx": "Startorch schoolmates.",
+  "basis": "inferred"
+ },
+ "Aemeath|Mornye": {
+  "rel": "Former student & professor",
+  "ctx": "Mornye studies the signal that might come from Aemeath; Aemeath cheers Rover for saving Mornye.",
+  "basis": "stated"
+ },
+ "Aemeath|Rover": {
+  "rel": "Bound across lifetimes",
+  "ctx": "Aemeath was raised by Rover's former self; in Lahai-Roi they stand before the Exostrider together.",
+  "basis": "stated"
+ },
+ "Aemeath|Shorekeeper": {
+  "rel": "Supporter",
+  "ctx": "The Shorekeeper backs Dr. Luuk's proposal to bring Aemeath back.",
+  "basis": "stated"
+ },
+ "Aemeath|Sigrika": {
+  "rel": "Fan & idol",
+  "ctx": "Sigrika loves Fleet Snowfluff's songs and missed her last fan meeting.",
+  "basis": "stated"
+ },
+ "Alannah|Yuanwu": {
+  "rel": "Insider knowledge",
+  "ctx": "Alannah knows Yuanwu secretly owns the Liuxian Teahouse.",
+  "basis": "stated"
+ },
+ "Augusta|Avidius": {
+  "rel": "Rivals",
+  "ctx": "Avidius challenged Augusta for Septimont with the Senate's favour; she respected him as an opponent.",
+  "basis": "stated"
+ },
+ "Augusta|Brant": {
+  "rel": "Allies",
+  "ctx": "Augusta and Brant regroup with Rover against the Dark Tide.",
+  "basis": "stated"
+ },
+ "Augusta|Buling": {
+  "rel": "Grateful acquaintances",
+  "ctx": "Augusta was taken with Buling from their first meeting and grateful for her help.",
+  "basis": "stated"
+ },
+ "Augusta|Cantarella": {
+  "rel": "Allies",
+  "ctx": "Augusta relies on the Fisalia family's potions against the Dark Tide.",
+  "basis": "stated"
+ },
+ "Augusta|Carlotta": {
+  "rel": "Allies",
+  "ctx": "Augusta and Carlotta hold the line together against the Dark Tide.",
+  "basis": "stated"
+ },
+ "Augusta|Cartethyia": {
+  "rel": "Understanding",
+  "ctx": "Augusta learned from the Dark Tide that Cartethyia planned her own \"death\".",
+  "basis": "stated"
+ },
+ "Augusta|Cristoforo": {
+  "rel": "Enemies",
+  "ctx": "Cristoforo meant Augusta to be Leviathan's Harbinger.",
+  "basis": "stated"
+ },
+ "Augusta|Galbrena": {
+  "rel": "Childhood friends",
+  "ctx": "Augusta and Galbrena (once Angel) grew up together in Fabianum before their homeland fell.",
+  "basis": "stated"
+ },
+ "Augusta|Iuno": {
+  "rel": "Close friends",
+  "ctx": "Septimont's Ephor and its prodigy priestess, friends since Iuno \"prophesied\" Augusta would lead a new era.",
+  "basis": "stated"
+ },
+ "Augusta|Lupa": {
+  "rel": "Ephor & star gladiator",
+  "ctx": "Augusta sees Lupa as a born arena genius; Lupa wonders why the Ephor fought.",
+  "basis": "stated"
+ },
+ "Augusta|Phoebe": {
+  "rel": "Allies",
+  "ctx": "Augusta and Phoebe entered the Dark Tide together, protected by its Echoes.",
+  "basis": "stated"
+ },
+ "Augusta|Qiuyuan": {
+  "rel": "Acquaintances",
+  "ctx": "Augusta asks after the Huanglong swordsman Qiuyuan.",
+  "basis": "stated"
+ },
+ "Augusta|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover sees Augusta as the prophesied Hero of Heroes; they defeated the Sovereign together.",
+  "basis": "stated"
+ },
+ "Avidius|Carlotta": {
+  "rel": "Allies",
+  "ctx": "Carlotta warns Avidius about the enemy's abnormal abilities.",
+  "basis": "stated"
+ },
+ "Avidius|Cristoforo": {
+  "rel": "Creator & creation",
+  "ctx": "Avidius was one of Cristoforo's creations, planted as a decoy.",
+  "basis": "stated"
+ },
+ "Avidius|Galbrena": {
+  "rel": "Decoy uncovered",
+  "ctx": "Galbrena discovered that Avidius was Cristoforo's long-planted decoy in Septimont.",
+  "basis": "stated"
+ },
+ "Avidius|Iuno": {
+  "rel": "Uneasy acquaintances",
+  "ctx": "Iuno felt something unnatural about Avidius, yet honours how he roared at fate.",
+  "basis": "stated"
+ },
+ "Avidius|Rover": {
+  "rel": "Ally and accuser",
+  "ctx": "Avidius, a Quillbearer creation, fought for a story of hope; in the altered Septimont he blames Rover.",
+  "basis": "stated"
+ },
+ "Avidius|Zani": {
+  "rel": "Allies",
+  "ctx": "Avidius helped Zani evacuate Egla Town.",
+  "basis": "stated"
+ },
+ "Baizhi|Chixia": {
+  "rel": "Friends",
+  "ctx": "Jinzhou friends with opposite temperaments who grew to understand each other.",
+  "basis": "stated"
+ },
+ "Baizhi|Jinhsi": {
+  "rel": "Magistrate & researcher",
+  "ctx": "Jinhsi sends Rover to Baizhi at Huaxu Academy.",
+  "basis": "stated"
+ },
+ "Baizhi|Jiyan": {
+  "rel": "Respect",
+  "ctx": "Jiyan respects Baizhi as one of the few who have found their calling.",
+  "basis": "stated"
+ },
+ "Baizhi|Lingyang": {
+  "rel": "Curious",
+  "ctx": "Lingyang once thought Baizhi's You'tan was his kind.",
+  "basis": "stated"
+ },
+ "Baizhi|Lumi": {
+  "rel": "Customer",
+  "ctx": "Lumi hauls Baizhi's heavy research parcels.",
+  "basis": "stated"
+ },
+ "Baizhi|Mortefi": {
+  "rel": "Academy colleagues",
+  "ctx": "Huaxu Academy colleagues in different departments who cooperate smoothly.",
+  "basis": "stated"
+ },
+ "Baizhi|Rover": {
+  "rel": "Friends",
+  "ctx": "Baizhi, the Huaxu researcher, was among Rover's first friends in Jinzhou and analyses clues for them.",
+  "basis": "stated"
+ },
+ "Baizhi|Sanhua": {
+  "rel": "Collaborators",
+  "ctx": "Sanhua worked with Baizhi on a project for the Magistrate.",
+  "basis": "stated"
+ },
+ "Baizhi|Verina": {
+  "rel": "Admirer",
+  "ctx": "Verina notes that \"Baizhi\" is an old name for angelica, a flower that blooms in the cold.",
+  "basis": "stated"
+ },
+ "Baizhi|Xiangli Yao": {
+  "rel": "Huaxu colleagues",
+  "ctx": "Huaxu Academy researchers who admire each other's work.",
+  "basis": "stated"
+ },
+ "Baizhi|Yangyang": {
+  "rel": "Friends",
+  "ctx": "Jinzhou friends; Baizhi values how well Yangyang listens, Yangyang how Baizhi helps.",
+  "basis": "stated"
+ },
+ "Baizhi|Yuanwu": {
+  "rel": "Tea friends",
+  "ctx": "Baizhi finds Yuanwu's tea sweeter than any teahouse's.",
+  "basis": "stated"
+ },
+ "Baizhi|Zhezhi": {
+  "rel": "Friends",
+  "ctx": "Zhezhi visits Chixia and tells Baizhi about Rover.",
+  "basis": "stated"
+ },
+ "Brant|Calcharo": {
+  "rel": "Captive & bounty hunter",
+  "ctx": "In a comedy event Calcharo's Ghost Hounds capture Brant for a bounty.",
+  "basis": "stated"
+ },
+ "Brant|Carlotta": {
+  "rel": "Mutual respect",
+  "ctx": "The Fool's Troupe captain and the Montelli daughter admire each other's resolve.",
+  "basis": "stated"
+ },
+ "Brant|Cartethyia": {
+  "rel": "Sympathetic observer",
+  "ctx": "Brant wonders who Cartethyia really is beyond the Order's tales of saint or sinner.",
+  "basis": "stated"
+ },
+ "Brant|Ciaccona": {
+  "rel": "Fellow performers",
+  "ctx": "The bard wonders whether the captain's adventures will make history.",
+  "basis": "stated"
+ },
+ "Brant|Galbrena": {
+  "rel": "Allies",
+  "ctx": "Brant's crew helps Galbrena clear the residual Dark Tide.",
+  "basis": "stated"
+ },
+ "Brant|Iuno": {
+  "rel": "Allies",
+  "ctx": "Brant and Iuno clean up after the Dark Tide.",
+  "basis": "stated"
+ },
+ "Brant|Lenore": {
+  "rel": "Strangers",
+  "ctx": "Lenore doesn't know Brant.",
+  "basis": "stated"
+ },
+ "Brant|Lupa": {
+  "rel": "Admiration",
+  "ctx": "Many Blue Furies gladiators came from the Troupe of Fools; Lupa saw Brant leap off deck to hug his crew.",
+  "basis": "stated"
+ },
+ "Brant|Margherita": {
+  "rel": "Regular customer",
+  "ctx": "Brant buys pizza at Trattoria Margherita.",
+  "basis": "stated"
+ },
+ "Brant|Phoebe": {
+  "rel": "Admirer",
+  "ctx": "Phoebe sees in Brant the free adventurer from her mother's stories.",
+  "basis": "stated"
+ },
+ "Brant|Phrolova": {
+  "rel": "Enemies",
+  "ctx": "Phrolova mocks Brant's hope for a \"happily ever after\".",
+  "basis": "stated"
+ },
+ "Brant|Roccia": {
+  "rel": "Captain & first mate",
+  "ctx": "Brant leads the Fool's Troupe; Roccia is its First Mate and stage designer.",
+  "basis": "stated"
+ },
+ "Brant|Rover": {
+  "rel": "Allies",
+  "ctx": "The Fool's Troupe captain, Rover's ally in Ragunna.",
+  "basis": "inferred"
+ },
+ "Brant|Zani": {
+  "rel": "Mutual respect",
+  "ctx": "Brant admires Zani for being true to herself; Zani envies his freedom.",
+  "basis": "stated"
+ },
+ "Buling|Camellya": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Camellya tried to fight Buling before she joined the Black Shores; Buling passed her test.",
+  "basis": "stated"
+ },
+ "Buling|Chisa": {
+  "rel": "Black Shores acquaintances",
+  "ctx": "Chisa met the Mengzhou Taoist Buling at the Black Shores and finds her fascinating.",
+  "basis": "stated"
+ },
+ "Buling|Chixia": {
+  "rel": "Friendly recognition",
+  "ctx": "Buling greets Chixia by name, to her pride.",
+  "basis": "stated"
+ },
+ "Buling|Encore": {
+  "rel": "Ghost-hunting partners",
+  "ctx": "Buling brings fearless Encore along when chasing ghost rumours.",
+  "basis": "stated"
+ },
+ "Buling|Iuno": {
+  "rel": "Allies",
+  "ctx": "Buling and Iuno look for a way through the Dark Tide.",
+  "basis": "stated"
+ },
+ "Buling|Jianxin": {
+  "rel": "Fellow disciples",
+  "ctx": "Buling and Jianxin trained under the same master and met in a martial contest.",
+  "basis": "stated"
+ },
+ "Buling|Namipon": {
+  "rel": "Acquaintances",
+  "ctx": "Namipon guides a worn-out Buling through Honami.",
+  "basis": "stated"
+ },
+ "Buling|Qingxiao": {
+  "rel": "Tester & gifted student",
+  "ctx": "Qingxiao tested Buling rigorously and found her gifted with Thunder Spells.",
+  "basis": "stated"
+ },
+ "Buling|Rover": {
+  "rel": "Fateful acquaintances",
+  "ctx": "Buling keeps crossing Rover's path, seeing someone always running between storms.",
+  "basis": "stated"
+ },
+ "Buling|Shorekeeper": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Buling sees the Shorekeeper standing outside every law, perhaps too detached.",
+  "basis": "stated"
+ },
+ "Buling|Youhu": {
+  "rel": "Business friends",
+  "ctx": "Youhu appraises treasures for Buling's clients.",
+  "basis": "stated"
+ },
+ "Calcharo|Carlotta": {
+  "rel": "Business deal",
+  "ctx": "Carlotta signs a contract with Calcharo's Ghost Hounds.",
+  "basis": "stated"
+ },
+ "Calcharo|Encore": {
+  "rel": "Story character",
+  "ctx": "Encore casts Calcharo as a big doggy in her stories.",
+  "basis": "stated"
+ },
+ "Calcharo|Galbrena": {
+  "rel": "Rival hunters",
+  "ctx": "They chased the same Tacet Discord in the New Federation: he to kill it, she to absorb it.",
+  "basis": "stated"
+ },
+ "Calcharo|Jiyan": {
+  "rel": "Mercenary & General",
+  "ctx": "Jiyan took Calcharo's Ghost Hounds on after they crossed into Huanglong; Calcharo respects him.",
+  "basis": "stated"
+ },
+ "Calcharo|Mortefi": {
+  "rel": "Disdain & respect",
+  "ctx": "Calcharo finds Mortefi a snooty New Federation noble but respects his craft.",
+  "basis": "stated"
+ },
+ "Calcharo|Rover": {
+  "rel": "Allies",
+  "ctx": "Calcharo of the Ghost Hounds keeps away from festivals; Rover tries to bring him along.",
+  "basis": "stated"
+ },
+ "Calcharo|Verina": {
+  "rel": "Kind encounter",
+  "ctx": "Calcharo gave Verina rare flower seeds when they met in the wild.",
+  "basis": "stated"
+ },
+ "Calcharo|Yangyang": {
+  "rel": "Acquaintances",
+  "ctx": "Calcharo stays behind while Yangyang calls Rover to the festival.",
+  "basis": "stated"
+ },
+ "Calcharo|Yinlin": {
+  "rel": "Infiltrator & target",
+  "ctx": "Yinlin once went undercover in Calcharo's group.",
+  "basis": "stated"
+ },
+ "Calcharo|Zani": {
+  "rel": "Referral",
+  "ctx": "Zani refers Calcharo for a job, for the referral bonus.",
+  "basis": "stated"
+ },
+ "Camellya|Changli": {
+  "rel": "Battle partners",
+  "ctx": "Camellya relishes fighting alongside Changli.",
+  "basis": "stated"
+ },
+ "Camellya|Chisa": {
+  "rel": "Recruiter",
+  "ctx": "Camellya suggested Chisa join the Black Shores and offered her a \"germination test\".",
+  "basis": "stated"
+ },
+ "Camellya|Encore": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Camellya hopes story-loving Encore grows into a strong opponent one day.",
+  "basis": "stated"
+ },
+ "Camellya|Jianxin": {
+  "rel": "Amused observer",
+  "ctx": "Camellya enjoys glimpses of Jianxin's untamed spirit.",
+  "basis": "stated"
+ },
+ "Camellya|Jinhsi": {
+  "rel": "Puzzled observer",
+  "ctx": "Camellya sees the self-sacrificing Shorekeeper in Jinhsi and doesn't understand it.",
+  "basis": "stated"
+ },
+ "Camellya|Lumi": {
+  "rel": "Battle partners",
+  "ctx": "Camellya and Lumi join the same fight.",
+  "basis": "stated"
+ },
+ "Camellya|Rover": {
+  "rel": "Black Shores companions",
+  "ctx": "Camellya gave Rover a frequency bracelet before Rinascita and often joins their errands.",
+  "basis": "stated"
+ },
+ "Camellya|Shorekeeper": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Carefree Camellya respects the rule-bound Shorekeeper, the Black Shores' de facto leader.",
+  "basis": "stated"
+ },
+ "Cantarella|Carlotta": {
+  "rel": "Rival heads of house",
+  "ctx": "The heads of Ragunna's Fisalia and Montelli families, who watch each other with interest and coordinate against Leviathan.",
+  "basis": "stated"
+ },
+ "Cantarella|Cartethyia": {
+  "rel": "Maiden & lost heir",
+  "ctx": "Cartethyia feels she took Cantarella's future as the Blessed Maiden; Cantarella admires her for reclaiming her humanity.",
+  "basis": "stated"
+ },
+ "Cantarella|Changli": {
+  "rel": "Stage partners",
+  "ctx": "Cantarella and Changli perform together and admire each other's craft.",
+  "basis": "stated"
+ },
+ "Cantarella|Ciaccona": {
+  "rel": "Allies",
+  "ctx": "Cantarella and Ciaccona defend Ragunna side by side.",
+  "basis": "stated"
+ },
+ "Cantarella|Fenrico": {
+  "rel": "Ragunna's powers",
+  "ctx": "Cantarella reads the oracle as pointing to Primus Fenrico and his First Relic.",
+  "basis": "stated"
+ },
+ "Cantarella|Galbrena": {
+  "rel": "Allies",
+  "ctx": "Galbrena tells Cantarella about Leviathan's state; they defend Ragunna together.",
+  "basis": "stated"
+ },
+ "Cantarella|Iuno": {
+  "rel": "Allies",
+  "ctx": "Cantarella's potions support Iuno's plan with the Anchor Stone.",
+  "basis": "stated"
+ },
+ "Cantarella|Jué": {
+  "rel": "Plea for help",
+  "ctx": "Cantarella asks Rover to bring Jué to Rinascita to save Imperator.",
+  "basis": "stated"
+ },
+ "Cantarella|Lupa": {
+  "rel": "Allies",
+  "ctx": "Cantarella brews potions to carry the party into the Journey.",
+  "basis": "stated"
+ },
+ "Cantarella|Phoebe": {
+  "rel": "Allies",
+  "ctx": "Phoebe fights beside Cantarella and finds her smoke warm and gentle.",
+  "basis": "stated"
+ },
+ "Cantarella|Qiuyuan": {
+  "rel": "Acquaintances",
+  "ctx": "Cantarella knows Qiuyuan as one who serves under Lord Liang.",
+  "basis": "stated"
+ },
+ "Cantarella|Roccia": {
+  "rel": "Amused onlooker",
+  "ctx": "Cantarella finds Roccia, the girl with the giant box, fascinating.",
+  "basis": "stated"
+ },
+ "Cantarella|Rover": {
+  "rel": "Grateful ally",
+  "ctx": "The head of the Fisalia family, who credits Rover with the peace after the Maiden's crisis.",
+  "basis": "stated"
+ },
+ "Cantarella|Scar": {
+  "rel": "Enemies",
+  "ctx": "Cantarella fears the escaped Fractsidus Overseer Scar.",
+  "basis": "stated"
+ },
+ "Cantarella|Zani": {
+  "rel": "Respect",
+  "ctx": "Zani sees the Fisalia head as less traditional than people think.",
+  "basis": "stated"
+ },
+ "Carlotta|Cartethyia": {
+  "rel": "Mutual respect",
+  "ctx": "Cartethyia values the fresh ideas Carlotta brings to Ragunna; Carlotta investigates her past.",
+  "basis": "stated"
+ },
+ "Carlotta|Ciaccona": {
+  "rel": "Patron & bard",
+  "ctx": "Carlotta appraises art fairly and taught Ciaccona about beauty; she sends Ciaccona on errands.",
+  "basis": "stated"
+ },
+ "Carlotta|Cristoforo": {
+  "rel": "Enemies",
+  "ctx": "Cristoforo warns that Carlotta and Rover will bear the consequences of their quest for the truth.",
+  "basis": "stated"
+ },
+ "Carlotta|Fenrico": {
+  "rel": "Exposed impostor",
+  "ctx": "Carlotta saw through the thing masquerading as Fenrico after he was slain.",
+  "basis": "stated"
+ },
+ "Carlotta|Galbrena": {
+  "rel": "Allies",
+  "ctx": "Carlotta and Galbrena coordinate Ragunna's defence against the Tidespawn.",
+  "basis": "stated"
+ },
+ "Carlotta|Iuno": {
+  "rel": "Admiration",
+  "ctx": "Iuno admires how Carlotta's family keeps bringing new things to Septimont and Ragunna.",
+  "basis": "stated"
+ },
+ "Carlotta|Lupa": {
+  "rel": "Allies",
+  "ctx": "Carlotta and Lupa plan the push into the Dark Tide.",
+  "basis": "stated"
+ },
+ "Carlotta|Margherita": {
+  "rel": "Customer",
+  "ctx": "Carlotta samples Margherita's newest pizza.",
+  "basis": "stated"
+ },
+ "Carlotta|Phoebe": {
+  "rel": "Mutual respect",
+  "ctx": "Carlotta admires Phoebe's kindness but worries it needs strength behind it; she enlists her help with the Order's records.",
+  "basis": "stated"
+ },
+ "Carlotta|Phrolova": {
+  "rel": "Enemies",
+  "ctx": "Carlotta worries Rover is still under Phrolova's spell.",
+  "basis": "stated"
+ },
+ "Carlotta|Qiuyuan": {
+  "rel": "Introduction",
+  "ctx": "Carlotta meets Qiuyuan, who saved Sir Leon.",
+  "basis": "stated"
+ },
+ "Carlotta|Roccia": {
+  "rel": "Patron & troupe",
+  "ctx": "Carlotta hires the Fool's Troupe; Roccia admires how she steers the Montelli family.",
+  "basis": "stated"
+ },
+ "Carlotta|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover helped Carlotta expose Capollo's betrayal during Ragunna's Carnevale.",
+  "basis": "stated"
+ },
+ "Carlotta|Shorekeeper": {
+  "rel": "Event acquaintances",
+  "ctx": "The Shorekeeper asks Carlotta about her taste in scents.",
+  "basis": "stated"
+ },
+ "Carlotta|Zani": {
+  "rel": "Montelli heir & employee",
+  "ctx": "Zani works for the Montelli family, which Carlotta represents; together they back Rover.",
+  "basis": "stated"
+ },
+ "Cartethyia|Changli": {
+  "rel": "Event acquaintances",
+  "ctx": "Changli and Cartethyia clash in temperament during a comedy event.",
+  "basis": "stated"
+ },
+ "Cartethyia|Ciaccona": {
+  "rel": "Bard & subject",
+  "ctx": "Cartethyia loved bards' tales as a child; Ciaccona won't sing her unfinished story.",
+  "basis": "stated"
+ },
+ "Cartethyia|Cristoforo": {
+  "rel": "Schemer & target",
+  "ctx": "Cristoforo goads Rover about Cartethyia's fate against Leviathan.",
+  "basis": "stated"
+ },
+ "Cartethyia|Fenrico": {
+  "rel": "Accused & guardian",
+  "ctx": "Fenrico swore none would take Ragunna, Cartethyia included; she saw him redeem himself in the end.",
+  "basis": "stated"
+ },
+ "Cartethyia|Galbrena": {
+  "rel": "Unlikely allies",
+  "ctx": "Galbrena learned of Cartethyia through the Dark Tide's memory and fought alongside her.",
+  "basis": "stated"
+ },
+ "Cartethyia|Iuno": {
+  "rel": "Uneasy allies",
+  "ctx": "Iuno doesn't forget Cartethyia's transgression, but works with her.",
+  "basis": "stated"
+ },
+ "Cartethyia|Jinhsi": {
+  "rel": "Event hosts",
+  "ctx": "Jinhsi helps Cartethyia save an anniversary ceremony.",
+  "basis": "stated"
+ },
+ "Cartethyia|Jué": {
+  "rel": "Admirer of its Resonator",
+  "ctx": "Cartethyia admires the resolve of Jué's Resonator.",
+  "basis": "stated"
+ },
+ "Cartethyia|Lupa": {
+  "rel": "Close friends",
+  "ctx": "Cartethyia stayed with Lupa in her worst moments; Lupa never treats her as a monster.",
+  "basis": "stated"
+ },
+ "Cartethyia|Phoebe": {
+  "rel": "Maiden & Acolyte",
+  "ctx": "Cartethyia admires Phoebe's sincere faith; Phoebe dreams of the Blessed Maiden.",
+  "basis": "stated"
+ },
+ "Cartethyia|Phrolova": {
+  "rel": "Envious observer",
+  "ctx": "Phrolova envies Cartethyia: a creation of Divinity with a fully human will.",
+  "basis": "stated"
+ },
+ "Cartethyia|Qiuyuan": {
+  "rel": "Investigator",
+  "ctx": "Qiuyuan examines the bullet that ended Cartethyia and senses no malice in it.",
+  "basis": "stated"
+ },
+ "Cartethyia|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover helped Cartethyia regain her body after her frequency merged with Fleurdelys.",
+  "basis": "stated"
+ },
+ "Cartethyia|Zani": {
+  "rel": "Curious",
+  "ctx": "Cartethyia wonders what Zani finds fun.",
+  "basis": "stated"
+ },
+ "Changli|Chixia": {
+  "rel": "Friends",
+  "ctx": "Chixia showed Changli around Jinzhou's local gems when she arrived.",
+  "basis": "stated"
+ },
+ "Changli|Fuling": {
+  "rel": "Helper",
+  "ctx": "Changli helps Fuling, who has made peace with her coming death.",
+  "basis": "stated"
+ },
+ "Changli|Jianxin": {
+  "rel": "Fellow Taoists",
+  "ctx": "Different sects, shared outlook: Changli values Jianxin's open mind.",
+  "basis": "stated"
+ },
+ "Changli|Jinhsi": {
+  "rel": "Teacher & student",
+  "ctx": "Changli raised and taught Jinhsi like a mother, and serves beside her at Jinzhou City Hall.",
+  "basis": "stated"
+ },
+ "Changli|Jiyan": {
+  "rel": "City Hall acquaintances",
+  "ctx": "Changli knew of Jiyan from City Hall's files when she first came to Jinzhou.",
+  "basis": "stated"
+ },
+ "Changli|Jué": {
+  "rel": "Companion of the Sentinel",
+  "ctx": "Changli's story places her steadfastly beside Sentinel Jué.",
+  "basis": "stated"
+ },
+ "Changli|Qingxiao": {
+  "rel": "Healer of old",
+  "ctx": "Qingxiao's Quietude Art once eased the burning pain of Changli's dangerous flame.",
+  "basis": "stated"
+ },
+ "Changli|Qiuyuan": {
+  "rel": "Mingting colleagues",
+  "ctx": "Qiuyuan rarely met Mingting's high-ups like Changli.",
+  "basis": "stated"
+ },
+ "Changli|Rover": {
+  "rel": "Ally with veiled motives",
+  "ctx": "Jinzhou's councillor guides Rover at Mt. Firmament, though her own aims stay hidden.",
+  "basis": "inferred"
+ },
+ "Changli|Sanhua": {
+  "rel": "City Hall colleagues",
+  "ctx": "Changli and Jinhsi wish their tireless bodyguard Sanhua would rest.",
+  "basis": "stated"
+ },
+ "Changli|Wuli": {
+  "rel": "Helper",
+  "ctx": "Changli helps Wuli and Fuling.",
+  "basis": "stated"
+ },
+ "Changli|Xinyi": {
+  "rel": "Old acquaintances",
+  "ctx": "Xinyi, mayor of Hongzhen, knows Changli; Changli warned that the Court of Savantae would trap the Sentinel.",
+  "basis": "stated"
+ },
+ "Changli|Yangyang": {
+  "rel": "Advisor & Outrider",
+  "ctx": "Yangyang knows Changli as the Magistrate's advisor and former teacher.",
+  "basis": "stated"
+ },
+ "Changli|Zani": {
+  "rel": "Event acquaintances",
+  "ctx": "Changli and Zani share a comedy event.",
+  "basis": "stated"
+ },
+ "Changli|Zhezhi": {
+  "rel": "Allies",
+  "ctx": "Zhezhi and Changli face the night together.",
+  "basis": "stated"
+ },
+ "Chisa|Encore": {
+  "rel": "Tutor",
+  "ctx": "Chisa once helped Encore with maths at the Haven of Sprouts.",
+  "basis": "stated"
+ },
+ "Chisa|Hiyuki": {
+  "rel": "Ashinohara natives",
+  "ctx": "Both from Ashinohara; Hiyuki avoids Chisa because Mikos are omens of dark times there.",
+  "basis": "stated"
+ },
+ "Chisa|Lucilla": {
+  "rel": "Student & President",
+  "ctx": "Chisa's family took Academy posts from President Lucilla while she was missing; she relies on Lucilla's reports.",
+  "basis": "stated"
+ },
+ "Chisa|Luuk Herssen": {
+  "rel": "Doctor & patient",
+  "ctx": "Chisa recovered for a while in Dr. Herssen's infirmary.",
+  "basis": "stated"
+ },
+ "Chisa|Lynae": {
+  "rel": "Friends",
+  "ctx": "Lynae thought Chisa was distant; they clicked over her bike.",
+  "basis": "stated"
+ },
+ "Chisa|Mornye": {
+  "rel": "Former TA & student",
+  "ctx": "Mornye was a teaching assistant when freshman Chisa vanished in the Void Storm.",
+  "basis": "stated"
+ },
+ "Chisa|Namipon": {
+  "rel": "Friends",
+  "ctx": "Namipon, Honami's mascot and self-declared guardian, is a calm presence for Chisa.",
+  "basis": "stated"
+ },
+ "Chisa|Rover": {
+  "rel": "Allies from Honami",
+  "ctx": "Chisa led Rover into Honami City's ruins; afterwards she stayed in the Black Shores' care.",
+  "basis": "stated"
+ },
+ "Chisa|Shorekeeper": {
+  "rel": "Patient & caretaker",
+  "ctx": "The Shorekeeper cared for Chisa while she recovered at the Black Shores; Chisa taught her a drink.",
+  "basis": "stated"
+ },
+ "Chisa|Sigrika": {
+  "rel": "Classmates",
+  "ctx": "Startorch Academy schoolmates.",
+  "basis": "inferred"
+ },
+ "Chisa|Valentina": {
+  "rel": "Black Shores helper",
+  "ctx": "Valentina gave Chisa access to the Black Shores database during her recovery.",
+  "basis": "stated"
+ },
+ "Chixia|Danjin": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Danjin brings lost children to Chixia, whom no child fears.",
+  "basis": "stated"
+ },
+ "Chixia|Encore": {
+  "rel": "Friends",
+  "ctx": "Encore counts Chixia among her besties; Chixia met her while helping Rover.",
+  "basis": "stated"
+ },
+ "Chixia|Jianxin": {
+  "rel": "Sparring partners",
+  "ctx": "Chixia always invites Jianxin to spar; Jianxin admires her.",
+  "basis": "stated"
+ },
+ "Chixia|Jinhsi": {
+  "rel": "Patroller & Magistrate",
+  "ctx": "Jinhsi sent Chixia and Yangyang to investigate the disappearances at Xuanfang.",
+  "basis": "stated"
+ },
+ "Chixia|Jiyan": {
+  "rel": "Patroller & General",
+  "ctx": "Jiyan has heard of Chixia's devotion; Chixia trusts him to protect Jinzhou.",
+  "basis": "stated"
+ },
+ "Chixia|Jué": {
+  "rel": "Faithful citizen",
+  "ctx": "Chixia trusts Jué to choose Jinzhou's Magistrates well.",
+  "basis": "stated"
+ },
+ "Chixia|Lingyang": {
+  "rel": "Friendly rivals",
+  "ctx": "Lingyang calls Chixia his top rival in helping people.",
+  "basis": "stated"
+ },
+ "Chixia|Lumi": {
+  "rel": "Customer",
+  "ctx": "Lumi delivers Chixia's snacks and hero-play merch.",
+  "basis": "stated"
+ },
+ "Chixia|Mortefi": {
+  "rel": "Lab visitor",
+  "ctx": "Chixia brings children to Mortefi's lab, and he likes her for it.",
+  "basis": "stated"
+ },
+ "Chixia|Rover": {
+  "rel": "Friends",
+  "ctx": "Chixia, a junior Patroller, was among Rover's first companions in Jinzhou.",
+  "basis": "stated"
+ },
+ "Chixia|Scar": {
+  "rel": "Heard of him",
+  "ctx": "Chixia hears from Rover how dangerous Scar is.",
+  "basis": "stated"
+ },
+ "Chixia|Taoqi": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Chixia points Rover to Director Taoqi at the city gate.",
+  "basis": "stated"
+ },
+ "Chixia|Verina": {
+  "rel": "Friends",
+  "ctx": "Jinzhou friends; Chixia once fed Verina a far too spicy spoonful.",
+  "basis": "stated"
+ },
+ "Chixia|Xiangli Yao": {
+  "rel": "Patient & researcher",
+  "ctx": "Xiangli Yao credits Baizhi with stabilising Chixia after her injuries.",
+  "basis": "stated"
+ },
+ "Chixia|Yangyang": {
+  "rel": "Close friends",
+  "ctx": "Jinzhou's Patroller and Outrider, who admire each other and were among the first to meet Rover.",
+  "basis": "stated"
+ },
+ "Chixia|Yinlin": {
+  "rel": "Senior & junior Patroller",
+  "ctx": "Yinlin is Chixia's senior at the Bureau and her first idol.",
+  "basis": "stated"
+ },
+ "Chixia|Youhu": {
+  "rel": "Wary",
+  "ctx": "Youhu steers clear of Patroller Chixia, just in case.",
+  "basis": "stated"
+ },
+ "Chixia|Yuanwu": {
+  "rel": "Morning neighbours",
+  "ctx": "Chixia is already patrolling outside Yuanwu's gym every morning.",
+  "basis": "stated"
+ },
+ "Chixia|Zhezhi": {
+  "rel": "Friends",
+  "ctx": "Chixia invited shy Zhezhi to dinner, which turned out to be a huge gathering.",
+  "basis": "stated"
+ },
+ "Ciaccona|Cristoforo": {
+  "rel": "Opponents",
+  "ctx": "Ciaccona exposes how someone used the Golden Anthem to stir the public; Cristoforo tests her.",
+  "basis": "stated"
+ },
+ "Ciaccona|Fenrico": {
+  "rel": "Pawns of a puppet master",
+  "ctx": "Ciaccona reads Fenrico's will in his lantern and suspects they were pawns.",
+  "basis": "stated"
+ },
+ "Ciaccona|Fulmine": {
+  "rel": "Rebuilding helpers",
+  "ctx": "Ciaccona and Fulmine offer their Fortes to rebuild Ragunna.",
+  "basis": "stated"
+ },
+ "Ciaccona|Iuno": {
+  "rel": "Friends",
+  "ctx": "Iuno asks Ciaccona to come back soon, \"for everyone else's sake\".",
+  "basis": "stated"
+ },
+ "Ciaccona|Margherita": {
+  "rel": "Neighbours",
+  "ctx": "Ciaccona asks Margherita for help with rumours in Ragunna.",
+  "basis": "stated"
+ },
+ "Ciaccona|Phoebe": {
+  "rel": "Protective silence",
+  "ctx": "Ciaccona keeps the Order's truths from Phoebe after seeing her devotion.",
+  "basis": "stated"
+ },
+ "Ciaccona|Qiuyuan": {
+  "rel": "Strangers met on the road",
+  "ctx": "Ciaccona meets Qiuyuan, newly arrived from Huanglong, in Rinascita.",
+  "basis": "stated"
+ },
+ "Ciaccona|Roccia": {
+  "rel": "Allies",
+  "ctx": "Roccia and Ciaccona help rebuild Ragunna.",
+  "basis": "stated"
+ },
+ "Ciaccona|Rover": {
+  "rel": "Allies",
+  "ctx": "The bard Ciaccona guides Rover through Ragunna's melodies.",
+  "basis": "inferred"
+ },
+ "Ciaccona|Scar": {
+  "rel": "Witness",
+  "ctx": "Ciaccona saw Scar beaten quickly.",
+  "basis": "stated"
+ },
+ "Ciaccona|Zani": {
+  "rel": "Bard & listener",
+  "ctx": "Zani has heard Ciaccona sing Rinascita's old folklore and asked her about the age of heroes.",
+  "basis": "stated"
+ },
+ "Cosmos|Encore": {
+  "rel": "Imaginary friend",
+  "ctx": "Cosmos is one of Encore's sentient dolls, a gift from her mother.",
+  "basis": "stated"
+ },
+ "Cosmos|Roccia": {
+  "rel": "Playmates",
+  "ctx": "Cosmos wants Roccia and Pero to play with the Wooly Adventure Squad.",
+  "basis": "stated"
+ },
+ "Cristoforo|Denia": {
+  "rel": "Schemer",
+  "ctx": "Cristoforo reports that the Spacetrek Collective took Denia in, as the Grand Architect wished.",
+  "basis": "stated"
+ },
+ "Cristoforo|Fenrico": {
+  "rel": "Manipulator & Primus",
+  "ctx": "Cristoforo plays on Primus Fenrico's role as the \"Enlightened One\" in his schemes.",
+  "basis": "stated"
+ },
+ "Cristoforo|Galbrena": {
+  "rel": "Enemies",
+  "ctx": "Galbrena saw through Cristoforo's script and the decoy he planted.",
+  "basis": "stated"
+ },
+ "Cristoforo|Lupa": {
+  "rel": "Manipulator & target",
+  "ctx": "Cristoforo frames Lupa's fate in his \"weaving time beneath the tide\".",
+  "basis": "stated"
+ },
+ "Cristoforo|Luuk Herssen": {
+  "rel": "Knows the codenames",
+  "ctx": "Luuk knows Cristoforo's Fractsidus codename, Arachnos.",
+  "basis": "stated"
+ },
+ "Cristoforo|Phrolova": {
+  "rel": "Fractsidus Overseers",
+  "ctx": "Fellow Overseers with clashing tastes; Phrolova mocks his obsession with heroic tales.",
+  "basis": "stated"
+ },
+ "Cristoforo|Rover": {
+  "rel": "Enemies",
+  "ctx": "Cristoforo, a Fractsidus Overseer posing as a playwright, stopped Rover at the Pilgrim's Sail and toys with them through illusions.",
+  "basis": "stated"
+ },
+ "Cristoforo|Scar": {
+  "rel": "Fractsidus Overseers",
+  "ctx": "Cristoforo broke Scar out of Jinzhou's prison under Mingting's nose.",
+  "basis": "stated"
+ },
+ "Cristoforo|Zani": {
+  "rel": "Deceived",
+  "ctx": "Zani met Cristoforo as a \"playwright\" sharing stories about the Blessed Maiden.",
+  "basis": "stated"
+ },
+ "Danjin|Mortefi": {
+  "rel": "Grateful friend",
+  "ctx": "Mortefi repaired Danjin's worn blade; she repaid him the following week.",
+  "basis": "stated"
+ },
+ "Danjin|Rover": {
+  "rel": "Friends",
+  "ctx": "Danjin admires Rover's instinct to act against injustice, even without memories.",
+  "basis": "stated"
+ },
+ "Danjin|Yangyang": {
+  "rel": "Midnight Rangers",
+  "ctx": "Danjin admires Yangyang's gentle strength; Yangyang respects Danjin's sense of justice.",
+  "basis": "stated"
+ },
+ "Danjin|Yinlin": {
+  "rel": "Battle partners",
+  "ctx": "Danjin finds Yinlin's thunder reassuring after many joint missions.",
+  "basis": "stated"
+ },
+ "Danjin|Youhu": {
+  "rel": "Curious",
+  "ctx": "Youhu admires Danjin's jade but feels no joyful frequency in it.",
+  "basis": "stated"
+ },
+ "Danjin|Yuanwu": {
+  "rel": "Worried elder",
+  "ctx": "Yuanwu senses a dangerous burden in Danjin's way of fighting.",
+  "basis": "stated"
+ },
+ "Denia|Hiyuki": {
+  "rel": "Fought, then sorry",
+  "ctx": "Hiyuki fought Denia under the Fractsidus's influence and feels she failed her.",
+  "basis": "stated"
+ },
+ "Denia|Lucilla": {
+  "rel": "President & lost student",
+  "ctx": "Lucilla blames herself for not seeing what Denia hid; Denia went missing among the Fractsidus.",
+  "basis": "stated"
+ },
+ "Denia|Luuk Herssen": {
+  "rel": "Hidden Fractsidus ties",
+  "ctx": "Both have Fractsidus ties in their profiles; Luuk hints that the truth comes to light.",
+  "basis": "stated"
+ },
+ "Denia|Lynae": {
+  "rel": "Schoolmates",
+  "ctx": "Startorch schoolmates; Lynae points Rover to Denia.",
+  "basis": "stated"
+ },
+ "Denia|Mornye": {
+  "rel": "Admirer & professor",
+  "ctx": "Denia thinks Mornye is the perfect teacher; Mornye watches her doze off in lectures.",
+  "basis": "stated"
+ },
+ "Denia|Phrolova": {
+  "rel": "Kind captor",
+  "ctx": "Phrolova was one of the few Overseers who talked to Denia, and played the violin for her.",
+  "basis": "stated"
+ },
+ "Denia|Rover": {
+  "rel": "Rescued from the Fractsidus",
+  "ctx": "Rover works to free Denia from the Threnodian frequency the Fractsidus used on her.",
+  "basis": "stated"
+ },
+ "Denia|Sigrika": {
+  "rel": "Close friends",
+  "ctx": "Friends since a group assignment; Denia worries about the weight Sigrika carries.",
+  "basis": "stated"
+ },
+ "Encore|Jiyan": {
+  "rel": "Acquaintances",
+  "ctx": "Jiyan has met Encore once and thinks she and Aalto complement each other.",
+  "basis": "stated"
+ },
+ "Encore|Mortefi": {
+  "rel": "Gadget fan",
+  "ctx": "Encore wants to ask Mortefi for a bouncy sheep gadget.",
+  "basis": "stated"
+ },
+ "Encore|Rover": {
+  "rel": "Black Shores friends",
+  "ctx": "Encore drags Rover into her wooly adventures at the Black Shores.",
+  "basis": "stated"
+ },
+ "Encore|Shorekeeper": {
+  "rel": "Black Shores colleagues",
+  "ctx": "The Shorekeeper admires Encore's imagination and lends her Tethys's computing power.",
+  "basis": "stated"
+ },
+ "Encore|Taoqi": {
+  "rel": "Allies",
+  "ctx": "Taoqi briefs Rover while Encore worries for their safety during the outbreak.",
+  "basis": "stated"
+ },
+ "Encore|Uncle Li": {
+  "rel": "Customer",
+  "ctx": "Uncle Li tells Encore the story of the Plumpcake.",
+  "basis": "stated"
+ },
+ "Encore|Valentina": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Valentina relays Tethys warnings built on data from Encore and Aalto.",
+  "basis": "stated"
+ },
+ "Encore|Verina": {
+  "rel": "Friends",
+  "ctx": "Verina answers curious Encore's endless questions; Encore loves Verina's flowers.",
+  "basis": "stated"
+ },
+ "Encore|Yangyang": {
+  "rel": "Rescuer",
+  "ctx": "Yangyang scolds little Encore for going somewhere dangerous alone.",
+  "basis": "stated"
+ },
+ "Encore|Yinlin": {
+  "rel": "Battle partners",
+  "ctx": "Encore and Yinlin face the \"Big Bad Demon\" together.",
+  "basis": "stated"
+ },
+ "Encore|Zhezhi": {
+  "rel": "Friends",
+  "ctx": "Encore drags camera-shy Zhezhi into photos.",
+  "basis": "stated"
+ },
+ "Fenrico|Galbrena": {
+  "rel": "Hostile",
+  "ctx": "Fenrico rejects Galbrena as a \"demon wrought from ruin\".",
+  "basis": "stated"
+ },
+ "Fenrico|Lenore": {
+  "rel": "Primus & Acolyte",
+  "ctx": "Lenore serves under Primus Fenrico, who banned rumours about the Sentinel.",
+  "basis": "stated"
+ },
+ "Fenrico|Phoebe": {
+  "rel": "Primus & Acolyte",
+  "ctx": "Phoebe reveres Primus Fenrico as the Enlightened One, the Sentinel's Resonator.",
+  "basis": "stated"
+ },
+ "Fenrico|Phrolova": {
+  "rel": "Rivals for the Gem",
+  "ctx": "Phrolova seeks the Gem that Fenrico holds.",
+  "basis": "stated"
+ },
+ "Fenrico|Qiuyuan": {
+  "rel": "Witness",
+  "ctx": "Qiuyuan carried the lantern that awakened Fenrico and saw his end.",
+  "basis": "stated"
+ },
+ "Fenrico|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover learns that Primus Fenrico gave his life to seal the Dark Tide in Ragunna.",
+  "basis": "stated"
+ },
+ "Fuling|Rover": {
+  "rel": "Helped by Rover",
+  "ctx": "Rover helps Fuling and Wuli in the Immortal Blaze story.",
+  "basis": "stated"
+ },
+ "Fuling|Wuli": {
+  "rel": "Travel companions",
+  "ctx": "Wuli promises to take Fuling to see more new places together.",
+  "basis": "stated"
+ },
+ "Fulmine|Phoebe": {
+  "rel": "Acquaintances",
+  "ctx": "Fulmine films the Carnevale and runs into Phoebe.",
+  "basis": "stated"
+ },
+ "Fulmine|Rover": {
+  "rel": "Acquaintances",
+  "ctx": "Fulmine, manager of the Wutherim Film Studio, sends Rover on Plushie photo errands.",
+  "basis": "stated"
+ },
+ "Fulmine|Zani": {
+  "rel": "Helpers",
+  "ctx": "Zani thanks Fulmine for his footage during the Ragunna investigation.",
+  "basis": "stated"
+ },
+ "Galbrena|Iuno": {
+  "rel": "Allies",
+  "ctx": "Iuno sees in Galbrena, the Discord Slayer, someone who can navigate the Dark Tide.",
+  "basis": "stated"
+ },
+ "Galbrena|Lupa": {
+  "rel": "Septimont acquaintances",
+  "ctx": "Lupa gave Galbrena candy, which she fed to Chimera.",
+  "basis": "stated"
+ },
+ "Galbrena|Margherita": {
+  "rel": "Customer",
+  "ctx": "Margherita gives Galbrena double scoops on the house.",
+  "basis": "stated"
+ },
+ "Galbrena|Phoebe": {
+  "rel": "Acquaintances",
+  "ctx": "Phoebe keeps track of where Galbrena went.",
+  "basis": "stated"
+ },
+ "Galbrena|Qiuyuan": {
+  "rel": "Fellow hunters",
+  "ctx": "Galbrena and Qiuyuan both hunt Cristoforo, who escaped them.",
+  "basis": "stated"
+ },
+ "Galbrena|Rover": {
+  "rel": "Black Shores comrades",
+  "ctx": "Galbrena fights beside Rover through Ragunna's Dark Tide; Rover comes to know her true story.",
+  "basis": "stated"
+ },
+ "Galbrena|Scar": {
+  "rel": "Enemies",
+  "ctx": "Galbrena stands against Scar during the Dark Tide.",
+  "basis": "stated"
+ },
+ "Galbrena|Zani": {
+  "rel": "Allies",
+  "ctx": "Zani and Galbrena compare notes after escaping the rift.",
+  "basis": "stated"
+ },
+ "Hiyuki|Lucilla": {
+  "rel": "Partners",
+  "ctx": "A \"contractual\" partnership: Lucilla's arrangements got Hiyuki into the Spacetrek Collective.",
+  "basis": "stated"
+ },
+ "Hiyuki|Luuk Herssen": {
+  "rel": "Colleagues",
+  "ctx": "Luuk sees Hiyuki off and asks her to keep in touch.",
+  "basis": "stated"
+ },
+ "Hiyuki|Lynae": {
+  "rel": "Kindred pasts",
+  "ctx": "Hiyuki knows some of Lynae's secrets; both are bound by their pasts.",
+  "basis": "stated"
+ },
+ "Hiyuki|Mornye": {
+  "rel": "Mentor & student",
+  "ctx": "Mornye calls Hiyuki \"Mentor\" and promises Startorch will always welcome her.",
+  "basis": "stated"
+ },
+ "Hiyuki|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover fights alongside Hiyuki through the Starlights crisis in Lahai-Roi.",
+  "basis": "inferred"
+ },
+ "Hiyuki|Sigrika": {
+  "rel": "Watchful elder",
+  "ctx": "Hiyuki sees Sigrika straining under a Solsworn's expectations far beyond her years.",
+  "basis": "stated"
+ },
+ "Hsin|Jingran": {
+  "rel": "Sentinel & investigator",
+  "ctx": "Jingran tracks a plot to steal Hsin's Sentinel technology.",
+  "basis": "stated"
+ },
+ "Hsin|Jinhsi": {
+  "rel": "Neighbouring Sentinel",
+  "ctx": "Jinhsi explains that Hsin, Mengzhou's Sentinel, built Xuanfang Hold and made pacts with Jué.",
+  "basis": "stated"
+ },
+ "Hsin|Jué": {
+  "rel": "Fellow Sentinels",
+  "ctx": "Hsin thinks Jué, the youngest of Huanglong's Sentinels, is the most rigid.",
+  "basis": "stated"
+ },
+ "Hsin|Liangyu": {
+  "rel": "Sentinel & Watcher",
+  "ctx": "Liangyu explains Mengzhou's mechanists and Hsin's Hold.",
+  "basis": "stated"
+ },
+ "Hsin|Mortefi": {
+  "rel": "Researcher of her work",
+  "ctx": "Mortefi traces the technology behind Hsin's Autopuppets.",
+  "basis": "stated"
+ },
+ "Hsin|Qingxiao": {
+  "rel": "Sentinel & Paragon",
+  "ctx": "Hsin invited Qingxiao to be the Xuan Paragon; the Sentinel teases her, Qingxiao humours it.",
+  "basis": "stated"
+ },
+ "Hsin|Rover": {
+  "rel": "Sentinel & seeker",
+  "ctx": "Rover searches Xuanfang for traces of Hsin the Moon Fox, Mengzhou's Sentinel.",
+  "basis": "stated"
+ },
+ "Hsin|Suisui": {
+  "rel": "Sentinel & dealmaker",
+  "ctx": "Suisui struck a secret deal with Hsin, who admires her purpose in commerce.",
+  "basis": "stated"
+ },
+ "Hsin|Suoming": {
+  "rel": "Sentinel & Intendant",
+  "ctx": "Suoming carried Mengzhou while Hsin was absent, resented it, and now serves the Sentinel.",
+  "basis": "stated"
+ },
+ "Hsin|Xiangli Yao": {
+  "rel": "Admirer of her work",
+  "ctx": "Xiangli Yao calls Xuanfang Hold the Moon Fox's masterpiece.",
+  "basis": "stated"
+ },
+ "Hsin|Xuanqing": {
+  "rel": "Sentinel & Resonator",
+  "ctx": "Xuanqing was Hsin the Moon Fox's Sentinel Resonator, alive in the Moon Fox's memories.",
+  "basis": "stated"
+ },
+ "Hsin|Yangyang": {
+  "rel": "Sentinel & investigator",
+  "ctx": "Yangyang investigates who Hsin chose to build Xuanfang Hold.",
+  "basis": "stated"
+ },
+ "Iuno|Lupa": {
+  "rel": "Friends",
+  "ctx": "Lupa likes Iuno's unconventional ways; Iuno admires Lupa's pure love of competition.",
+  "basis": "stated"
+ },
+ "Iuno|Qiuyuan": {
+  "rel": "Allies",
+  "ctx": "Qiuyuan and Iuno deal with the aftermath of the Dark Tide.",
+  "basis": "stated"
+ },
+ "Iuno|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover follows Iuno's memories in Septimont, even after the world forgets she existed.",
+  "basis": "stated"
+ },
+ "Iuno|Scar": {
+  "rel": "Enemies",
+  "ctx": "Scar taunts Septimont's gladiators while Iuno tracks his frequency.",
+  "basis": "stated"
+ },
+ "Jianxin|Jiyan": {
+  "rel": "Comrades in arms",
+  "ctx": "Jianxin holds the base while General Jiyan leads the push against the Threnodian.",
+  "basis": "stated"
+ },
+ "Jianxin|Lingyang": {
+  "rel": "Martial artists",
+  "ctx": "Lingyang's liondance grew out of the same martial traditions Jianxin practises.",
+  "basis": "stated"
+ },
+ "Jianxin|Lumi": {
+  "rel": "Chance meeting",
+  "ctx": "Lumi once woke to find Jianxin napping on a clifftop boulder.",
+  "basis": "stated"
+ },
+ "Jianxin|Rover": {
+  "rel": "Allies",
+  "ctx": "Jianxin helps Rover decode the Magistrate's riddle in Jinzhou.",
+  "basis": "stated"
+ },
+ "Jianxin|Sanhua": {
+  "rel": "Respect",
+  "ctx": "Sanhua sees a golden hue in Jianxin's soul.",
+  "basis": "stated"
+ },
+ "Jianxin|Yangyang": {
+  "rel": "Jinzhou acquaintances",
+  "ctx": "Yangyang knows Master Jianxin and runs into her on the road.",
+  "basis": "stated"
+ },
+ "Jianxin|Youhu": {
+  "rel": "Secret keeper",
+  "ctx": "Youhu knows the secret of Jianxin's mirror.",
+  "basis": "stated"
+ },
+ "Jianxin|Yuanwu": {
+  "rel": "Sparring partners",
+  "ctx": "Jianxin challenged Yuanwu at his boxing gym; now she trains with him for a meal.",
+  "basis": "stated"
+ },
+ "Jianxin|Zhezhi": {
+  "rel": "Mountain acquaintances",
+  "ctx": "Zhezhi met Jianxin training in the mountains, full of travel tales.",
+  "basis": "stated"
+ },
+ "Jingran|Qingxiao": {
+  "rel": "Old debt",
+  "ctx": "Years ago Qingxiao gave Jingran's master a divination; Jingran later fights beside her.",
+  "basis": "stated"
+ },
+ "Jingran|Qiuyuan": {
+  "rel": "Allies",
+  "ctx": "Qiuyuan let Jingran decide his own revenge.",
+  "basis": "stated"
+ },
+ "Jingran|Rover": {
+  "rel": "Allies",
+  "ctx": "Rover and Jingran fight together in Mengzhou; Rover keeps his Qingfu pendant.",
+  "basis": "stated"
+ },
+ "Jingran|Suisui": {
+  "rel": "Reputations",
+  "ctx": "Each knows the other by reputation: the Chongming Pruner and the Cat of the Nether Lamp.",
+  "basis": "stated"
+ },
+ "Jinhsi|Jiyan": {
+  "rel": "Magistrate & General",
+  "ctx": "Jinhsi trusts Jiyan to defend Jinzhou's frontier; he respects the different battle she fights.",
+  "basis": "stated"
+ },
+ "Jinhsi|Jué": {
+  "rel": "Resonator & Sentinel",
+  "ctx": "Jinhsi is Jué's Appointed Resonator; the Sentinel once reversed her death.",
+  "basis": "stated"
+ },
+ "Jinhsi|Phoebe": {
+  "rel": "Event helpers",
+  "ctx": "Jinhsi and Phoebe tidy up after a ceremony.",
+  "basis": "stated"
+ },
+ "Jinhsi|Qingxiao": {
+  "rel": "Fellow sword flyers",
+  "ctx": "Qingxiao notes Jinhsi has mastered Sword Flight.",
+  "basis": "stated"
+ },
+ "Jinhsi|Qiuyuan": {
+  "rel": "By description",
+  "ctx": "Qiuyuan recognises Rover from the description given by Jinhsi's bodyguard.",
+  "basis": "stated"
+ },
+ "Jinhsi|Rover": {
+  "rel": "Trusted allies",
+  "ctx": "The Magistrate of Jinzhou, who trusts Rover and fights beside them for the city.",
+  "basis": "stated"
+ },
+ "Jinhsi|Sanhua": {
+  "rel": "Magistrate & guard",
+  "ctx": "Sanhua is Jinhsi's loyal bodyguard who makes sure she eats and wakes on time.",
+  "basis": "stated"
+ },
+ "Jinhsi|Scar": {
+  "rel": "Magistrate & captive",
+  "ctx": "Jinhsi planned and carried out Scar's capture in Jinzhou.",
+  "basis": "stated"
+ },
+ "Jinhsi|Sigrika": {
+  "rel": "Admirer",
+  "ctx": "Sigrika would like to meet Jinhsi, who handles her pressure well.",
+  "basis": "stated"
+ },
+ "Jinhsi|Suisui": {
+  "rel": "Magistrate & visitor",
+  "ctx": "Jinhsi receives Suisui in Jinzhou, who claims a direct deal with Sentinel Hsin.",
+  "basis": "stated"
+ },
+ "Jinhsi|Taoqi": {
+  "rel": "Magistrate & director",
+  "ctx": "Taoqi runs Jinzhou's Defense Division for Jinhsi and defends the young Magistrate.",
+  "basis": "stated"
+ },
+ "Jinhsi|Uncle Li": {
+  "rel": "Neighbourly",
+  "ctx": "Jinhsi stops by to taste-test Uncle Li's pastries.",
+  "basis": "stated"
+ },
+ "Jinhsi|Xiangli Yao": {
+  "rel": "Magistrate & researcher",
+  "ctx": "Jinhsi often visits the Academy to follow Xiangli Yao's weapons work.",
+  "basis": "stated"
+ },
+ "Jinhsi|Xinyi": {
+  "rel": "Magistrate & mayor",
+  "ctx": "Jinhsi relies on Xinyi, mayor of Hongzhen, during the Sentinel crisis on Mt. Firmament.",
+  "basis": "stated"
+ },
+ "Jinhsi|Yangyang": {
+  "rel": "Magistrate & Outrider",
+  "ctx": "Yangyang sympathises with Jinhsi, chosen as Magistrate while still a teenager.",
+  "basis": "stated"
+ },
+ "Jiyan|Jué": {
+  "rel": "Sentinel's chosen General",
+  "ctx": "Jiyan was chosen by Jué to lead the Midnight Rangers; Jué prophesied Rover's arrival.",
+  "basis": "stated"
+ },
+ "Jiyan|Lingyang": {
+  "rel": "Liondance & soldiers",
+  "ctx": "Lingyang's troupe performs before Jiyan's soldiers go into battle.",
+  "basis": "stated"
+ },
+ "Jiyan|Mortefi": {
+  "rel": "Rescuer & friend",
+  "ctx": "Jiyan rescued Mortefi from the wilderness and referred him to the Academy; Mortefi repays him in solved problems.",
+  "basis": "stated"
+ },
+ "Jiyan|Qiuyuan": {
+  "rel": "By reputation",
+  "ctx": "Qiuyuan respects Jiyan as the youngest General in Huanglong's Ministry of War.",
+  "basis": "stated"
+ },
+ "Jiyan|Rover": {
+  "rel": "Comrades in arms",
+  "ctx": "The General of the Midnight Rangers, who fought beside Rover in the Grand Warstorm.",
+  "basis": "stated"
+ },
+ "Jiyan|Sanhua": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Sanhua explains the Midnight Rangers under General Jiyan.",
+  "basis": "stated"
+ },
+ "Jiyan|Taoqi": {
+  "rel": "Frontline & home front",
+  "ctx": "Taoqi keeps Jinzhou's defences in order so General Jiyan can focus on the front.",
+  "basis": "stated"
+ },
+ "Jiyan|Xiangli Yao": {
+  "rel": "Mutual respect",
+  "ctx": "Jiyan shares battle knowledge with Xiangli Yao's research; Xiangli Yao admires him.",
+  "basis": "stated"
+ },
+ "Jiyan|Yangyang": {
+  "rel": "General & Outrider",
+  "ctx": "Yangyang serves under General Jiyan in the Midnight Rangers and credits him with protecting them all.",
+  "basis": "stated"
+ },
+ "Jué|Qingxiao": {
+  "rel": "By reputation",
+  "ctx": "Qingxiao knows Rover resolved Mt. Firmament's crisis alongside Jué.",
+  "basis": "stated"
+ },
+ "Jué|Rover": {
+  "rel": "Sentinel & guest",
+  "ctx": "Rover wonders how Jinzhou's Sentinel Jué, its Magistrate and its General are connected.",
+  "basis": "stated"
+ },
+ "Jué|Sanhua": {
+  "rel": "Sentinel & guard",
+  "ctx": "Sanhua explains Jinhsi's title of Loong Maiden and Jué's disappearance.",
+  "basis": "stated"
+ },
+ "Jué|Scar": {
+  "rel": "Suspect",
+  "ctx": "Scar hints there is more to Jué's disappearance than the Fractsidus.",
+  "basis": "stated"
+ },
+ "Jué|Xinyi": {
+  "rel": "Sentinel & mayor",
+  "ctx": "Xinyi keeps watch over Jué's Mt. Firmament and counsels Jinhsi on virtue.",
+  "basis": "stated"
+ },
+ "Jué|Yangyang": {
+  "rel": "Sentinel & citizen",
+  "ctx": "Yangyang introduces Jinzhou's Sentinel Jué to Rover, and saw it manifest in battle.",
+  "basis": "stated"
+ },
+ "Lenore|Maji": {
+  "rel": "Lollo helpers",
+  "ctx": "Lenore, an Acolyte, offers to take on Maji's dirty jobs.",
+  "basis": "stated"
+ },
+ "Lenore|Phoebe": {
+  "rel": "Order colleagues",
+  "ctx": "Lenore notes Phoebe's rise to the Privy Council.",
+  "basis": "stated"
+ },
+ "Lenore|Rover": {
+  "rel": "Helped by Rover",
+  "ctx": "Rover sees Lenore, former dean of the Minor Forbidden Archive, through the Morning Star quests.",
+  "basis": "inferred"
+ },
+ "Liangyu|Qingxiao": {
+  "rel": "Xuan Triad & Paragon",
+  "ctx": "Liangyu of the Xuan Triad reports to Paragon Qingxiao.",
+  "basis": "stated"
+ },
+ "Liangyu|Rover": {
+  "rel": "Allies in Mengzhou",
+  "ctx": "Liangyu of the Xuan Triad tells Rover how Yangyang drew the Autopuppets away.",
+  "basis": "stated"
+ },
+ "Liangyu|Suisui": {
+  "rel": "Allies",
+  "ctx": "Liangyu and Suisui weigh Muyu's motives against the Sentinel.",
+  "basis": "stated"
+ },
+ "Liangyu|Suoming": {
+  "rel": "Mengzhou colleagues",
+  "ctx": "Suoming sees an old friend in Watcher Liangyu.",
+  "basis": "stated"
+ },
+ "Liangyu|Yangyang": {
+  "rel": "Comrades",
+  "ctx": "Yangyang travelled with Liangyu of the Xuan Triad during an evacuation; Liangyu refuses her apology.",
+  "basis": "stated"
+ },
+ "Lingyang|Mortefi": {
+  "rel": "Toy maker",
+  "ctx": "Lingyang knows Mortefi as the genius behind Jinzhou's children's toys.",
+  "basis": "stated"
+ },
+ "Lingyang|Sanhua": {
+  "rel": "Mistaken identity",
+  "ctx": "Sanhua once mistook Lingyang for a wild beast by the shape of his soul.",
+  "basis": "stated"
+ },
+ "Lingyang|Taoqi": {
+  "rel": "Sleepy audience",
+  "ctx": "Lingyang can't believe Taoqi sleeps through the Qixing Drum.",
+  "basis": "stated"
+ },
+ "Lingyang|Verina": {
+  "rel": "Allies",
+  "ctx": "Verina and the Liondance Troupe join Jinzhou's defence.",
+  "basis": "stated"
+ },
+ "Lingyang|Yangyang": {
+  "rel": "Fan",
+  "ctx": "Lingyang keeps asking Yangyang to sing at his theatre; she's too shy.",
+  "basis": "stated"
+ },
+ "Lingyang|Youhu": {
+  "rel": "Friendly rivals in verse",
+  "ctx": "Youhu rates Lingyang's Lucky Greetings almost as cool as her poems.",
+  "basis": "stated"
+ },
+ "Lingyang|Yuanwu": {
+  "rel": "Neighbours",
+  "ctx": "Lingyang brings fish to the cats at Yuanwu's gym.",
+  "basis": "stated"
+ },
+ "Lingyang|Zhezhi": {
+  "rel": "Admirer",
+  "ctx": "Zhezhi tried to sketch Lingyang's liondance and couldn't keep up.",
+  "basis": "stated"
+ },
+ "Lucilla|Lucy": {
+  "rel": "By reputation",
+  "ctx": "Lucy knows Lucilla's reputation from the Somnoire crisis and passes on her parting gift.",
+  "basis": "stated"
+ },
+ "Lucilla|Luuk Herssen": {
+  "rel": "Colleagues",
+  "ctx": "The Academy's President and its doctor, who trust each other's skills if not each other's secrets.",
+  "basis": "stated"
+ },
+ "Lucilla|Lynae": {
+  "rel": "President & student",
+  "ctx": "Lynae is on a \"watchlist\" and tries not to break President Lucilla's rules.",
+  "basis": "stated"
+ },
+ "Lucilla|Mornye": {
+  "rel": "Academy colleagues",
+  "ctx": "The President and the professor who coordinate Startorch's response to the Void anomalies.",
+  "basis": "stated"
+ },
+ "Lucilla|Rover": {
+  "rel": "Academy President & student",
+  "ctx": "Rover enrols at Startorch Academy under President Lucilla and works with her through the Synchronist crisis.",
+  "basis": "stated"
+ },
+ "Lucilla|Sigrika": {
+  "rel": "President & student",
+  "ctx": "Lucilla is fond of earnest Sigrika, who loves her classes.",
+  "basis": "stated"
+ },
+ "Lucy|Luuk Herssen": {
+  "rel": "Sponsor",
+  "ctx": "Dr. Luuk registers Lucy as a student so she can move freely.",
+  "basis": "stated"
+ },
+ "Lucy|Lynae": {
+  "rel": "Accidental confidante",
+  "ctx": "When Lucy's ability awakened she hacked Lynae by accident and saw the memories Lynae had locked away.",
+  "basis": "stated"
+ },
+ "Lucy|Mornye": {
+  "rel": "Researcher & netrunner",
+  "ctx": "Lucy is moved by Mornye's records and waits on her leads.",
+  "basis": "stated"
+ },
+ "Lucy|Rebecca": {
+  "rel": "Crewmates",
+  "ctx": "Night City crewmates; Rebecca saw Lucy as part of the crew, Lucy never quite opened up.",
+  "basis": "stated"
+ },
+ "Lucy|Rover": {
+  "rel": "Somnoire allies",
+  "ctx": "Rover and Lucy trace the Nightmare Tacet Discord linked to her in the Somnoire.",
+  "basis": "stated"
+ },
+ "Lucy|Sigrika": {
+  "rel": "Curious",
+  "ctx": "Lucy is intrigued by the logic of Sigrika's runes.",
+  "basis": "stated"
+ },
+ "Lumi|Rover": {
+  "rel": "Friends",
+  "ctx": "Rover rescues Lumi, the Lollo Logistics navigator, from Tacet Discords.",
+  "basis": "stated"
+ },
+ "Lumi|Youhu": {
+  "rel": "Customer",
+  "ctx": "Lumi delivers Youhu's insured antiques.",
+  "basis": "stated"
+ },
+ "Lumi|Zhezhi": {
+  "rel": "Courier & night owl",
+  "ctx": "Lumi leaves paints and paper at night-owl Zhezhi's door.",
+  "basis": "stated"
+ },
+ "Lupa|Rover": {
+  "rel": "Allies",
+  "ctx": "Lupa takes Rover through Septimont, while Phrolova claims she will bring the Dark Tide.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Lynae": {
+  "rel": "Doctor & student",
+  "ctx": "Lynae felt Dr. Herssen could see right through her; she suggests his candy flavours.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Mornye": {
+  "rel": "Doctor & former patient",
+  "ctx": "Mornye was a regular at Dr. Herssen's infirmary as a student; now they are colleagues.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Phrolova": {
+  "rel": "Knows the codenames",
+  "ctx": "Luuk knows Phrolova's Fractsidus codename, Hecate.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Rebecca": {
+  "rel": "Doctor & patient",
+  "ctx": "Rebecca warmed to Dr. Luuk, who patches people up, minds included.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Rover": {
+  "rel": "Academy doctor, hidden ties",
+  "ctx": "The Startorch doctor who helps Rover at the Academy; his profile also ties him to the Fractsidus.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Shorekeeper": {
+  "rel": "Informant",
+  "ctx": "The Shorekeeper confirms Luuk Herssen has supplied intelligence to the Black Shores.",
+  "basis": "stated"
+ },
+ "Luuk Herssen|Sigrika": {
+  "rel": "Doctor & student",
+  "ctx": "Dr. Luuk looks after overburdened Sigrika, who samples his candies; students owe him after the Celebration.",
+  "basis": "stated"
+ },
+ "Lynae|Mornye": {
+  "rel": "Kindred spirits",
+  "ctx": "Student and professor who both hate sitting through class; Lynae once took Mornye for a drive.",
+  "basis": "stated"
+ },
+ "Lynae|Rebecca": {
+  "rel": "Kindred spirits",
+  "ctx": "Graffiti, motorbikes and racing: Rebecca and Lynae click instantly.",
+  "basis": "stated"
+ },
+ "Lynae|Rover": {
+  "rel": "Suspect turned ally",
+  "ctx": "Rover first suspected Lynae in the Frostlands Detector incident before they became allies at the Academy.",
+  "basis": "stated"
+ },
+ "Lynae|Sigrika": {
+  "rel": "Classmates & friends",
+  "ctx": "Same year at Startorch; Sigrika helped Lynae settle in and pass Royan Cultural History.",
+  "basis": "stated"
+ },
+ "Maji|Rover": {
+  "rel": "Lollo colleagues",
+  "ctx": "Maji, of Lollo Logistics, taught Rover to transmit data on their jobs.",
+  "basis": "stated"
+ },
+ "Maji|Zani": {
+  "rel": "Lollo customers",
+  "ctx": "Maji thanks Zani for the pizza delivered to the Vault staff.",
+  "basis": "stated"
+ },
+ "Margherita|Phoebe": {
+  "rel": "Customer",
+  "ctx": "Phoebe loves Margherita's pizza.",
+  "basis": "stated"
+ },
+ "Margherita|Roccia": {
+  "rel": "Childhood memories",
+  "ctx": "The smell of Margherita's brings back Roccia's childhood; the Troupe performs there.",
+  "basis": "stated"
+ },
+ "Margherita|Rover": {
+  "rel": "Favourite trattoria",
+  "ctx": "Rover orders gelato and pizza at Margherita's.",
+  "basis": "stated"
+ },
+ "Margherita|Zani": {
+  "rel": "Regular customer",
+  "ctx": "Trattoria Margherita is Zani's go-to restaurant.",
+  "basis": "stated"
+ },
+ "Mornye|Rebecca": {
+  "rel": "Engineer & gunner",
+  "ctx": "Mornye studies Rebecca's weapons; Rebecca is amazed by Mornye's transparent prosthetic legs.",
+  "basis": "stated"
+ },
+ "Mornye|Rover": {
+  "rel": "Professor & student",
+  "ctx": "Professor Mornye guides Rover at Startorch through the Frostlands and Second Sunrise crises.",
+  "basis": "stated"
+ },
+ "Mornye|Sigrika": {
+  "rel": "Professor & student",
+  "ctx": "Mornye finds Sigrika conscientious to a fault; Sigrika helps her at the Reactor Drive.",
+  "basis": "stated"
+ },
+ "Mornye|Valentina": {
+  "rel": "Black Shores contact",
+  "ctx": "Valentina receives Professor Mornye's guest at the Black Shores.",
+  "basis": "stated"
+ },
+ "Mortefi|Rover": {
+  "rel": "Colleagues",
+  "ctx": "Mortefi keeps Rover updated on Autopuppet data after the Jinzhou aftermath.",
+  "basis": "stated"
+ },
+ "Mortefi|Taoqi": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Taoqi coordinates Mortefi's team during the emergency.",
+  "basis": "stated"
+ },
+ "Mortefi|Verina": {
+  "rel": "Concerned friend",
+  "ctx": "Verina worries Mortefi doesn't sleep enough.",
+  "basis": "stated"
+ },
+ "Mortefi|Xiangli Yao": {
+  "rel": "Friendly rivals",
+  "ctx": "Mortefi swears to out-invent Xiangli Yao, who admires his drive.",
+  "basis": "stated"
+ },
+ "Mortefi|Yangyang": {
+  "rel": "Jinzhou acquaintances",
+  "ctx": "Mortefi finds Yangyang's humming calming; Yangyang introduced him to Rover.",
+  "basis": "stated"
+ },
+ "Mortefi|Youhu": {
+  "rel": "Hoped-for client",
+  "ctx": "Youhu hopes the cultured Mortefi becomes her client.",
+  "basis": "stated"
+ },
+ "Namipon|Platya": {
+  "rel": "Honami natives",
+  "ctx": "Namipon and Platya, both of Honami, meet again.",
+  "basis": "stated"
+ },
+ "Namipon|Rover": {
+  "rel": "Friends",
+  "ctx": "Namipon guides Rover and Chisa through Honami and asks them to come back.",
+  "basis": "stated"
+ },
+ "Namipon|Shorekeeper": {
+  "rel": "Allies",
+  "ctx": "Namipon helped the Black Shores stabilise a tunnel between Lahai-Roi and Honami City.",
+  "basis": "stated"
+ },
+ "Phoebe|Roccia": {
+  "rel": "Gentle acquaintances",
+  "ctx": "Phoebe was the first Acolyte to touch Roccia's box without Pero biting.",
+  "basis": "stated"
+ },
+ "Phoebe|Rover": {
+  "rel": "Allies",
+  "ctx": "Phoebe, an Acolyte of the Order of the Deep, helps Rover across Ragunna.",
+  "basis": "inferred"
+ },
+ "Phoebe|Zani": {
+  "rel": "Friends across faith",
+  "ctx": "A devout Acolyte and a sceptical Montelli employee who respect each other.",
+  "basis": "stated"
+ },
+ "Phrolova|Rover": {
+  "rel": "Enemies",
+  "ctx": "Phrolova, a Fractsidus Overseer, works against Rover and claims Lupa will bring the Dark Tide to Septimont.",
+  "basis": "stated"
+ },
+ "Phrolova|Scar": {
+  "rel": "Fractsidus Overseers",
+  "ctx": "Fellow Overseers; Phrolova finds Scar's rule-breaking inelegant.",
+  "basis": "stated"
+ },
+ "Platya|Rover": {
+  "rel": "Black Shores partners",
+  "ctx": "Platya and Rover track the Ghost Miko together in Ashinohara.",
+  "basis": "stated"
+ },
+ "Platya|Valentina": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Platya asks Valentina for field leave to return to Honami, her hometown.",
+  "basis": "stated"
+ },
+ "Qingxiao|Rover": {
+  "rel": "Partners",
+  "ctx": "Rover calls Qingxiao their partner and protects her through Song of the Heart Sword.",
+  "basis": "stated"
+ },
+ "Qingxiao|Suisui": {
+  "rel": "Debt of gratitude",
+  "ctx": "Qingxiao once cleared Tacet Discords from Suisui's caravan's path through Xuanfang.",
+  "basis": "stated"
+ },
+ "Qingxiao|Suoming": {
+  "rel": "Mengzhou colleagues",
+  "ctx": "Suoming turns to Paragon Qingxiao, who knows Hsin the Moon Fox well.",
+  "basis": "stated"
+ },
+ "Qingxiao|Yangyang": {
+  "rel": "Comrades",
+  "ctx": "Qingxiao sees the Xuanling Bird in Yangyang and relies on her in Mengzhou.",
+  "basis": "stated"
+ },
+ "Qiuyuan|Rover": {
+  "rel": "Agent & ally",
+  "ctx": "Qiuyuan, sent from Mingting to Rinascita, was told to help Rover there.",
+  "basis": "stated"
+ },
+ "Qiuyuan|Sanhua": {
+  "rel": "Distant relatives",
+  "ctx": "Sanhua descends from a branch of Qiuyuan's family that left Chongzhou for the borderlands; both live for the sword.",
+  "basis": "stated"
+ },
+ "Qiuyuan|Scar": {
+  "rel": "Hunter & target",
+  "ctx": "Qiuyuan was ordered to execute Scar, the escaped Fractsidus Overseer, in Rinascita.",
+  "basis": "stated"
+ },
+ "Qiuyuan|Xiangli Yao": {
+  "rel": "Event acquaintances",
+  "ctx": "Qiuyuan and Xiangli Yao plan together during an event.",
+  "basis": "stated"
+ },
+ "Qiuyuan|Zhezhi": {
+  "rel": "Event acquaintances",
+  "ctx": "Qiuyuan and Zhezhi plan together during an event.",
+  "basis": "stated"
+ },
+ "Rebecca|Rover": {
+  "rel": "Somnoire allies",
+  "ctx": "Rebecca, from Night City, works with Rover in the Somnoire.",
+  "basis": "inferred"
+ },
+ "Rebecca|Sigrika": {
+  "rel": "Friends",
+  "ctx": "Rebecca thinks Sigrika is too responsible and helped her win at games.",
+  "basis": "stated"
+ },
+ "Roccia|Rover": {
+  "rel": "Allies",
+  "ctx": "Roccia helps Rover track Abby's frequency in Ragunna.",
+  "basis": "stated"
+ },
+ "Roccia|Zani": {
+  "rel": "Easy colleagues",
+  "ctx": "Roccia finds Zani the definition of a reliable adult to work with.",
+  "basis": "stated"
+ },
+ "Rover|Sanhua": {
+  "rel": "Friends",
+  "ctx": "Sanhua, Jinhsi's guard, greets Rover as an old acquaintance.",
+  "basis": "stated"
+ },
+ "Rover|Scar": {
+  "rel": "Enemies",
+  "ctx": "Scar, a Fractsidus Overseer, saw in Rover a vessel for the Crownless and hunted them from Jinzhou on.",
+  "basis": "stated"
+ },
+ "Rover|Shorekeeper": {
+  "rel": "Watcher & Rover",
+  "ctx": "The Shorekeeper watches over Rover, who turns to her for the Black Shores' help.",
+  "basis": "stated"
+ },
+ "Rover|Sigrika": {
+  "rel": "Riddle partners",
+  "ctx": "Rover and Sigrika solved the Divinator's riddles together, through the Celebration and into the Dark Side.",
+  "basis": "stated"
+ },
+ "Rover|Suisui": {
+  "rel": "Correspondents",
+  "ctx": "Suisui, Yangyang's sister, writes to Rover and seeks them out during the Mengzhou crisis.",
+  "basis": "stated"
+ },
+ "Rover|Suoming": {
+  "rel": "Investigator & Intendant",
+  "ctx": "Rover digs into Intendant Suoming's role in the Sentinel's \"assassination\" in Mengzhou.",
+  "basis": "stated"
+ },
+ "Rover|Valentina": {
+  "rel": "Commander & agent",
+  "ctx": "Valentina, Black Shores commander, points Rover to Chisa's guide.",
+  "basis": "stated"
+ },
+ "Rover|Verina": {
+  "rel": "Friends",
+  "ctx": "Verina helped Rover back in Jinzhou.",
+  "basis": "stated"
+ },
+ "Rover|Wuli": {
+  "rel": "Helped by Rover",
+  "ctx": "Rover looks for Wuli and Fuling in Rinascita.",
+  "basis": "inferred"
+ },
+ "Rover|Xiangli Yao": {
+  "rel": "Allies",
+  "ctx": "Rover explores Xiangli Yao's past and his Autopuppets during Wish Upon the Moon.",
+  "basis": "stated"
+ },
+ "Rover|Xinyi": {
+  "rel": "Acquaintances",
+  "ctx": "Xinyi points Rover to the Truthseeker's Pass and handles the aftermath with Changli.",
+  "basis": "stated"
+ },
+ "Rover|Xuanqing": {
+  "rel": "Companions in memory",
+  "ctx": "A memory of Xuanqing, Hsin's Sentinel Resonator, journeyed with Rover to restore Hsin's Feeling Capsule.",
+  "basis": "stated"
+ },
+ "Rover|Yangyang": {
+  "rel": "First friend in Jinzhou",
+  "ctx": "Yangyang was among the first to find Rover on waking and showed them the way to Jinzhou.",
+  "basis": "stated"
+ },
+ "Rover|Yinlin": {
+  "rel": "Allies",
+  "ctx": "Yinlin, an undercover Patroller, sees investigative potential in Rover.",
+  "basis": "stated"
+ },
+ "Rover|Yuanwu": {
+  "rel": "Respect",
+  "ctx": "Yuanwu senses Rover has lived through far more than he has.",
+  "basis": "stated"
+ },
+ "Rover|Zani": {
+  "rel": "Allies",
+  "ctx": "Zani welcomed Rover to Ragunna on the Montelli family's behalf.",
+  "basis": "stated"
+ },
+ "Rover|Zhezhi": {
+  "rel": "Friends",
+  "ctx": "Rover reassures Zhezhi, the painter, through the Mengzhou crisis and her own quests.",
+  "basis": "stated"
+ },
+ "Sanhua|Scar": {
+  "rel": "Captor & captive",
+  "ctx": "Sanhua helped capture Scar, who claimed the Fractsidus had imprisoned the Sentinel.",
+  "basis": "stated"
+ },
+ "Sanhua|Suisui": {
+  "rel": "Misunderstanding",
+  "ctx": "Suisui apologises to Sanhua for doubting her on arriving in Jinzhou.",
+  "basis": "stated"
+ },
+ "Sanhua|Taoqi": {
+  "rel": "Envious colleague",
+  "ctx": "Taoqi wishes she had a helper like Sanhua.",
+  "basis": "stated"
+ },
+ "Sanhua|Uncle Li": {
+  "rel": "Customer",
+  "ctx": "Uncle Li counts on Sanhua and Rover for his Plumpcake seeds.",
+  "basis": "stated"
+ },
+ "Sanhua|Xiangli Yao": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Sanhua briefed Xiangli Yao on Rover's situation.",
+  "basis": "stated"
+ },
+ "Sanhua|Yangyang": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Yangyang recounts how one cold look from Sanhua turns intruders away.",
+  "basis": "stated"
+ },
+ "Scar|Yangyang": {
+  "rel": "Captor & hostage",
+  "ctx": "Scar captured Yangyang to win Rover's trust and planted fake clues.",
+  "basis": "stated"
+ },
+ "Shorekeeper|Valentina": {
+  "rel": "Black Shores colleagues",
+  "ctx": "Valentina relays the Shorekeeper's worries and whereabouts.",
+  "basis": "stated"
+ },
+ "Suisui|Yangyang": {
+  "rel": "Sisters",
+  "ctx": "Suisui is Yangyang's older sister; alike in face, opposite in spirit.",
+  "basis": "stated"
+ },
+ "Suoming|Yinlin": {
+  "rel": "Acquaintances",
+  "ctx": "Yinlin meets Lady Suoming at Xuanfang.",
+  "basis": "stated"
+ },
+ "Taoqi|Xiangli Yao": {
+  "rel": "Collaborators",
+  "ctx": "Taoqi consults Xiangli Yao on projects that overlap with the Academy.",
+  "basis": "stated"
+ },
+ "Taoqi|Yangyang": {
+  "rel": "Director & Outrider",
+  "ctx": "Taoqi sends Yangyang with Rover; Yangyang admires her calm under pressure.",
+  "basis": "stated"
+ },
+ "Uncle Li|Yinlin": {
+  "rel": "Investigator & witness",
+  "ctx": "Yinlin investigates the Tacet Discords drawn to Uncle Li's purchases.",
+  "basis": "stated"
+ },
+ "Uncle Li|Zhezhi": {
+  "rel": "Customer",
+  "ctx": "Zhezhi compares every dish to Uncle Li's.",
+  "basis": "stated"
+ },
+ "Verina|Yangyang": {
+  "rel": "Friends",
+  "ctx": "Yangyang listens patiently to Verina explain her plants.",
+  "basis": "stated"
+ },
+ "Verina|Zhezhi": {
+  "rel": "Nature companions",
+  "ctx": "Zhezhi and Verina spend hours on plants: their habits, and their meaning in Huanglong.",
+  "basis": "stated"
+ },
+ "Xiangli Yao|Yangyang": {
+  "rel": "Jinzhou acquaintances",
+  "ctx": "Yangyang knows Xiangli Yao by sight through Mortefi.",
+  "basis": "stated"
+ },
+ "Yangyang|Yinlin": {
+  "rel": "Jinzhou colleagues",
+  "ctx": "Yangyang told Yinlin what Rover went through after Rinascita.",
+  "basis": "stated"
+ },
+ "Yangyang|Youhu": {
+  "rel": "Friends",
+  "ctx": "Yangyang introduces Youhu, the antique appraiser, who teases her about Rover.",
+  "basis": "stated"
+ },
+ "Yangyang|Zhezhi": {
+  "rel": "Jinzhou friends",
+  "ctx": "Zhezhi tracks Yangyang's case and is among those who call her.",
+  "basis": "stated"
+ },
+ "Yinlin|Zhezhi": {
+  "rel": "Allies",
+  "ctx": "Yinlin and Zhezhi fight the night's threat together.",
+  "basis": "stated"
+ },
+ "Youhu|Zhezhi": {
+  "rel": "Grateful",
+  "ctx": "Youhu pointed Zhezhi to collectors of rare old paintings.",
+  "basis": "stated"
+ }
+}

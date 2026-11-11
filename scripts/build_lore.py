@@ -242,7 +242,47 @@ for c in BONDS["characters"]:
         org = find(f)
         if org and org["id"] != n["id"] and org["kind"] in ("faction", "place"):
             PENDING.append((n["id"], org["id"], "role", dict(role="member", of=org["id"], who=n["id"], source=f"{c['id']} — wiki profile", url=c["page"])))
+# What each bond means: hand-written relation + context (scripts/bond_context.json) for every bond with
+# quotes or conversations; pairs that only share quests get a rule-based line from sides and affiliations.
+CONTEXT = json.load(open(os.path.join(HERE, "bond_context.json"))) if os.path.exists(os.path.join(HERE, "bond_context.json")) else {}
+OVERSEERS = {"Scar", "Cristoforo", "Phrolova"}
+NPC_HOME = {"Cosmos": "Black Shores", "Platya": "Black Shores", "Valentina": "Black Shores", "Margherita": "Ragunna",
+            "Fulmine": "Ragunna", "Lenore": "Ragunna", "Fenrico": "Ragunna", "Alannah": "Ragunna", "Uncle Li": "Jinzhou",
+            "Xinyi": "Jinzhou", "Jué": "Jinzhou", "Liangyu": "Mengzhou", "Avidius": "Septimont", "Maji": "Lollo Logistics"}
+CITIES = {"Jinzhou", "Ragunna", "Mengzhou", "Septimont", "Lahai-Roi", "Chongzhou"}
+ORG_REL = {"Black Shores": "Black Shores colleagues", "Startorch Academy": "Startorch Academy", "Midnight Rangers": "Midnight Rangers",
+           "Order of the Deep": "Order of the Deep", "Troupe of Fools": "Fool's Troupe", "Montelli Family": "Montelli family",
+           "Huaxu Academy": "Huaxu Academy colleagues", "Spacetrek Collective": "Spacetrek Collective", "Jinzhou City Hall": "Jinzhou City Hall"}
+CHAR = {c["id"]: c for c in BONDS["characters"]}
+
+
+def affil(name):
+    c = CHAR.get(name, {})
+    return set(c.get("affiliations", [])) | ({NPC_HOME[name]} if name in NPC_HOME else set())
+
+
+def bond_context(b):
+    if b["key"] in CONTEXT: return CONTEXT[b["key"]]
+    a, z, qs, n = b["a"], b["b"], b.get("sceneQuests", []), b["scenes"]
+    where = ", ".join(qs[:2]) + (f" and {n - 2} more" if n > 2 else "")
+    plural = "quest" if n == 1 else "quests"
+    if (a in OVERSEERS) != (z in OVERSEERS):
+        ov, other = (a, z) if a in OVERSEERS else (z, a)
+        return dict(rel="Opposite sides", ctx=f"{ov}, a Fractsidus Overseer, is in the same {plural} as {other} ({where}) but they never speak.", basis="inferred")
+    if "Abby" in (a, z):
+        other = z if a == "Abby" else a
+        return dict(rel="Seen with Rover", ctx=f"Abby travels with Rover, so it was there when Rover met {other} ({where}).", basis="inferred")
+    shared = affil(a) & affil(z)
+    org = next((o for o in ORG_REL if o in shared), None)
+    if org: return dict(rel=ORG_REL[org] if org == "Black Shores" or org.endswith("colleagues") else f"Both of the {ORG_REL[org]}" if org != "Startorch Academy" else "Startorch Academy",
+                        ctx=f"Both belong to the {org}; they share {n} {plural} ({where}) without speaking on screen.", basis="inferred")
+    city = next((o for o in shared if o in CITIES), None)
+    if city: return dict(rel=f"Both of {city}", ctx=f"Both are from {city}; they share {n} {plural} ({where}) without speaking on screen.", basis="inferred")
+    return dict(rel="Crossed paths", ctx=f"In the same {plural} ({where}) without speaking to each other.", basis="inferred")
+
+
 for b in BONDS["bonds"]:
+    b.update(bond_context(b))
     a, z = find(b["a"]), find(b["b"])
     if a and z: PENDING.append((a["id"], z["id"], "bond", dict({k: v for k, v in b.items() if k not in ("a", "b")}, pair=[a["id"], z["id"]])))
 
