@@ -161,7 +161,8 @@ export default function Graph({ data, selected, focusLink, hoverId, onHover, onS
     if (!pts.length) return
     const xs = pts.map((n) => n.x), ys = pts.map((n) => n.y)
     const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)]
-    const top = (document.querySelector('.toolbar')?.getBoundingClientRect().bottom || 0) + 12, bottom = height - 72
+    const top = (document.querySelector('.toolbar')?.getBoundingClientRect().bottom || 0) + 12
+    const bottom = (document.querySelector('.peek-bar')?.getBoundingClientRect().top ?? height - 140) - 12
     const k = Math.min(8, (width - 48) / Math.max(x1 - x0, 1), Math.max(bottom - top, 120) / Math.max(y1 - y0, 1))
     const shift = ((top + bottom) / 2 - height / 2) / k // put the box in the middle of the free space, not of the screen
     fg.current.zoom(k, 700)

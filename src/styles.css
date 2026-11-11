@@ -480,3 +480,7 @@ button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--hud-faint); }
   .p-file { padding-right: 0; margin-top: 30px; }
   .e-top { padding-right: 160px; }
 }
+@media (max-width: 900px) {
+  /* clear of hosting badges (e.g. "Powered by Netlify") and the phone's home indicator */
+  .peek-bar { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+}
