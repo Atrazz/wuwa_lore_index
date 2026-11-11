@@ -484,3 +484,8 @@ button:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--hud-faint); }
   /* clear of hosting badges (e.g. "Powered by Netlify") and the phone's home indicator */
   .peek-bar { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
+@media (max-width: 900px) {
+  /* phones: an open panel starts just below the toolbar; the entry-type chips step aside meanwhile */
+  .app.has-panel .entries { display: none; }
+  .panel { top: calc(14px + var(--tb-h, 300px) + 8px); height: auto; bottom: 8px; }
+}

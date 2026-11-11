@@ -100,7 +100,7 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion={lite ? 'always' : 'never'}>
-    <div className={'app' + (lite ? ' lite' : '')}>
+    <div className={'app' + (lite ? ' lite' : '') + ((selected || link) && !peek ? ' has-panel' : '')}>
       <div className="paper" />
       {!askLite && <Graph data={data} selected={selected} focusLink={link} hoverId={hover} onHover={setHover}
         onSelect={clickNode} onLinkSelect={openLink} width={w} height={h} groupBy={groupBy} lite={lite} peek={peek} key={lite ? 'lite' : 'full'} />} {/* built once the phone prompt is answered, so it starts in the chosen mode */}

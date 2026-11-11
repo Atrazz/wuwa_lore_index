@@ -31,6 +31,14 @@ function Menu({ label, count, children }) {
 const GROUPINGS = [['none', 'None', 'Free layout'], ['kind', 'Type', 'Concepts, places, factions, characters…'], ['region', 'Region', 'Huanglong, Rinascita, Lahai-Roi… with Across Solaris in the middle']]
 
 export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, nodeKinds, toggleNode, onAbout, visible, groupBy, setGroupBy, lite, toggleLite }) {
+  // the toolbar's height (it wraps on phones) as a CSS variable, so phone panels can start just below it
+  const headerRef = useRef()
+  useEffect(() => {
+    const el = headerRef.current
+    if (!el || typeof ResizeObserver === 'undefined') return
+    const ro = new ResizeObserver(() => document.documentElement.style.setProperty('--tb-h', `${el.offsetHeight}px`))
+    ro.observe(el); return () => ro.disconnect()
+  }, [])
   const [q, setQ] = useState('')
   const [idx, setIdx] = useState(0)
   const box = useRef()
@@ -50,7 +58,7 @@ export default function Toolbar({ nodes, links, onPick, edgeKinds, toggleEdge, n
   const edgeCount = useMemo(() => Object.fromEntries(EDGES.map((e) => [e.key, links.filter((l) => l.kinds[e.key]).length])), [links])
 
   return (
-    <motion.header className="toolbar" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
+    <motion.header ref={headerRef} className="toolbar" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.5 }}>
       <div className="mast">
         <span className="mast-title"><i className="mast-hex" />Echo <em>Codex</em></span>
         <span className="mast-sub">Solaris lore archive</span>
