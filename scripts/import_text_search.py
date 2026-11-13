@@ -36,10 +36,38 @@ def classify(row):
     return None
 
 
+def export_rows(rows):
+    return [dict(text=r["c"].get("en", ""), zh=r["c"].get("zh-Hans", ""), textKey=r["id"], file=str(r.get("f", "")),
+                 anchor=str(r.get("anchorId", "")), story="",
+                 tags=[t for t in (r.get("stateKey"), r.get("speaker"), (r.get("versionTag") or {}).get("firstSeen")) if t])
+            for r in rows]
+
+
+def research_searches(path):
+    """Searcher exports in the cache's row shape: version-filtered dumps (research_<version>.json,
+    {"searches": {name: {filter, total, rows, complete}}}) and query cross-checks
+    (wiki_text_crosscheck_<version>.json, {"queries": {term: [{version, total, rows, truncated}]}})."""
+    research = json.loads(path.read_text())
+    research.setdefault("version", "")
+    for name, search in research.get("searches", {}).items():
+        f = search["filter"]
+        yield research, dict(query=f"{research['version']} {name}: {f.get('stateKeyQuery') or f.get('query') or 'all'}",
+                             chapterFilter=f.get("stateKeyQuery", ""), total=search["total"],
+                             truncated=not search.get("complete", False), rows=export_rows(search["rows"]))
+    for term, runs in research.get("queries", {}).items():
+        for run in runs:
+            yield research, dict(query=f"{term} ({run['version']} text)", chapterFilter="", searchTerm=term, total=run["total"],
+                                 truncated=bool(run.get("truncated")), rows=export_rows(run["rows"]))
+
+
 def import_cache():
     cache = json.loads((ROOT / "scripts/raw/text_searcher.json").read_text())
+    searches = [(cache, s) for s in cache["searches"]]
+    research = sorted((ROOT / "scripts/raw").glob("research_*.json")) + sorted((ROOT / "scripts/raw").glob("wiki_text_crosscheck_*.json"))
+    for path in research:
+        searches += list(research_searches(path))
     records, coverage = {}, []
-    for search in cache["searches"]:
+    for origin, search in searches:
         coverage.append({k: v for k, v in search.items() if k not in {"rows", "contextRows"}} | {"loaded": len(search.get("rows", [])), "contextLoaded": len(search.get('contextRows', []))})
         for row in search.get("rows", []) + search.get('contextRows', []):
             info = classify(row)
@@ -58,7 +86,7 @@ def import_cache():
                 speakerZh=speaker, chapter=chapter, version=next((t for t in row["tags"] if re.search(r"版本|沿用", t)), ""),
                 text=text, zh=clean(row["zh"]), file=row["file"], anchor=row["anchor"],
                 story=row["story"], queries=[], source="WuWa Text Searcher · Yakitahome",
-                url=cache["source"], retrieved=cache["retrieved"],
+                url=origin["source"], retrieved=origin["retrieved"],
             ))
             for key in ('title', 'titleKey', 'contextFor'):
                 if row.get(key):
@@ -66,7 +94,10 @@ def import_cache():
             term = search.get("searchTerm", search["query"])
             if term not in record["queries"]:
                 record["queries"].append(term)
-    output = dict(source=cache["source"], retrieved=cache["retrieved"], version=cache["version"],
+    origins = [cache] + [json.loads(p.read_text()) for p in research]
+    version = "–".join(dict.fromkeys(o["version"] for o in origins if o.get("version")))
+    retrieved = " and ".join(dict.fromkeys(o["retrieved"] for o in origins))
+    output = dict(source=cache["source"], retrieved=retrieved, version=version,
                   coverage=sorted(coverage, key=lambda s: (s["query"], s["chapterFilter"])),
                   records=sorted(records.values(), key=lambda r: r["id"]))
     (ROOT / "scripts/text_searcher.json").write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n")

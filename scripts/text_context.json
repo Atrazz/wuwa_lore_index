@@ -83,5 +83,45 @@
     "rel": "A fellow competitor's respect",
     "ctx": "Quinta treats losing to Lupa as understandable and predicts that she will reach bigger stages and become the strongest Gladiator. This is the NPC's admiration and expectation, rather than confirmation of Lupa's future achievements.",
     "textKeys": ["FWNPC_QQYC_49_2", "FWNPC_QQYC_49_10"]
+  },
+  "Anna|Lily": {
+    "rel": "Classmates and close friends",
+    "ctx": "Lily says she and Anna were close friends while studying at the Clotho Doctors Alliance and kept writing letters after being sent to different war zones. After the war Anna became the New Federation's \"Queen of the Deep\"; Lily trusts that Anna is saving people in her own way, which is Lily's own assessment.",
+    "textKeys": ["FavorWord_151213_Content"]
+  },
+  "Lily|Meta": {
+    "rel": "Bargain in the Somnoire",
+    "ctx": "Meta, which calls itself the owner of the Somnoire, finds Lily in its domain and strikes a bargain over the soldiers' souls. In the end it asks whether she will become its helper beyond the Somnoire; Lily accepts, and Meta grants her freedom and opens a gateway outside.",
+    "textKeys": ["Main_YYMRDHS_160_69", "Main_YYMRDHS_212_56"]
+  },
+  "Cassandra|Lily": {
+    "rel": "Medic and commander",
+    "ctx": "On the eve of the frontal assault Lily reports on the wounded to Commander Cassandra, who thanks her for protecting Liam and tells her to run if things go wrong. The two imagine their reunion with Liam, sitting back to back.",
+    "textKeys": ["Main_YYMRDHS_152_39"]
+  },
+  "Cassandra|Liam": {
+    "rel": "Mother and son",
+    "ctx": "Liam says directly that Cassandra is his mother and that he is looking for the person she sent to pick him up.",
+    "textKeys": ["Main_YYMRDHS_57_8"]
+  },
+  "Grimm|Lily": {
+    "rel": "Passenger and conductor",
+    "ctx": "Lily's dream restores Grimm's memories, and he understands his piece tells the story of his own life. Troubled on seeing Lily, he asks whether she could ever forgive him; she then weaves an apparition of his old friend so the two can fulfil the promise they once made.",
+    "textKeys": ["Main_YYMRDHS_108_36"]
+  },
+  "Lily|Lucilla": {
+    "rel": "Kindness at Startorch Academy",
+    "ctx": "Lily recalls that Lucilla was kind to her during her short stay at Startorch Academy and, on hearing her story, simply embraced her. Lily compares her warmth to Cassandra's.",
+    "textKeys": ["FavorWord_151216_Content"]
+  },
+  "Lily|Sigrika": {
+    "rel": "Friends at Startorch Academy",
+    "ctx": "Lily and Sigrika became fast friends at Startorch Academy; Sigrika never pressed her about her past. Lily suspects Sigrika has also lost someone dear, but says she does not like to assume.",
+    "textKeys": ["FavorWord_151217_Content"]
+  },
+  "Lily|Scott Rabelle": {
+    "rel": "Teacher and student",
+    "ctx": "Lily calls Professor Rabelle one of her most important teachers at the Clotho Doctors Alliance, who taught her what it means to be a healer. Her story says Rabelle ran the Alliance and took her on as a student; the wiki identifies him as Dr. Scott Rabelle.",
+    "textKeys": ["FavorWord_151215_Content", "FavorStory_151202_Content"]
   }
 }

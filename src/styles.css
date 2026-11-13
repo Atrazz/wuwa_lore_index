@@ -101,6 +101,8 @@ a { color: inherit; }
 .seal.long { font-size: 15px; }
 .p-scroll { overflow-y: auto; flex: 1; padding: 4px 24px 28px; }
 .p-summary { font-size: 14px; line-height: 1.75; color: var(--text); margin: 18px 0 6px; }
+.p-caveat { font-size: 13px; line-height: 1.65; color: var(--muted); margin: 10px 0 6px; padding: 8px 12px; border-left: 2px solid var(--amber); border-radius: 0 8px 8px 0; background: color-mix(in srgb, var(--amber) 7%, transparent); }
+.caveat-tag { font: 600 11px var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--amber); margin-right: 4px; }
 .rw-img { display: block; max-width: 100%; max-height: 160px; margin: 16px 0 0; border-radius: 10px; }
 .src { font: 11.5px var(--sans); color: var(--muted); text-decoration: none; }
 .src:hover { color: var(--hud); }

@@ -35,6 +35,7 @@ def load(name, default=None):
 
 P = load("pages.json", {})
 P.update({k: v for k, v in load("npc_pages.json", {}).items() if k not in P})  # NPC pages via import_bonds.py
+P = {k: re.sub(r"\{\{\s*PAGENAME\s*\}\}", k, v) for k, v in P.items()}  # "'''{{PAGENAME}}''' is a …" leads
 BONDS = json.load(open(os.path.join(HERE, "bonds.json"))) if os.path.exists(os.path.join(HERE, "bonds.json")) else {"characters": [], "bonds": []}
 G = load("groups.json", {})
 NOTION = load("notion_entries.json", {"entries": []})["entries"]
@@ -111,8 +112,12 @@ def lead(wt):
     b = strip_templates(body(wt), r"Quote|Description|Main|About|Stub|Spoiler")
     b = re.split(r"\n==", b)[0]
     paras = [clean(p) for p in b.split("\n\n")]
-    paras = [p for p in paras if len(p) > 60 and not p.startswith("{|") and not p.startswith("|")]
-    return paras[0][:700] if paras else ""
+    paras = [p for p in paras if re.search(r"\w", p) and not p.startswith("{|") and not p.startswith("|")]
+    text = ""
+    for p in paras:  # a short opening sentence ("The X is one of …") joins the paragraph after it
+        text = (text + " " + p).strip()
+        if len(text) > 60: return text[:700]
+    return ""
 
 
 def section(wt, *names):
@@ -218,7 +223,8 @@ for t in G.get("location", []):
     wt = P.get(t, "")
     ib = infobox(wt, "Location Infobox")
     types = {clean(ib.get(k, "")) for k in ("type", "type2")}
-    if not types & PLACE_TYPES and t not in nations: continue
+    # Ostina (Phrolova's birthplace, rebuilt in the Lost Beyond) was relabelled "Area" in Nov 2026; keep it.
+    if not types & PLACE_TYPES and t not in nations and t not in ("Ostina",): continue
     n = add_node(t, "place", summary=lead(wt), nation=clean(ib.get("nation", "")))
     if n: page_of[n["id"]] = t
 for t in G.get("term", []):
@@ -587,6 +593,22 @@ text_reviews = json.load(open(TEXT_CONTEXT_FILE)) if os.path.exists(TEXT_CONTEXT
 TEXT_ENTITIES_FILE = os.path.join(HERE, "text_entities.json")
 text_entities = json.load(open(TEXT_ENTITIES_FILE)) if os.path.exists(TEXT_ENTITIES_FILE) else []
 text_counts = enrich(nodes, edges, add_node, find, edge, text_source, text_reviews, DM_EN, DM_ZH, DM_DOCS, text_entities, ENTITY_ALIASES)
+
+# Reviewed notes where game text is in tension with a wiki introduction (scripts/wiki_caveats.json).
+# The cited passage joins the entry's evidence without creating new links.
+CAVEATS_FILE = os.path.join(HERE, "wiki_caveats.json")
+attached_text = {r["textKey"]: r for n in nodes.values() for r in n.get("textEvidence", [])}
+for name, notes in (json.load(open(CAVEATS_FILE)) if os.path.exists(CAVEATS_FILE) else {}).items():
+    n = find(name)
+    if not n: raise ValueError(f"Caveat for unknown entry: {name}")
+    for note in notes:
+        records = [attached_text.get(k) for k in note["textKeys"]]
+        if not note["textKeys"] or not all(records): raise ValueError(f"Missing source for caveat: {name}")
+        for r in records:
+            if n["id"] not in r["entities"]: r["entities"].append(n["id"])
+            if r not in n.setdefault("textEvidence", []): n["textEvidence"].append(r)
+        n["textEvidenceCount"] = len(n["textEvidence"])
+        n.setdefault("caveats", []).append(dict(note=note["note"], citation=r["id"], textKey=r["textKey"], source=r["source"]))
 
 # community entries per node
 by_node = collections.defaultdict(list)

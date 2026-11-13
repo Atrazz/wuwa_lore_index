@@ -1,0 +1,692 @@
+{
+  "version": "3.8",
+  "checked": "2026-11-14",
+  "source": "https://mc.yakitahome.com/search",
+  "scope": "Potential additions and evidence updates only; no application data was changed.",
+  "coverage": {
+    "storyFilter": "stateKeyQuery=3_8; first-seen version 3.8",
+    "storyRows": 2079,
+    "profileFilter": "stateKeyQuery=档案; first-seen version 3.8",
+    "profileRows": 174,
+    "allCollectedVersionTags": "3.8版本",
+    "limitation": "Complete results for these two filters, not an exhaustive audit of every 3.8 document, item, quest or changed older string."
+  },
+  "candidates": [
+    {
+      "name": "Promeus",
+      "proposedKind": "being",
+      "status": "potential-addition",
+      "summary": "Named as the New Federation's Sentinel. Shorekeeper's database account says it did not act during the Resonator War.",
+      "qualification": "The reason for its inaction remains unresolved; do not infer complicity or a hidden identity.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_6_20",
+          "chapter": "剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": "秧秧",
+          "version": "3.8版本",
+          "excerpt": "Let me think... Oh, right. He mentioned a name. Promeus, the New Federation's Sentinel. He said that was the name he kept hearing, over and over.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_8_37",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束1_5_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You contact Shorekeeper, who informs you that Aalto will soon travel to Xuanfang to assist Jedediah. She has also uncovered information about the New Federation in the Tethys System's database. One detail stands out: Promeus, the New Federation's Sentinel, took no action during t",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Meta",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "The catlike entity that calls itself the owner of the Somnoire, bargains with Lily and Rover, and lends power to treat the soldiers' corrupted frequencies.",
+      "qualification": "Owner is its self-description. Its comparison with Sentinels does not establish that it is a Sentinel. Do not automatically merge it with either Gatekeeper.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_160_55",
+          "chapter": "剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "As for me, call me Meta. You might say I'm the owner of this place.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_160_69",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "When Lily awakens, she finds herself in an unfamiliar room, face-to-face with a colorful cat. The cat introduces itself as Meta, the owner of the Somnoire, and explains that Lily is now within its domain. Lily's Forte is connected to dreams, and her excessive use of it on the bat",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorWord_151214_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Meta calls itself the owner of the Somnoire and likes to compare itself to a Sentinel. But it doesn't carry that same weight or authority. Honestly, it's more like a child sometimes—mischievous, playful, curious about every little thing. I know it's got secrets, plenty of 'em. I ",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Anna",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "Lily's former fellow student and close friend at the Clotho Doctors Alliance, later a powerful New Federation figure who hosts an auction meeting.",
+      "qualification": "Queen of the Deep is a title for Anna, not a second entity. Lily's confidence in Anna's motives is her personal assessment. Anna is not Alannah.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151213_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lady Anna and I were close friends when we studied at the Clotho Doctors Alliance. We were sent to different war zones after, but we never stopped writing letters. Right up until I was sent to the Fifth Sector...\nLuckily, we both made it out alive. When I saw her again, she'd bec",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_211_19",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束5_17_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Meanwhile, a meeting unfolds somewhere in the New Federation. Several powerful figures voice their concern that the Resonator War could happen again. Their discussion is interrupted by a woman named Anna, who appears to be hosting the gathering. She mocks the assembled dignitarie",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Cassandra",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "Commander of the Fifth Sector troops and Liam's mother. She protects Lily and is later the first passenger Lily helps aboard the train.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_57_8",
+          "chapter": "剧情_3_8_予以明日的花束2_19_1",
+          "speakerZh": "利亚姆",
+          "version": "3.8版本",
+          "excerpt": "Sure do! D'ya know Cassandra? She's my mama. I'm looking for the person she sent to pick me up.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_152_39",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_26_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "On the eve of the frontal assault, Lily gives Commander Cassandra her usual report on the wounded. Noticing how exhausted Lily looks, Cassandra urges her to get some rest, if only for tonight. She then thanks Lily on behalf of the Fifth Sector's soldiers, and as a mother herself,",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_165_8",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_39_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lily begins her journey to help the souls find peace. Her first passenger is none other than Commander Cassandra. Like the other souls aboard, Cassandra has lost most of her memories of life and no longer recognizes Lily. All she remembers is her son, Liam, and her longing to ret",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Liam",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "A boy seeking his mother aboard the Train of Souls. His harmonica and hide-and-seek memories anchor the first major passenger story.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_64_73",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_24_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You and Liam continue searching for clues about his mother. In a passenger carriage, you find Lily seated in a room, dressed in her military medic's uniform. Liam seems to recognize her. She hands him a harmonica and tells him to take good care of it. Assuming Lily is playing a r",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_72_53",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_32_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "The train completes another circuit through the war zones and returns to the Fifth Sector. Liam senses that something is wrong. Deep down, he has known all along where he is, but he cannot bear to believe that his mother and Lily, the woman who always protected him, could be in s",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Grimm",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "The train's pianist, whose memory journey concerns a farewell performance, guilt and reconciliation with an old friend.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_101_35",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束3_3_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Following the broadcast's instructions, you find the room for the next stop and discover that the soul awaiting release is Mr. Grimm, the pianist from the Lounge Carriage. Lily had intended to handle this alone, unwilling to involve an innocent bystander or expose anyone else to ",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_108_36",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束3_8_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "The performance ends abruptly. You awaken to find yourself back in reality, but Grimm is nowhere to be seen. Lily is just as bewildered. Then, a frantic flurry of piano notes erupts from the Lounge Carriage. You and Lily rush over to find Mr. Grimm pouring his anguish into the ke",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Herriman",
+      "proposedKind": "unique_npc",
+      "status": "potential-addition",
+      "summary": "A military officer who presses Lily to continue treating soldiers and later informs her of her reassignment to the Fifth Sector.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_122_46",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束3_22_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "During another round, Lily is stabbed by a soldier who seems to harbor a deep hatred for her. He has been keeping a tally of how many times she has treated him, convinced that Lily and the officers are demons who keep sending him back to hell. Lily has no answer to his accusation",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_126_11",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束3_26_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Officer Herriman delivers a speech before an assembled audience, then asks Lily to stay behind. For reasons still unclear, she has been reassigned to the Fifth Sector. Before she boards the transport, Herriman takes the opportunity to mock her.",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Jedediah",
+      "proposedKind": "npc",
+      "status": "potential-addition",
+      "summary": "A New Federation Goldrunner whose disturbed journey through the Somnoire prompts the investigation. Yangyang contacts the Black Shores, and Aalto is sent to assist him.",
+      "qualification": "General-NPC candidate; the text alone does not establish a unique visual model.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_6_46",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You arrive at the agreed meeting place with Yangyang, only to find a man screaming in agony before collapsing into a deep sleep. Yangyang explains that he is Jedediah, a Goldrunner from the New Federation. Goldrunners often venture into the Somnoire through \"Dream Pathways\" in se",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_8_37",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束1_5_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You contact Shorekeeper, who informs you that Aalto will soon travel to Xuanfang to assist Jedediah. She has also uncovered information about the New Federation in the Tethys System's database. One detail stands out: Promeus, the New Federation's Sentinel, took no action during t",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Professor Rabelle",
+      "proposedKind": "npc",
+      "status": "potential-addition",
+      "summary": "Lily identifies Professor Rabelle as an important medical teacher at the Clotho Doctors Alliance.",
+      "qualification": "Mentioned-only candidate. Do not merge the person with Rabelle's Curve or with the college. This passage alone does not prove all those names have the same historical namesake.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151215_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Professor Rabelle was one of my most important teachers back at the Clotho Doctors Alliance. He taught me more than just medicine. He taught me what it truly means to be a healer. That all we can do is give every last bit of ourselves to save every life we can. And trust that wil",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Goldrunners",
+      "proposedKind": "concept",
+      "status": "potential-addition",
+      "summary": "Adventurers in the New Federation who seek freedom and search the Somnoire for valuables through Dream Pathways.",
+      "qualification": "A social role or collective label; insufficient evidence here to model a single formal faction.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_6_10",
+          "chapter": "剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": "秧秧",
+          "version": "3.8版本",
+          "excerpt": "He says Goldrunners are adventurers who chase freedom across the New Federation.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_6_11",
+          "chapter": "剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": "秧秧",
+          "version": "3.8版本",
+          "excerpt": "They use \"Dream Pathways\" to enter the Somnoire in search of valuables to trade. On one of these \"treasure hunts,\" he stumbled into a particularly bizarre pocket.",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Dream Pathways",
+      "proposedKind": "concept",
+      "status": "potential-addition",
+      "summary": "Routes used by Goldrunners to enter the Somnoire and retrieve tradeable valuables.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_6_11",
+          "chapter": "剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": "秧秧",
+          "version": "3.8版本",
+          "excerpt": "They use \"Dream Pathways\" to enter the Somnoire in search of valuables to trade. On one of these \"treasure hunts,\" he stumbled into a particularly bizarre pocket.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_6_46",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You arrive at the agreed meeting place with Yangyang, only to find a man screaming in agony before collapsing into a deep sleep. Yangyang explains that he is Jedediah, a Goldrunner from the New Federation. Goldrunners often venture into the Somnoire through \"Dream Pathways\" in se",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Dream Abode",
+      "proposedKind": "place",
+      "status": "potential-addition",
+      "summary": "Meta's name for the deep part of the Somnoire where consciousness and imagination meet.",
+      "qualification": "",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_160_5",
+          "chapter": "剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "The depths of the Somnoire, where consciousness and imagination meet. Though I prefer to call it the Dream Abode. Sounds more romantic, don't you think?",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_181_73",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束5_5_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Following Meta's guidance, you make your way to its Dream Abode, where it offers you a bargain to save Lily. Though you suspect Meta has ulterior motives, you have no other source of power to turn to and reluctantly agree. Meta reveals the three keys to saving Lily before sending",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Waking Moon Festival",
+      "proposedKind": "concept",
+      "status": "potential-addition",
+      "summary": "The Xuanfang celebration discussed in Tangning's farewell dialogue and visited during Lily's dream journey.",
+      "qualification": "Chinese name: 朝月会. Keep separate from the Moon-Chasing Festival (追月节) unless later evidence establishes an equivalence.",
+      "evidence": [
+        {
+          "textKey": "JSZYH_1_6",
+          "chapter": "剧情_3_8_朝月会结束_2_1",
+          "speakerZh": "棠宁",
+          "version": "3.8版本",
+          "excerpt": "The Hold has never seen a livelier Waking Moon Festival... And now that the Sentinel has appeared, everyone is breathing a little easier. I'd say things in Xuanfang will only improve from here.",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_141_46",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_11_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Drawing on your memories, Lily weaves a series of dreams that take you around the world. Together, you wander the streets of Jinzhou, dance on a stage in Ragunna, experience student life at Startorch Academy, chase the auroras across the frostlands, and finally celebrate the Waki",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Lily",
+      "proposedKind": "character",
+      "status": "existing-entry-update",
+      "summary": "Substantially expand her history as Lily Grace: perfumer, military psychotherapist, conductor, and former Clotho Doctors Alliance student; add her ties to Anna, Meta, Cassandra and the Academy.",
+      "qualification": "Already a playable-character entry; do not create another Lily node. Her voice line about Sigrika's loss is speculation, not confirmed family history.",
+      "evidence": [
+        {
+          "textKey": "FavorStory_151204_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "\"You're free now.\"\nShe could still hear the cat saying it.\nFree? Free to go where? Something deep in her mind made the choice for her, because her feet had already set out for the one place her memory still held onto: home, the Federated Cities.\n\"Fifth Sector. Miss Lily Grace?\" T",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorRoleInfo_1512_TalentDoc",
+          "chapter": "莉莉档案_共鸣能力鉴定报告",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "[Forte Examination Report: RA2777-G]\nForte Overview: Tests reveal a Rabelle's Curve with a pronounced periodic waveform. Therefore, the subject is classified as a Congenital Resonator. Her Tacet Mark is located on her chest.\nSubsequent testing, read alongside her work as a perfum",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_45_29",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_10_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lily answers your questions one by one. The battlefield you crossed was part of the Resonator War, and she and the other passengers all died in that conflict. Their lingering frequencies were tainted by the suffering and resentment of war, preventing their souls from finding peac",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorWord_151213_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lady Anna and I were close friends when we studied at the Clotho Doctors Alliance. We were sent to different war zones after, but we never stopped writing letters. Right up until I was sent to the Fifth Sector...\nLuckily, we both made it out alive. When I saw her again, she'd bec",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Train of Souls",
+      "proposedKind": "place",
+      "status": "existing-entry-update",
+      "summary": "A train within the Somnoire that gathers war victims' lingering frequencies. Lily treats their trauma, weaves memory dreams and helps them find peace.",
+      "qualification": "Already present in WuwaLore. Prioritize filling its sparse description rather than adding a duplicate. Named carriages and stops can initially be context, not separate graph nodes.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_44_59",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_53_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "In the Lounge Carriage, you find a soldier pointing a gun at those around him, shouting, \"Someone stop this train!\" Fearing for Lily's safety, you try to stop her from approaching him. She simply shakes her head, assuring you that she has handled such incidents countless times. S",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_45_29",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_10_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lily answers your questions one by one. The battlefield you crossed was part of the Resonator War, and she and the other passengers all died in that conflict. Their lingering frequencies were tainted by the suffering and resentment of war, preventing their souls from finding peac",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_50_35",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_13_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You follow Lily into a room, where you find Liam, the boy who greeted you earlier. Lily explains that the train never stops at actual stations. Instead, she uses her Forte to weave dreams from the passengers' memories, allowing them to revisit worlds they once knew. Once everythi",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Fifth Sector",
+      "proposedKind": "place",
+      "status": "existing-entry-update",
+      "summary": "A war zone of the Federated Cities to which Lily is reassigned after refusing to discharge soldiers on the verge of Overclocking. Cassandra commands its soldiers.",
+      "qualification": "Already present; contextualize hostile descriptions of this sector as soldiers' perspectives.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_145_28",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_16_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "The scene shifts back to the war. Lily stands trial before the military in an interrogation room. She had once been ordered by her superiors to discharge a group of soldiers from medical care. Recognizing that they were on the verge of Overclocking and unfit to return to combat, ",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_152_39",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_26_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "On the eve of the frontal assault, Lily gives Commander Cassandra her usual report on the wounded. Noticing how exhausted Lily looks, Cassandra urges her to get some rest, if only for tonight. She then thanks Lily on behalf of the Fifth Sector's soldiers, and as a mother herself,",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Clotho Doctors Alliance",
+      "proposedKind": "faction",
+      "status": "existing-entry-update",
+      "summary": "Add Lily and Anna's medical training, Rabelle's teaching, and the Alliance's Mental Health Care Center. Its assessment of Lily is later validated by Startorch Academy.",
+      "qualification": "Already a faction in WuwaLore; enrich it rather than create a second institution.",
+      "evidence": [
+        {
+          "textKey": "FavorRoleInfo_1512_TalentDoc",
+          "chapter": "莉莉档案_共鸣能力鉴定报告",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "[Forte Examination Report: RA2777-G]\nForte Overview: Tests reveal a Rabelle's Curve with a pronounced periodic waveform. Therefore, the subject is classified as a Congenital Resonator. Her Tacet Mark is located on her chest.\nSubsequent testing, read alongside her work as a perfum",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorWord_151213_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lady Anna and I were close friends when we studied at the Clotho Doctors Alliance. We were sent to different war zones after, but we never stopped writing letters. Right up until I was sent to the Fifth Sector...\nLuckily, we both made it out alive. When I saw her again, she'd bec",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorWord_151215_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Professor Rabelle was one of my most important teachers back at the Clotho Doctors Alliance. He taught me more than just medicine. He taught me what it truly means to be a healer. That all we can do is give every last bit of ourselves to save every life we can. And trust that wil",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Resonator War",
+      "proposedKind": "concept",
+      "status": "existing-entry-update",
+      "summary": "Add the Fifth Sector, war trauma and frequency corruption, Promeus' reported inaction, and the interests of surviving New Federation elites.",
+      "qualification": "The war's ultimate cause remains open. The Gatekeeper explicitly directs Rover to survivors' perspectives in the waking world.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_8_37",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束1_5_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "You contact Shorekeeper, who informs you that Aalto will soon travel to Xuanfang to assist Jedediah. She has also uncovered information about the New Federation in the Tethys System's database. One detail stands out: Promeus, the New Federation's Sentinel, took no action during t",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_45_29",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束2_10_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lily answers your questions one by one. The battlefield you crossed was part of the Resonator War, and she and the other passengers all died in that conflict. Their lingering frequencies were tainted by the suffering and resentment of war, preventing their souls from finding peac",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_211_19",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束5_17_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Meanwhile, a meeting unfolds somewhere in the New Federation. Several powerful figures voice their concern that the Resonator War could happen again. Their discussion is interrupted by a woman named Anna, who appears to be hosting the gathering. She mocks the assembled dignitarie",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "ST_YYMRDHS_64_7",
+          "chapter": "剧情_3_8_无配音生态文本_65_1",
+          "speakerZh": "黑色守门人",
+          "version": "3.8版本",
+          "excerpt": "That's why it's so hard to trace this war back to its roots. The only ones who can tell you the truth about the Resonator War are those who survived it.",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "name": "Somnoire",
+      "proposedKind": "place",
+      "status": "existing-entry-update",
+      "summary": "Extend its relationship to Meta, Dream Pathways, the Dream Abode, war memories, and the train.",
+      "qualification": "Distinguish Lily's initial interpretation as a world of the dead from the later explanation that these events occur within the Somnoire.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_160_69",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "When Lily awakens, she finds herself in an unfamiliar room, face-to-face with a colorful cat. The cat introduces itself as Meta, the owner of the Somnoire, and explains that Lily is now within its domain. Lily's Forte is connected to dreams, and her excessive use of it on the bat",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_176_52",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_51_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "As strange changes begin to overtake Lily's body, Meta suddenly intrudes upon one of her dreams. It reveals that, after returning from the New Federation, Lily secretly created another dream without its knowledge, gathering all the souls from the Fifth Sector who had yet to find ",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    }
+  ],
+  "bondCandidates": [
+    {
+      "a": "Lily",
+      "b": "Anna",
+      "context": "Former classmates and close friends; continued correspondence during the war.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151213_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lady Anna and I were close friends when we studied at the Clotho Doctors Alliance. We were sent to different war zones after, but we never stopped writing letters. Right up until I was sent to the Fifth Sector...\nLuckily, we both made it out alive. When I saw her again, she'd bec",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Professor Rabelle",
+      "context": "Medical teacher and student.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151215_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Professor Rabelle was one of my most important teachers back at the Clotho Doctors Alliance. He taught me more than just medicine. He taught me what it truly means to be a healer. That all we can do is give every last bit of ourselves to save every life we can. And trust that wil",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Meta",
+      "context": "Bargain to treat the soldiers' souls, followed by assistance outside the Somnoire.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_160_69",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "When Lily awakens, she finds herself in an unfamiliar room, face-to-face with a colorful cat. The cat introduces itself as Meta, the owner of the Somnoire, and explains that Lily is now within its domain. Lily's Forte is connected to dreams, and her excessive use of it on the bat",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_212_56",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束5_18_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "When Lily awakens, her memories of you have faded into a dream, leaving only a vague impression of your figure. As agreed, Meta asks whether she is willing to become its helper in the world beyond the Somnoire. Lily accepts and embraces the mysterious cat in gratitude. Her sincer",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Cassandra",
+      "context": "Military medic and commander; mutual protection and trust.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_152_39",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束4_26_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "On the eve of the frontal assault, Lily gives Commander Cassandra her usual report on the wounded. Noticing how exhausted Lily looks, Cassandra urges her to get some rest, if only for tonight. She then thanks Lily on behalf of the Fifth Sector's soldiers, and as a mother herself,",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Cassandra",
+      "b": "Liam",
+      "context": "Mother and son; stated directly by Liam.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_57_8",
+          "chapter": "剧情_3_8_予以明日的花束2_19_1",
+          "speakerZh": "利亚姆",
+          "version": "3.8版本",
+          "excerpt": "Sure do! D'ya know Cassandra? She's my mama. I'm looking for the person she sent to pick me up.",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Grimm",
+      "context": "Helps him face memories and reconcile with his past.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_108_36",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束3_8_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "The performance ends abruptly. You awaken to find yourself back in reality, but Grimm is nowhere to be seen. Lily is just as bewildered. Then, a frantic flurry of piano notes erupts from the Lounge Carriage. You and Lily rush over to find Mr. Grimm pouring his anguish into the ke",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Lucilla",
+      "context": "Lucilla welcomes and comforts Lily at the Academy.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151216_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "During my short stay at Startorch Academy, Miss Lucilla was ever so kind to me. It wasn't until later that I learned she was from the New Federation. When I told her my story, she didn't speak a word. She simply embraced me. The last person who held me like that was Cassandra. Th",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Sigrika",
+      "context": "Friendship at the Academy; retain Lily's uncertainty about Sigrika's past.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151217_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Before I returned to the New Federation, I spent some time at Startorch Academy. That's where I met Sigrika. We became fast friends. She has a rare gift for knowing when not to pry. She never pressed me about my past, and she never tried too hard to lift my spirits. But sometimes",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "a": "Lily",
+      "b": "Rover",
+      "context": "Works together to help the passengers; their shared diary supports their later reunion.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_221_31",
+          "chapter": "跳过总结_剧情_3_8_后日谈_10_1",
+          "speakerZh": null,
+          "version": "3.8版本",
+          "excerpt": "Lily leans against a railing at Startorch Academy. Although she remembers her experiences with you only as a hazy dream, she has been following what the two of you wrote in the diary. You realize that Meta never destroyed the diary, allowing you to find Lily once more. This time,",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    }
+  ]
+}

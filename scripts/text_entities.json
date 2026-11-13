@@ -41,5 +41,139 @@
     "kind": "faction",
     "summary": "A college whose curriculum reform and continued funding are discussed by Reilynn. The NPC attributes the proposal to President Lucilla and describes the Etheric Sea as its future challenge.",
     "textKeys": ["34NPCTHST_7_4", "34NPCTHST_7_9"]
+  },
+  {
+    "id": "Promeus",
+    "kind": "being",
+    "zh": "普罗米厄",
+    "page": "https://wutheringwaves.fandom.com/wiki/Promeus",
+    "summary": "The New Federation's Sentinel. Yangyang reports that Jedediah kept hearing its name, and the Tethys System's database, as relayed by Shorekeeper, records that Promeus took no action during the Resonator War. Why it stayed inactive is not explained.",
+    "textKeys": ["Main_YYMRDHS_6_20", "Main_YYMRDHS_8_35", "Main_YYMRDHS_8_37"]
+  },
+  {
+    "id": "Meta",
+    "kind": "character",
+    "zh": "梅塔",
+    "speakers": ["「梅塔」"],
+    "page": "https://wutheringwaves.fandom.com/wiki/Meta",
+    "summary": "A catlike entity that calls itself the owner of the Somnoire. It bargains with Lily and later with Rover, lending power to treat the soldiers' corrupted frequencies. Lily notes that it likes to compare itself to a Sentinel; the text does not establish that it is one.",
+    "textKeys": ["Main_YYMRDHS_160_55", "Main_YYMRDHS_160_69", "FavorWord_151214_Content"]
+  },
+  {
+    "id": "Anna",
+    "kind": "character",
+    "speakers": ["安娜"],
+    "page": "https://wutheringwaves.fandom.com/wiki/Anna",
+    "summary": "Lily's close friend from their studies at the Clotho Doctors Alliance; the two kept writing to each other after being sent to different war zones. After the war she became the New Federation's \"Queen of the Deep\", seen hosting a meeting of dignitaries worried that the Resonator War could return.",
+    "textKeys": ["FavorWord_151213_Content", "Main_YYMRDHS_211_19"],
+    "notTextKeys": ["InfoDisplay_103000005_Text"]
+  },
+  {
+    "id": "Cassandra",
+    "kind": "character",
+    "zh": "卡瓦莎",
+    "page": "https://wutheringwaves.fandom.com/wiki/Cassandra",
+    "summary": "Liam's mother and commander of the Fifth Sector's soldiers, who looked out for Lily during the war. Aboard the Train of Souls she is the first passenger Lily helps; she has lost most of her memories except her son and her wish to return to him.",
+    "textKeys": ["Main_YYMRDHS_57_8", "Main_YYMRDHS_152_39", "Main_YYMRDHS_165_8"]
+  },
+  {
+    "id": "Liam",
+    "kind": "character",
+    "zh": "利亚姆",
+    "page": "https://wutheringwaves.fandom.com/wiki/Liam",
+    "summary": "A boy aboard the Train of Souls searching for his mother, Cassandra. Lily gives him a harmonica, and his story is the first major passenger journey of the quest.",
+    "textKeys": ["Main_YYMRDHS_64_73", "Main_YYMRDHS_72_53"]
+  },
+  {
+    "id": "Grimm",
+    "kind": "character",
+    "zh": "格姆",
+    "page": "https://wutheringwaves.fandom.com/wiki/Grimm",
+    "summary": "The pianist of the Train of Souls' Lounge Carriage. His memory journey turns on a farewell performance, guilt, and reconciliation with an old friend.",
+    "textKeys": ["Main_YYMRDHS_101_35", "Main_YYMRDHS_108_36"]
+  },
+  {
+    "id": "Herriman",
+    "kind": "character",
+    "zh": "赫利曼",
+    "page": "https://wutheringwaves.fandom.com/wiki/Herriman",
+    "summary": "A military officer who presses Lily to keep treating soldiers so they can return to combat, and who later tells her she has been reassigned to the Fifth Sector.",
+    "textKeys": ["Main_YYMRDHS_122_46", "Main_YYMRDHS_126_11"]
+  },
+  {
+    "id": "Jedediah",
+    "kind": "character",
+    "zh": "杰凯德",
+    "page": "https://wutheringwaves.fandom.com/wiki/Jedediah",
+    "summary": "A New Federation Goldrunner whose disturbed journey through the Somnoire starts the 3.8 investigation. Yangyang contacts the Black Shores, and Aalto is sent to Xuanfang to assist him.",
+    "textKeys": ["Main_YYMRDHS_6_46", "Main_YYMRDHS_8_37"]
+  },
+  {
+    "id": "Goldrunners",
+    "kind": "concept",
+    "zh": "淘金客",
+    "summary": "Adventurers who chase freedom across the New Federation and enter the Somnoire through Dream Pathways to find valuables to trade. A social role rather than a formal faction.",
+    "textKeys": ["Main_YYMRDHS_6_10", "Main_YYMRDHS_6_46"]
+  },
+  {
+    "id": "Dream Pathways",
+    "kind": "concept",
+    "zh": "梦路",
+    "summary": "Routes Goldrunners use to enter the Somnoire and retrieve valuables to trade.",
+    "textKeys": ["Main_YYMRDHS_6_11", "Main_YYMRDHS_6_46"]
+  },
+  {
+    "id": "Dream Abode",
+    "kind": "place",
+    "zh": "梦居",
+    "summary": "Meta's name for the depths of the Somnoire, where consciousness and imagination meet. Rover goes there to accept Meta's bargain to save Lily.",
+    "textKeys": ["Main_YYMRDHS_160_5", "Main_YYMRDHS_181_73"]
+  },
+  {
+    "id": "Waking Moon Festival",
+    "kind": "concept",
+    "zh": "朝月会",
+    "summary": "A celebration in Xuanfang Hold. Tangning calls this year's the liveliest the Hold has seen, and Lily's dream journey ends at the festival. Kept separate from the Moon-Chasing Festival (追月节).",
+    "textKeys": ["JSZYH_1_6", "Main_YYMRDHS_141_46"]
+  },
+  {
+    "id": "Scott Rabelle",
+    "kind": "character",
+    "zh": "史考特·拉贝尔",
+    "page": "https://wutheringwaves.fandom.com/wiki/Scott_Rabelle",
+    "summary": "Dr. Scott Rabelle, founder of Resonance Curve Theory, developed Rabelle's Test (Rabelle's Curve) for examining Resonators, and Startorch Academy's Rabelle College is named after him. In Lily's 3.8 story and voice line, her teacher at the Clotho Doctors Alliance is \"Prof. Rabelle\", who ran the Alliance at the time; the wiki identifies the two as the same person, while the 3.8 text gives only the surname.",
+    "textKeys": ["Term850067_Desc", "LoadingTipsText_609001_TipsText"]
+  },
+  {
+    "id": "Delio",
+    "kind": "character",
+    "zh": "德利亚",
+    "summary": "A young soldier, a student of eighteen or nineteen, whom Lily treats at a front-line field hospital in her third character story.",
+    "textKeys": ["FavorStory_151203_Content"]
+  },
+  {
+    "id": "Eris",
+    "kind": "character",
+    "zh": "厄里斯",
+    "page": "https://wutheringwaves.fandom.com/wiki/%22Eris%22",
+    "summary": "\"Eris\" is the codename of the Fractsidus's contact in the New Federation. A scorched report from a Fractsidus Overseer was addressed to Eris, Luuk locates Eris at the Fractsidus's most critical base of operations, and the Grand Architect sends Cristoforo with a message to Eris. The wiki calls Eris the Vice Architect, a title not found in the checked game text.",
+    "textKeys": ["MAIN_RGLC_11_9", "MAIN_RGLC_11_10", "MAIN_RGLC_15_12", "Zuoyequnxing_188_6"]
+  },
+  {
+    "id": "Chase",
+    "kind": "character",
+    "zh": "查特",
+    "page": "https://wutheringwaves.fandom.com/wiki/Chase",
+    "summary": "Head of the Spacetrek Collective, from the New Federation. Luuk says he began as a low-level employee at Ashridge Energy, later held a government post, and then moved into large investment projects. Some claim he has been Ashridge Energy's man all along, but no one has proven it.",
+    "textKeys": ["Zuoyequnxing_50_16", "Zuoyequnxing_50_18"],
+    "contextKeys": ["Zuoyequnxing_50_19"]
+  },
+  {
+    "id": "Ichor",
+    "kind": "concept",
+    "zh": "日髓",
+    "summary": "A special pharmaceutical substance developed for extremely rare diseases; its severe side effects keep it under research. In its natural form it is a volatile golden liquid that radiates heat. The Novialle Regenerative Group's core technology comes from it, and Luuk says its \"Golden Serum\" is also called Ichor.",
+    "textKeys": ["Term750042_Desc", "MAIN_RGLC_10_4"],
+    "notTextKeys": ["InfoDisplay_102001301_Text"]
   }
 ]

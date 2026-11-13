@@ -10,7 +10,7 @@ def plain(text):
 
 def name_pattern(name):
     # These proper names also occur as ordinary English nouns.
-    flags = 0 if name in {"Scar", "Cosmos", "Encore"} else re.I
+    flags = 0 if name in {"Scar", "Cosmos", "Encore", "Chase"} else re.I
     return re.compile(r"(?<![\w-])" + re.escape(name).replace("’", "['’]") + r"(?![\w-])", flags)
 
 
@@ -49,10 +49,16 @@ def excerpt(text, names, limit=1200):
 def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh, documents, definitions=(), aliases=None):
     source_text = dict(text_en)
     source_text.update((r["textKey"], r["text"]) for r in source.get("records", []))
+    context_for = {}
     for definition in definitions:
         if not definition["textKeys"] or not all(key in source_text and name_pattern(definition["id"]).search(source_text[key]) for key in definition["textKeys"]):
             raise ValueError(f"Missing source for text entry: {definition['id']}")
-        add_node(definition["id"], definition["kind"], summary=definition["summary"],
+        # Reviewed passages about the entry that refer to it only by pronoun ("he", "this person").
+        for key in definition.get("contextKeys", []):
+            if key not in source_text:
+                raise ValueError(f"Missing context passage for text entry: {definition['id']} {key}")
+            context_for[key] = definition["id"]
+        add_node(definition["id"], definition["kind"], summary=definition["summary"], page=definition.get("page", ""),
                  zh=definition.get("zh", ""), summarySource="Game text", sourceTextKeys=definition["textKeys"])
     subjects = [n for n in nodes.values() if n["kind"] in {"character", "being", "place", "faction", "concept"}]
     patterns = [(n["id"], name_pattern(n["id"])) for n in subjects if len(n["id"]) >= 4]
@@ -66,6 +72,11 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
         if canonical:
             patterns.append((canonical["id"], name_pattern(alternate)))
     by_zh = {n["zh"]: n["id"] for n in subjects if n.get("zh")}
+    # Reviewed speaker tags that differ from the plain name, e.g. 「梅塔」 for Meta.
+    # Quoted tags such as “莉莉” mark a persona, so they are never mapped automatically.
+    for definition in definitions:
+        for tag in definition.get("speakers", []):
+            by_zh[tag] = find(definition["id"])["id"]
     translation = collections.defaultdict(collections.Counter)
     for key, zh in text_zh.items():
         en = text_en.get(key, "")
@@ -95,9 +106,11 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
         by_zh[zh] = npc["id"]
 
     attached = {}
+    # Passages reviewed as naming someone else ("Hoda Theophilus Anna" is not Lily's friend Anna).
+    excluded = {find(d["id"])["id"]: set(d.get("notTextKeys", [])) for d in definitions}
 
     def attach(record, mentions, speaker=None):
-        mentions = list(dict.fromkeys(mentions))
+        mentions = [nid for nid in dict.fromkeys(mentions) if record["textKey"] not in excluded.get(nid, ())]
         if speaker and speaker not in mentions:
             mentions.insert(0, speaker)
         if not mentions:
@@ -139,8 +152,9 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
             speaker = None
         mentions = [nid for nid, pattern in patterns if pattern.search(record["text"])]
         mentions.extend(n["id"] for n in subjects if n["id"] != 'Scar' and len(n.get("zh", "")) >= 2 and n["zh"] in record.get("zh", ""))
-        if record.get('contextFor') and find(record['contextFor']):
-            mentions.insert(0, find(record['contextFor'])["id"])
+        for target in (record.get('contextFor'), context_for.get(record["textKey"])):
+            if target and find(target):
+                mentions.insert(0, find(target)["id"])
         owner = by_zh.get(speaker_name(record.get("speakerZh", "")))
         if owner and record["kind"] == "Character profile":
             mentions.insert(0, owner)

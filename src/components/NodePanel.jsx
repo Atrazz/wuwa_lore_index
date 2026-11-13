@@ -65,8 +65,8 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
   const mentionsRef = useRef()
   const mentions = useMemo(() => {
     const records = node.textEvidence || []
-    const primary = node.summaryCitation?.id
-    return primary && records.includes(primary) ? [primary, ...records.filter((r) => r !== primary)] : records
+    const first = [node.summaryCitation?.id, ...(node.caveats || []).map((c) => c.citation)].filter((r) => r && records.includes(r))
+    return [...new Set(first), ...records.filter((r) => !first.includes(r))]
   }, [node])
   // etymology lines already shown as a real-world card aren't repeated
   const shownRefs = new Set(inspired.flatMap((l) => l.kinds.inspired.map((e) => e.text)))
@@ -139,6 +139,15 @@ export default function NodePanel({ node, index, links, nodes, onOpen, onPick, o
               node.kind !== 'theory' && node.summarySource !== 'Game text' && node.summaryMode !== 'overview' && (node.wiki || node.page) && <a className="src" href={node.wiki || node.page} target="_blank" rel="noreferrer"> {node.kind === 'realworld' ? 'Wikipedia' : 'Wiki'} ↗</a>}
           </p>
         )}
+        {node.caveats?.map((c) => (
+          <p className="p-caveat" key={c.citation}>
+            <span className="caveat-tag">Game text differs</span> {c.note}{' '}
+            <button className="src" title={`${c.source} · ${c.textKey}`} onClick={() => {
+              setMentionsOpen(true)
+              requestAnimationFrame(() => mentionsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+            }}> Game text ↓</button>
+          </p>
+        ))}
 
         {bonds.length > 0 && (
           <Section title="Relationships" count={bonds.length} color={EDGE.bond.color}>

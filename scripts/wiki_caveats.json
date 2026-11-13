@@ -1,0 +1,18 @@
+{
+  "Resonator War": [
+    {
+      "note": "A 3.8 war report describes the Federated Cities' government forces fighting a Resonator army, whereas this introduction places the Resonator side in the Federated Cities. The report is one in-world account, so the tension is noted rather than resolved.",
+      "textKeys": [
+        "InfoDisplay_38010006_Text"
+      ]
+    }
+  ],
+  "Fifth Sector": [
+    {
+      "note": "A 3.8 war report describes the Federated Cities' government forces fighting a Resonator army, whereas this introduction calls the occupying force the Federated Cities' Resonator army. The report is one in-world account, so the tension is noted rather than resolved.",
+      "textKeys": [
+        "InfoDisplay_38010006_Text"
+      ]
+    }
+  ]
+}

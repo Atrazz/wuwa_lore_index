@@ -1,0 +1,520 @@
+{
+  "checked": "2026-11-14",
+  "source": "https://mc.yakitahome.com/search",
+  "purpose": "Cross-check the user's newly expanded wiki lore against in-game text; research only, no changes to graph content.",
+  "coverage": {
+    "queries": 21,
+    "versionScope": "3.8 first; older text searched for corroboration when needed",
+    "substringHandling": "Whole-word/phrase filtering applied before interpreting proper-name hits",
+    "limitations": "Some older searches are capped at 50 rows. Absence from the checked results is not proof of absence from the game."
+  },
+  "findings": [
+    {
+      "topic": "Scott Rabelle / Rabelle's Curve",
+      "status": "supported",
+      "finding": "The terminology entry names Dr. Scott Rabelle as the developer of the Resonator examination method. Lily's 3.8 voice line and story identify Professor Rabelle as her medical teacher at Clotho.",
+      "qualification": "The full name comes from older text; the 3.8 passages use Professor Rabelle. Treat the wiki's identification as a cross-source link, rather than claiming the full name first appears in 3.8.",
+      "evidence": [
+        {
+          "textKey": "Term850067_Desc",
+          "chapter": null,
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "2.4版本",
+            "hasChanges": false
+          },
+          "excerpt": "Developed by Dr. Scott Rabelle, this method was originally designed to examine Resonators. It is also known as \"Rabelle's Test.\"\nKnown for its safety, reliability, and ease of use, the test has since been adopted across multiple regions.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorWord_151215_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Professor Rabelle was one of my most important teachers back at the Clotho Doctors Alliance. He taught me more than just medicine. He taught me what it truly means to be a healer. That all we can do is give every last bit of ourselves to save every life we can. And trust that will be enough.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorStory_151202_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Lily began her internship at the Clotho Doctors Alliance on her birthday.\nThere were no flowers, no cake, nobody from home. What welcomed her was the smell of disinfectant, which hung in those corridors all year and never thinned.\n\"New, are you? Right, then. Down to the laundry.\"\nSheets, blankets and pillowcases stiff with dried blood, heaped up and waiting ",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Clotho Doctors Alliance / Lily / Anna",
+      "status": "supported",
+      "finding": "Lily and Anna studied together at Clotho. Lily's Forte examination names the Alliance's Mental Health Care Center; her story describes an internship and medical training.",
+      "qualification": "These support membership and training links. Professor Rabelle's presence alone does not independently prove the wiki's claim that he headed the company.",
+      "evidence": [
+        {
+          "textKey": "FavorWord_151213_Content",
+          "chapter": "莉莉档案_角色语音",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Lady Anna and I were close friends when we studied at the Clotho Doctors Alliance. We were sent to different war zones after, but we never stopped writing letters. Right up until I was sent to the Fifth Sector...\nLuckily, we both made it out alive. When I saw her again, she'd become the New Federation's \"Queen of the Deep,\" with powerful folks kneeling at he",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorRoleInfo_1512_TalentDoc",
+          "chapter": "莉莉档案_共鸣能力鉴定报告",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "[Forte Examination Report: RA2777-G]\nForte Overview: Tests reveal a Rabelle's Curve with a pronounced periodic waveform. Therefore, the subject is classified as a Congenital Resonator. Her Tacet Mark is located on her chest.\nSubsequent testing, read alongside her work as a perfumer, indicates that the subject has an acute sense of smell and can induce dreams",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorStory_151202_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Lily began her internship at the Clotho Doctors Alliance on her birthday.\nThere were no flowers, no cake, nobody from home. What welcomed her was the smell of disinfectant, which hung in those corridors all year and never thinned.\n\"New, are you? Right, then. Down to the laundry.\"\nSheets, blankets and pillowcases stiff with dried blood, heaped up and waiting ",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Delio",
+      "status": "supported-mentioned-character",
+      "finding": "Lily's third character story identifies Delio as a young soldier she treats at a field hospital. This supplies a specific patient relationship and explains an important part of her medical experience.",
+      "qualification": "A story-only character candidate, not a newly verified playable character. The passage contains traumatic wartime events; a concise character summary is sufficient.",
+      "evidence": [
+        {
+          "textKey": "FavorStory_151203_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "The field hospital nearest the front had been set up in an old office block, and Lily had been working there the better part of a year.\n\"Mr. Delio, how are we today? Anything you'd like to tell me?\"\nLily sat down by the bed. She called him mister, though what she was looking at was a student of eighteen or nineteen inside a uniform cut for a bigger man.\n\"Don",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Lily's dream-inducing perfumes",
+      "status": "supported",
+      "finding": "The Forte examination links specially prepared perfume with the ability to induce dreams, with observed durations of 15–60 minutes.",
+      "qualification": "Prefer this concrete mechanism over treating every fragrance or flower as a separate lore concept.",
+      "evidence": [
+        {
+          "textKey": "FavorRoleInfo_1512_TalentDoc",
+          "chapter": "莉莉档案_共鸣能力鉴定报告",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "[Forte Examination Report: RA2777-G]\nForte Overview: Tests reveal a Rabelle's Curve with a pronounced periodic waveform. Therefore, the subject is classified as a Congenital Resonator. Her Tacet Mark is located on her chest.\nSubsequent testing, read alongside her work as a perfumer, indicates that the subject has an acute sense of smell and can induce dreams",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Promeus and the New Federation",
+      "status": "supported-with-attribution",
+      "finding": "The new story names Promeus as the nation's Sentinel and reports its inaction during the war. Older Galilei dialogue warns that his research could be used by the capital to exploit its Sentinel.",
+      "qualification": "Inaction is Shorekeeper's account of a database record; the reason is not established. The exploitation connection combines a 3.8 identification with an older unnamed-Sentinel reference.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_6_20",
+          "chapter": "剧情_3_8_予以明日的花束1_3_1",
+          "speakerZh": "秧秧",
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Let me think... Oh, right. He mentioned a name. Promeus, the New Federation's Sentinel. He said that was the name he kept hearing, over and over.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_8_35",
+          "chapter": "剧情_3_8_予以明日的花束1_5_1",
+          "speakerZh": "守岸人（通讯中）",
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "\"During the Resonator War, Promeus took no action.\"",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "NPC_LBEXB_3_6",
+          "chapter": "剧情_3.0拉海洛_学院拉贝尔学部_1_2",
+          "speakerZh": "伽利雷",
+          "version": {
+            "firstSeen": "3.0版本"
+          },
+          "excerpt": "If I go back to the New Federation, my research will only become another way for the capital to exploit the Sentinel.",
+          "source": "existing searcher cache",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Novialle Regenerative Group / Ichor / Luuk Herssen",
+      "status": "supported-older-text",
+      "finding": "The terminology entries define Novialle as a New Federation pharmaceutical corporation and Ichor as a controversial treatment with severe side effects. Luuk describes its Golden Serum and his inheritance of the company.",
+      "qualification": "These are 3.1 sources, useful for the newly expanded wiki context but not new 3.8 revelations. Keep Ichor's lore entry separate from combat-resource labels such as Ichor Flow and Ichor Blade.",
+      "evidence": [
+        {
+          "textKey": "Term750043_Desc",
+          "chapter": null,
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "A pharmaceutical corporation based in the New Federation. Its core technology originates from the development of Ichor, a groundbreaking medical advancement shadowed by perpetual controversy.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Term750042_Desc",
+          "chapter": null,
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "A special pharmaceutical substance developed for extremely rare diseases. However, its severe side effects make it intolerable for most, keeping it under ongoing research and validation. In its natural form, Ichor is a volatile golden liquid that radiates intense heat at room temperature. In rare cases, it can be controlled and stabilized into a solid form.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "MAIN_RGLC_10_4",
+          "chapter": "剧情_3_1_拉海洛主线_下半_13_1",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "The \"Golden Serum\" developed by the Novialle Group. But I prefer its other name—Ichor.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "MAIN_RGLC_10_10",
+          "chapter": "跳过总结_剧情_3_1_拉海洛主线_下半_13_1",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "A vial of \"Golden Serum,\" an \"evolutionary drug\" developed by the Novialle Regenerative Group, owned by Luuk's adoptive father, which drew the Fractsidus's attention.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "MAIN_RGLC_36_34",
+          "chapter": "剧情_3_1_拉海洛主线_下半_30_1",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "Later, after I inherited Novialle, I realized there were still so many things I couldn't control. So I'd eat them to cope, especially when I was up to my neck in trouble thanks to my business associates.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Ashridge Energy / Chase",
+      "status": "supported-older-text",
+      "finding": "Luuk says Chase began as an Ashridge Energy employee, later held government office, and then pursued major investment projects.",
+      "qualification": "The allegation that he remained Ashridge's agent is explicitly unproven in the dialogue; preserve that uncertainty.",
+      "evidence": [
+        {
+          "textKey": "Zuoyequnxing_50_18",
+          "chapter": "剧情_3_3_拉海洛主线_上半新_2_1",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.3版本",
+            "hasChanges": false
+          },
+          "excerpt": "Chase started as a low-level employee at Ashridge Energy in the New Fed. Then he dropped off the grid for a few years before resurfacing in a government position.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Zuoyequnxing_50_19",
+          "chapter": "剧情_3_3_拉海洛主线_上半新_2_1",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.3版本",
+            "hasChanges": false
+          },
+          "excerpt": "After that, he left the government and started diving into multiple large-scale investment projects. Some say he's still been Ashridge Energy's man the whole time, but no one's been able to prove it.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "World Expo / Triumph Avionics / Panovista Transit",
+      "status": "supported-older-text",
+      "finding": "An NPC names both aviation firms in the context of the New Federation World Expo. Aalto and Mortefi's story independently establish the expo's technology and research context.",
+      "qualification": "Versions range from 1.0 to 3.0. This supports company-country-event connections without creating duplicate company nodes.",
+      "evidence": [
+        {
+          "textKey": "NPC_HBGC_31_4",
+          "chapter": "剧情_3.0拉海洛_学院华表广场_1_17",
+          "speakerZh": "施泰因",
+          "version": {
+            "firstSeen": "3.0版本",
+            "hasChanges": false
+          },
+          "excerpt": "No wonder Triumph Avionics and Panovista Transit are getting all the hype at the New Federation World Expo.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_Linaxita_2_0_4_10",
+          "chapter": "剧情_2_0_黎那汐塔主线_序幕_2_1",
+          "speakerZh": "秋水",
+          "version": {
+            "firstSeen": "2.0版本",
+            "hasChanges": false
+          },
+          "excerpt": "This is cutting-edge gear from the New Fed World Expo. Nearly lost my shirt haggling for it. Planning to stock up for the Black Shores.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "FavorStory_120404_Content",
+          "chapter": "莫特斐档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "1.0版本",
+            "hasChanges": false
+          },
+          "excerpt": "Mortefi's childhood was suffocating, trapped by hypocritical high society norms and neglect from his parents.\n\nLocked away in his grim study, he resorted to venting his anger on household objects. But even this small act of rebellion soon lost its appeal as his parents simply replaced the destroyed items. New and shiny, they were always neatly arranged, a co",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Eris / Fractsidus / New Federation",
+      "status": "supported-older-text",
+      "finding": "Luuk identifies Eris in the New Federation as the recipient of a Fractsidus report, and a later scene has the Grand Architect send a message there.",
+      "qualification": "Exact-word filtering found no literal Eris mention among the 43 version-3.8 substring results. The selected sources support the location and organizational links; the English title Vice-Architect was not independently recovered by these searches.",
+      "evidence": [
+        {
+          "textKey": "MAIN_RGLC_11_9",
+          "chapter": "剧情_3_1_拉海洛主线_下半_14_2",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "The recipient is \"Eris\" in the New Federation.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "MAIN_RGLC_11_10",
+          "chapter": "跳过总结_剧情_3_1_拉海洛主线_下半_14_2",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "A scorched report from a Fractsidus Overseer, meant to be sent to \"Eris\" in the New Federation.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "MAIN_RGLC_15_12",
+          "chapter": "剧情_3_1_拉海洛主线_下半_18_1",
+          "speakerZh": "陆·赫斯",
+          "version": {
+            "firstSeen": "3.1版本",
+            "hasChanges": false
+          },
+          "excerpt": "That's their most critical base of operations, and where you'll find \"Eris.\"",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Zuoyequnxing_188_6",
+          "chapter": "剧情_3_3_拉海洛主线_上半新_20_1",
+          "speakerZh": "残星会会长",
+          "version": {
+            "firstSeen": "3.3版本",
+            "hasChanges": false
+          },
+          "excerpt": "Cristoforo, be a dear and run a message to Eris in the New Federation for me.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Old Federation / Fifth Sector / passage of time",
+      "status": "supported",
+      "finding": "Lily's fourth character story says her old country and military affiliation no longer exist when she returns. It explicitly explains that time in the Somnoire does not keep pace with the outside world.",
+      "qualification": "Supports historical change and Lily's displacement, not a precise elapsed duration or identification of the victorious faction.",
+      "evidence": [
+        {
+          "textKey": "FavorStory_151204_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "\"You're free now.\"\nShe could still hear the cat saying it.\nFree? Free to go where? Something deep in her mind made the choice for her, because her feet had already set out for the one place her memory still held onto: home, the Federated Cities.\n\"Fifth Sector. Miss Lily Grace?\" The official at the border turned her papers over and turned them back. They were",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Dreaming Deep and Dream Abode",
+      "status": "keep-distinct",
+      "finding": "Dreaming Deep results identify an older event, while 3.8 dialogue gives Dream Abode as Meta's name for the Somnoire's depths.",
+      "qualification": "Do not merge the names solely because both involve deeper parts of the Somnoire. No 3.8 literal Dreaming Deep results were returned.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_160_5",
+          "chapter": "剧情_3_8_予以明日的花束4_34_1",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "The depths of the Somnoire, where consciousness and imagination meet. Though I prefer to call it the Dream Abode. Sounds more romantic, don't you think?",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "Main_YYMRDHS_181_73",
+          "chapter": "跳过总结_剧情_3_8_予以明日的花束5_5_1",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Following Meta's guidance, you make your way to its Dream Abode, where it offers you a bargain to save Lily. Though you suspect Meta has ulterior motives, you have no other source of power to turn to and reluctantly agree. Meta reveals the three keys to saving Lily before sending you back to the train. Aboard the train, you seem to hear the voices of the fal",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "War sides in the wiki overview",
+      "status": "needs-reconciliation",
+      "finding": "A 3.8 war report describes fighting between the Federated Cities' government forces and a Resonator army. Its Chinese wording also distinguishes those two forces. This needs reconciliation with the wiki overview identifying the Federated Army with the Resonator front.",
+      "qualification": "The report is an in-world journalistic account, not a complete history of every faction. Flag the apparent tension rather than reversing the entire war chronology on one document.",
+      "evidence": [
+        {
+          "textKey": "InfoDisplay_38010006_Text",
+          "chapter": null,
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Since March 21, the government forces of the Federated Cities and the Resonator army have been locked in battle across this city for three months. The once-celebrated \"City of Progress\" has been torn apart by relentless artillery fire. \n\nOur reporters traveled along the highway toward the front. Everywhere they looked, ammunition crates, stretchers, and wrec",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Which side won the Resonator War",
+      "status": "not-established-by-checked-passages",
+      "finding": "The checked text establishes that the old state disappeared and the New Federation replaced it, but does not explicitly identify the winning side.",
+      "qualification": "Preserve the wiki's likely/presumed wording. The Gatekeeper says the war's truth must be pieced together from surviving witnesses.",
+      "evidence": [
+        {
+          "textKey": "FavorStory_151204_Content",
+          "chapter": "莉莉档案_角色故事",
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "\"You're free now.\"\nShe could still hear the cat saying it.\nFree? Free to go where? Something deep in her mind made the choice for her, because her feet had already set out for the one place her memory still held onto: home, the Federated Cities.\n\"Fifth Sector. Miss Lily Grace?\" The official at the border turned her papers over and turned them back. They were",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "ST_YYMRDHS_64_7",
+          "chapter": "剧情_3_8_无配音生态文本_65_1",
+          "speakerZh": "黑色守门人",
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "That's why it's so hard to trace this war back to its roots. The only ones who can tell you the truth about the Resonator War are those who survived it.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    },
+    {
+      "topic": "Fear-suppressing or mutating petals",
+      "status": "not-corroborated-in-checked-text",
+      "finding": "The 12 first-seen-3.8 results for petals concern flowers, perfume, dreams, food, or gameplay. They do not independently substantiate the war-overview claim about troops consuming mutating petals.",
+      "qualification": "This is a search limitation, not proof the claim is false. If derived from Lily's showcase, retain it as visual/showcase evidence rather than cite an unrelated flower description.",
+      "evidence": [
+        {
+          "textKey": "Main_YYMRDHS_195_2",
+          "chapter": "剧情_3_8_主线钢琴家、迷宫和花海玩法_24_1",
+          "speakerZh": "卡瓦莎",
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "Take our petals. This time, let us carry you home.",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        },
+        {
+          "textKey": "ItemInfo_42601650_BgDescription",
+          "chapter": null,
+          "speakerZh": null,
+          "version": {
+            "firstSeen": "3.8版本",
+            "hasChanges": false
+          },
+          "excerpt": "The petals of the Reverie Lily are as pure and flawless as moonlight. The slender flower sways and releases wisps of delicate fragrance with every gentle breeze that passes. The scent is not quite sweet but faintly bitter, like old dreams steeped in the night's dew. Those dreams hold a thousand unspoken words, yet the flower remains silent.\nIt stays rooted i",
+          "source": "live text-searcher query",
+          "url": "https://mc.yakitahome.com/search"
+        }
+      ]
+    }
+  ]
+}
