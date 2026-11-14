@@ -249,6 +249,11 @@
   "ctx": "Abby wonders whether the Sentinel cares about Lenore's small worries.",
   "basis": "stated"
  },
+ "Abby|Lily": {
+  "rel": "Met aboard the train",
+  "ctx": "Lily meets Abby inside Rover and calls the name cute. Abby is suspicious of the train at first, later says Lily's trust isn't misplaced, and Lily thanks them both before her last request.",
+  "basis": "stated"
+ },
  "Abby|Lucilla": {
   "rel": "Acquaintances",
   "ctx": "Lucilla calls Rover and Abby in about \"the one from afar\".",
@@ -1634,6 +1639,11 @@
   "ctx": "Rover searches Xuanfang for traces of Hsin the Moon Fox, Mengzhou's Sentinel.",
   "basis": "stated"
  },
+ "Hsin|Shorekeeper": {
+  "rel": "Frequency analysis",
+  "ctx": "Shorekeeper analyzes Hsin's fragmented frequency to re-examine the Tethys System's records on the Resonator War.",
+  "basis": "stated"
+ },
  "Hsin|Suisui": {
   "rel": "Sentinel & dealmaker",
   "ctx": "Suisui struck a secret deal with Hsin, who admires her purpose in commerce.",
@@ -1932,6 +1942,11 @@
  "Liangyu|Yangyang": {
   "rel": "Comrades",
   "ctx": "Yangyang travelled with Liangyu of the Xuan Triad during an evacuation; Liangyu refuses her apology.",
+  "basis": "stated"
+ },
+ "Lily|Rover": {
+  "rel": "Partners aboard the train",
+  "ctx": "Rover, still alive, rides the Train of Souls with Lily and helps her guide its passengers, even playing the Attendant in Liam's memory; the two agree to look out for each other.",
   "basis": "stated"
  },
  "Lingyang|Mortefi": {

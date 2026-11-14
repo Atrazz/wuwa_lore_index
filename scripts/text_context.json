@@ -123,5 +123,15 @@
     "rel": "Teacher and student",
     "ctx": "Lily calls Professor Rabelle one of her most important teachers at the Clotho Doctors Alliance, who taught her what it means to be a healer. Her story says Rabelle ran the Alliance and took her on as a student; the wiki identifies him as Dr. Scott Rabelle.",
     "textKeys": ["FavorWord_151215_Content", "FavorStory_151202_Content"]
+  },
+  "Liam|Lily": {
+    "rel": "Protected during the war",
+    "ctx": "Aboard the Train of Souls, Lily, in her medic's uniform, gives Liam a harmonica, and he seems to recognize her from his own memories. In the war, Cassandra thanks Lily for protecting Liam aboard the train.",
+    "textKeys": ["Main_YYMRDHS_64_73", "Main_YYMRDHS_152_39"]
+  },
+  "Herriman|Lily": {
+    "rel": "Officer over a medic",
+    "ctx": "After a soldier stabs Lily, Officer Herriman tells her that a doctor's duty is to save lives and not to be shaken by the soldiers' words. He later informs her that she has been reassigned to the Fifth Sector and mocks her before she leaves.",
+    "textKeys": ["Main_YYMRDHS_122_46", "Main_YYMRDHS_126_11"]
   }
 }

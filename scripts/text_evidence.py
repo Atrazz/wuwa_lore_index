@@ -1,6 +1,8 @@
 """Attach attributable game-text evidence without turning co-occurrence into a bond."""
 import collections
 import itertools
+import json
+import os
 import re
 
 
@@ -8,9 +10,20 @@ def plain(text):
     return re.sub(r"<[^>]+>", "", text or "").strip()
 
 
+# Names that are also ordinary English words only count when capitalised ("left behind" is not the
+# Left Behind), and alternate names that never match English text on their own ("common" is not the
+# Common Class). Both lists live in scripts/concept_filter.json.
+_FILTER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "concept_filter.json")))
+CASE_SENSITIVE = set(_FILTER.get("caseSensitive", []))
+NO_TEXT_MATCH = set(_FILTER.get("noTextMatch", []))
+# Chinese names that are too generic to match on (天的 is inside 今天的, "today's"), and Chinese names of
+# people or things outside the map that contain an entry's name (莉莉贝 Lillibet contains 莉莉 Lily).
+UNRELIABLE_ZH = set(_FILTER.get("unreliableZh", []))
+ZH_IGNORE = _FILTER.get("zhIgnore", [])
+
+
 def name_pattern(name):
-    # These proper names also occur as ordinary English nouns.
-    flags = 0 if name in {"Scar", "Cosmos", "Encore", "Chase"} else re.I
+    flags = 0 if name in CASE_SENSITIVE else re.I
     return re.compile(r"(?<![\w-])" + re.escape(name).replace("’", "['’]") + r"(?![\w-])", flags)
 
 
@@ -69,7 +82,7 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
             patterns.append((canonical["id"], name_pattern(definition["id"])))
     for alternate, canonical_name in (aliases or {}).items():
         canonical = find(canonical_name)
-        if canonical:
+        if canonical and alternate not in NO_TEXT_MATCH:
             patterns.append((canonical["id"], name_pattern(alternate)))
     by_zh = {n["zh"]: n["id"] for n in subjects if n.get("zh")}
     # Reviewed speaker tags that differ from the plain name, e.g. 「梅塔」 for Meta.
@@ -82,6 +95,15 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
         en = text_en.get(key, "")
         if isinstance(zh, str) and isinstance(en, str) and 1 < len(zh) < 18 and 1 < len(en) < 45 and "\n" not in en:
             translation[zh][en] += 1
+
+    # A Chinese name inside a longer entry name is not a mention: 莉莉 (Lily) in 莉莉兰德 (Lilyland).
+    zh_names = {n["zh"] for n in subjects if len(n.get("zh", "")) >= 2}
+    longer = {zh: sorted((o for o in zh_names if zh in o and o != zh), key=len, reverse=True) for zh in zh_names}
+
+    def zh_mentions(zh, text):
+        for other in [*longer.get(zh, ()), *ZH_IGNORE]:
+            text = text.replace(other, "")
+        return zh in text
 
     records = source.get("records", [])
     speaker_hits = collections.defaultdict(set)
@@ -151,7 +173,7 @@ def enrich(nodes, edges, add_node, find, edge, source, reviews, text_en, text_zh
         if record["kind"] not in {"Dialogue", "World dialogue", "Voice line"}:
             speaker = None
         mentions = [nid for nid, pattern in patterns if pattern.search(record["text"])]
-        mentions.extend(n["id"] for n in subjects if n["id"] != 'Scar' and len(n.get("zh", "")) >= 2 and n["zh"] in record.get("zh", ""))
+        mentions.extend(n["id"] for n in subjects if n["id"] != 'Scar' and n["id"] not in UNRELIABLE_ZH and len(n.get("zh", "")) >= 2 and zh_mentions(n["zh"], record.get("zh", "")))
         for target in (record.get('contextFor'), context_for.get(record["textKey"])):
             if target and find(target):
                 mentions.insert(0, find(target)["id"])

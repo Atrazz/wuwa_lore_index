@@ -90,5 +90,7 @@ npm run data           # use cached downloads, rebuild src/data/lore.json
 npm run data:refresh   # re-download wiki + community dataset
 ```
 
+`scripts/concept_filter.json` removes concept entries that are ordinary words or one-off names and folds duplicates. It also sets how names match game text: `caseSensitive` names count only when capitalised (Lily, Left Behind, Shimmer), `noTextMatch` aliases never match English text on their own ("common" is not the Common Class), `unreliableZh` entries are never matched by a too-generic Chinese name (Celestials' 天的 is inside 今天的), and `zhIgnore` lists Chinese names outside the map that contain an entry's name (莉莉贝 Lillibet). A Chinese name inside a longer entry name (莉莉 in 莉莉兰德 Lilyland) never counts as a mention.
+
 `scripts/curated.json` holds real-world references taken by hand from articles, each with a citation.
 Game text and assets © Kuro Games. Wiki text CC BY-SA. Community dataset by the Solaris Archives community.

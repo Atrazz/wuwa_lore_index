@@ -1,5 +1,5 @@
 {
- "_note": "Concept entries that are ordinary words, game modes, puzzle items or one-off names, removed from the map; and duplicates folded into the entry they name.",
+ "_note": "Concept entries that are ordinary words, game modes, puzzle items or one-off names, removed from the map; and duplicates folded into the entry they name. caseSensitive: names that are also ordinary English words and only count in game text when capitalised. noTextMatch: alternate names (from entity_aliases.json) that never match English game text on their own. unreliableZh: entries whose Chinese name is too generic to match on (a guessed one is not shown either). zhIgnore: Chinese names of things outside the map that contain an entry's name.",
  "drop": [
   "Abyssal Sea",
   "Amnesia",
@@ -25,6 +25,7 @@
   "Dhalifa",
   "Dreams",
   "Dreamscape Nodes",
+  "Ecoacoustic",
   "Emotions",
   "Endstate Matrix",
   "Expeditions",
@@ -99,5 +100,29 @@
   "Fleet Snowfluff": "Aemeath",
   "Harbinger of the Dark Tide": "Harbinger",
   "Stellar Matrix": "Stellar Matrices"
- }
+ },
+ "caseSensitive": [
+  "Chase",
+  "Cosmos",
+  "Encore",
+  "Left Behind",
+  "Lily",
+  "Phantoms",
+  "Scar",
+  "Shimmer"
+ ],
+ "noTextMatch": [
+  "Calamity",
+  "Common",
+  "Elite",
+  "Overlord"
+ ],
+ "unreliableZh": [
+  "Celestials",
+  "Forte",
+  "Remnant Energy"
+ ],
+ "zhIgnore": [
+  "莉莉贝"
+ ]
 }

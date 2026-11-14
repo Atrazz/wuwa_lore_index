@@ -18,7 +18,7 @@ Edge kinds (strongest evidence first):
 import collections, datetime, json, math, os, re, unicodedata, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from text_evidence import enrich
+from text_evidence import enrich, UNRELIABLE_ZH
 from character_types import character_kind
 from concept_summaries import add_concept_summaries
 
@@ -288,6 +288,13 @@ def affil(name):
 def bond_context(b):
     if b["key"] in CONTEXT: return CONTEXT[b["key"]]
     a, z, qs, n = b["a"], b["b"], b.get("sceneQuests", []), b["scenes"]
+    # Not yet reviewed in bond_context.json: never describe a pair that talks or is mentioned as silent.
+    if b.get("quests"):
+        talked = [q["quest"] for q in b["quests"]]
+        return dict(rel=b["label"], ctx=f"They talk on screen in {', '.join(talked[:2])}" + (f" and {len(talked) - 2} more." if len(talked) > 2 else "."), basis="inferred")
+    if b.get("voicelines") or b.get("mentions"):
+        m = (b.get("voicelines") or b.get("mentions"))[0]
+        return dict(rel=b["label"], ctx=f"{m['source_of']} refers to {m['to']}" + (f" in {m['title']}." if m.get("title") else "."), basis="inferred")
     where = ", ".join(qs[:2]) + (f" and {n - 2} more" if n > 2 else "")
     plural = "quest" if n == 1 else "quests"
     if (a in OVERSEERS) != (z in OVERSEERS):
@@ -553,7 +560,7 @@ for n in nodes.values():
     wt = P.get(page, "") if page else ""
     zh, lit = zh_from_lang(wt, n["id"]) if wt else ("", "")
     if wt: zh = other_langs(wt, page).get("zhs", "") or zh
-    if not zh:
+    if not zh and n["id"] not in UNRELIABLE_ZH:
         # only the node's own name: community aliases can be fan identifications ("Grand Architect | Triss")
         for names in ([n["id"]],):
             cands = collections.Counter(DM_ZH.get(k, "") for name in names for k in en_index.get(name.lower(), []))
